@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .image-fade::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1)
+    );
+    pointer-events: none;
+    border-radius: 1.5rem;
+  }
+
+  .parallax {
+    /* The image used */
+    background-image: url("img_parallax.jpg");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .reset blockquote,
+  .reset dl,
+  .reset dd,
+  .reset h1,
+  .reset h2,
+  .reset h3,
+  .reset h4,
+  .reset h5,
+  .reset h6,
+  .reset hr,
+  .reset figure,
+  .reset p,
+  .reset pre,
+  .reset ol,
+  .reset ul,
+  .reset table,
+  .reset a {
+    all: revert !important;
+  }
+
+  /* .reset iframe {
+    width: 100% !important;
+    height: 500px !important;
+  }
+ */
+
+  .parallelogram-text {
+    position: relative;
+    display: inline-block;
+    background-color: #030303;
+    /* Set your desired background color */
+    padding: 10px 20px;
+    /* Set your desired padding */
+
+    /* Apply the transformation */
+    transform: skew(-20deg);
+    transform-origin: top left;
+  }
+
+  .parallelogram-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background-color: inherit;
+    transform: skew(20deg);
+    transform-origin: top right;
+  }
+
+  .scroll-x::-webkit-scrollbar-thumb,
+  .scroll-y::-webkit-scrollbar-thumb {
+    background: #5b0888;
+    border-radius: 7px;
+  }
+
+  .scroll-x::-webkit-scrollbar,
+  .scroll-y::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  .scroll-x::-webkit-scrollbar-thumb,
+  .scroll-y::-webkit-scrollbar-thumb {
+    background: #5b0888;
+    border-radius: 7px;
+  }
+
+  .scroll-x::-webkit-scrollbar,
+  .scroll-y::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .scroll-x,
+  .scroll-y {
+    scrollbar-color: rgb(211 198 249 / 70%);
+    scrollbar-width: thin;
+  }
+
+  .scroll-x,
+  .scroll-y {
+    scrollbar-face-color: #5b0888;
+    scrollbar-base-color: #5b0888;
+    scrollbar-3dlight-color: #5b0888;
+    scrollbar-highlight-color: #5b0888;
+    scrollbar-track-color: #5b0888;
+    scrollbar-arrow-color: #5b0888;
+    scrollbar-shadow-color: #5b0888;
+    scrollbar-dark-shadow-color: #5b0888;
+  }
+
+  .login-radial {
+    background: radial-gradient(#e5cff7, #5b0888);
+  }
+
+  .home-landing-gradient {
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 45%,
+      #f73236 60%,
+      #f73236 100%
+    );
+  }
+
+  @media screen and (max-width: 650px) {
+    .home-landing-gradient {
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 25%,
+        #f73236 30%,
+        #f73236 100%
+      );
+    }
+  }
+
+  .discount-bg {
+    background-image: url('data:image/svg+xml,<svg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.89 110.7"><defs><style>.cls-1{fill:%23f8485e;}</style></defs><title>discount</title><g id="Layer_2" data-name="Layer 2"><g id="ALL-Books-page"><path class="cls-1" d="M105.05,47.35,97.59,79.62a11.72,11.72,0,0,1-6.35,7.93L61.36,101.83a11.68,11.68,0,0,1-10.16,0L21.4,87.35a11.69,11.69,0,0,1-6.31-8L7.81,47.08a11.72,11.72,0,0,1,2.29-9.9L30.82,11.35A11.7,11.7,0,0,1,40,7l33.12.09a11.69,11.69,0,0,1,9.14,4.43l20.58,25.95A11.72,11.72,0,0,1,105.05,47.35Z"/><path class="cls-1" d="M36.62,0l0,2,39.82.11A9.64,9.64,0,0,1,84,5.79L108.78,37a9.68,9.68,0,0,1,1.86,8.22l-9,38.79a9.64,9.64,0,0,1-5.27,6.57L60.47,107.75a9.67,9.67,0,0,1-8.42,0L16.22,90.35A9.68,9.68,0,0,1,11,83.75L2.24,44.9a9.64,9.64,0,0,1,1.89-8.2L29.05,5.63A9.65,9.65,0,0,1,36.62,2V0m0,0a11.7,11.7,0,0,0-9.13,4.38L2.57,35.44a11.72,11.72,0,0,0-2.28,9.9L9,84.19a11.71,11.71,0,0,0,6.31,8l35.83,17.37a11.64,11.64,0,0,0,10.15,0L97.26,92.38a11.72,11.72,0,0,0,6.35-7.93l9-38.79a11.68,11.68,0,0,0-2.23-9.91L85.61,4.54A11.71,11.71,0,0,0,76.47.11L36.65,0Z"/></g></g></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .course-label-bg {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 199.59"><defs><style>.cls-1{fill:%23100303;}</style></defs><title>label</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M3,0H14V159.76L2.09,148.06a7,7,0,0,1-2.09-5V3A3,3,0,0,1,3,0Z"/><path class="cls-1" d="M22,0H92V167.62L61.2,197.87a6,6,0,0,1-8.4,0L22,167.62Z"/><path class="cls-1" d="M114,3V143.06a7,7,0,0,1-2.09,5L99.33,160.42V0H111A3,3,0,0,1,114,3Z"/></g></g></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .reset table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  .reset th,
+  .reset td {
+    border: 1px solid black !important;
+    padding: 8px !important;
+    text-align: left !important;
+  }
+
+  .reset th {
+    background-color: #f2f2f2 !important;
+  }
+
+  .reset * {
+    max-width: 100%;
+  }
+
+  .reset > article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
