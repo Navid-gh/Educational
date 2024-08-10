@@ -6,6 +6,7 @@ import useClickActive from "../hooks/useClickActive";
 import Close from "./UI/Icons/Close";
 import Itaa from "./UI/Icons/Itaa";
 import GrayWhatsapp from "./UI/Icons/GrayWhatsapp";
+import Class from "./UI/Icons/Class";
 
 const FixedContactUs = () => {
   const { isActive, toggleActive } = useClickActive(true);
@@ -16,6 +17,8 @@ const FixedContactUs = () => {
   const { isActive: telegramActive, toggleActive: toggleTelegramActive } =
     useClickActive(true);
   const { isActive: itaaActive, toggleActive: toggleItaaActive } =
+    useClickActive(true);
+  const { isActive: freeActive, toggleActive: toggleFreeActive } =
     useClickActive(true);
   return (
     <div className="fixed bottom-16 left-1 w-20 h-20 cursor-pointer z-50 text-xs">
@@ -38,6 +41,18 @@ const FixedContactUs = () => {
           <Close className="fill-white" id="main-close" />
         </div>
         <div className="bg-black flex flex-col gap-2 shadow-contactCard w-14 rounded-full p-2">
+          <div
+            className={cn(
+              "p-2 bg-black rounded-full transition-all duration-500 hover:bg-[#64a964] shadow-contactCard opacity-30 -translate-x-3",
+              {
+                "opacity-100 translate-x-0": isActive,
+                "bg-[#64a964]": freeActive,
+              }
+            )}
+            onClick={toggleFreeActive}
+          >
+            <Class id="main-free-class" fill="white" />
+          </div>
           <div
             className={cn(
               "p-2 bg-black rounded-full transition-all duration-500 hover:bg-[#64a964] shadow-contactCard opacity-30 -translate-x-3",
@@ -88,6 +103,20 @@ const FixedContactUs = () => {
           </div>
         </div>
       </div>
+      <a
+        href={`/Article/66982119b81fb6d998b0308d/%D9%85%DB%8C%D9%86%DB%8C-%D8%AF%D9%88%D8%B1%D9%87`}
+        rel="noopener noreferrer"
+        target="_blank"
+        className={cn(
+          "absolute left-[60%] -top-[245px] flex pointer-events-none justify-end min-w-max z-10 px-6 pr-9 py-2 rounded-full bg-[#64a964] text-white opacity-0 transition-all duration-300 translate-x-2",
+          {
+            "opacity-100 translate-x-0 pointer-events-auto": freeActive,
+            "opacity-0 translate-x-2 pointer-events-none": !isActive,
+          }
+        )}
+      >
+        <span>دوره رایگان(کلیک کنید)</span>
+      </a>
       <a
         href={`https://wa.me/message/3ECCGRVEYQWBL1`}
         rel="noopener noreferrer"

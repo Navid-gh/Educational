@@ -277,7 +277,7 @@ const Summary = () => {
       >
         {userQuery.data ? (
           <>
-            <section className="flex gap-[1%] flex-wrap">
+            <section className="flex gap-[1%] flex-wrap justify-between">
               <SummaryBoxes
                 key={1}
                 title="دوره های مجازی"
@@ -295,12 +295,19 @@ const Summary = () => {
               />
               <SummaryBoxes
                 key={3}
+                title="دوره های رایگان"
+                value={1}
+                icon={<Class className="w-6 h-6" />}
+                link="Free"
+              />
+              <SummaryBoxes
+                key={4}
                 title="کتاب ها"
                 value={userQuery.data.lengthBook}
                 icon={<Book className="w-6 h-6" />}
               />
               <SummaryBoxes
-                key={4}
+                key={5}
                 title="دیدگاه های من"
                 value={userQuery.data.lengthcomment}
                 icon={<Comment className="w-6 h-6" />}

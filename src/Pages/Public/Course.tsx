@@ -42,15 +42,16 @@ const Course = () => {
 
   const handleSwitch = (id: string) => {
     const refs = [infoRef, asksRef, chaptersRef, commentsef, relatedRef];
-    refs.forEach((ref) => {
+    for (const ref of refs) {
       if (ref?.current?.id === id) {
         ref?.current?.scrollIntoView({
           behavior: "smooth",
           block: "start",
           inline: "nearest",
         });
+        break;
       }
-    });
+    }
   };
 
   const details = useMemo(() => {

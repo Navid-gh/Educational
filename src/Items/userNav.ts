@@ -38,6 +38,11 @@ export const userNavItems = [
     id: uuidv4(),
   },
   {
+    name: "دوره های رایگان",
+    link: "Free",
+    id: uuidv4(),
+  },
+  {
     name: "خروج",
     link: "Logout",
     id: uuidv4(),

@@ -19,8 +19,8 @@ const Hero = () => {
             هر آنچه که نیاز داری برای رشد و ارتقا مهارت های فردیت
           </h2>
         </div>
-        <div className="flex items-center gap-2 self-start">
-          <Link to={"/courses/Fanbayan"}>
+        <div className="flex items-center justify-center gap-2 self-start flex-wrap">
+          <Link to={"/courses/Fanbayan"} className="min-w-fit">
             <MainButton
               intent={"black"}
               size="small"
@@ -28,12 +28,25 @@ const Hero = () => {
               className="max-w-none p-4"
             />
           </Link>
-          <Link to={"/courses/PersonalDevelopment"}>
+          <Link to={"/courses/PersonalDevelopment"} className="min-w-fit">
             <MainButton
               intent={"purple"}
               size="small"
               text="آموزش مهارت های رشد و توسعه ی فردی"
               className="max-w-none p-4"
+            />
+          </Link>
+          <Link
+            to={
+              "/Article/66982119b81fb6d998b0308d/%D9%85%DB%8C%D9%86%DB%8C-%D8%AF%D9%88%D8%B1%D9%87"
+            }
+            className="min-w-fit"
+          >
+            <MainButton
+              intent={"purple"}
+              size="small"
+              text="دوره رایگان"
+              className="max-w-none p-4 bg-red-500"
             />
           </Link>
         </div>

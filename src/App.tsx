@@ -56,6 +56,7 @@ const User = lazy(() => import("./Pages/User/User"));
 const Summary = lazy(() => import("./Pages/User/Summary"));
 const Info = lazy(() => import("./Pages/User/Info"));
 const Orders = lazy(() => import("./Pages/User/Orders"));
+const Free = lazy(() => import("./Pages/User/Free"));
 
 function App() {
   const isReady = useInitialAuth();
@@ -385,6 +386,7 @@ function App() {
                     </Suspense>
                   }
                 />
+                <Route path="Free" element={<Free />} />
               </Route>
               <Route
                 path="Failed"

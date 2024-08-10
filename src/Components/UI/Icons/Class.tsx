@@ -2,7 +2,8 @@ import { SVGProps, FC, memo } from "react";
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
-const Class: FC<SVGElementProps> = ({ id, ...props }) => {
+const Class: FC<SVGElementProps> = ({ id, fill, ...props }) => {
+  fill = fill || "#5b0888";
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +12,7 @@ const Class: FC<SVGElementProps> = ({ id, ...props }) => {
       id={id}
     >
       <defs>
-        <style>{`#${id} .cls-1{fill:#5b0888}`}</style>
+        <style>{`#${id} .cls-1{fill:${fill}`}</style>
       </defs>
       <g id="Layer_2" data-name="Layer 2">
         <g id="panel">

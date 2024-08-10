@@ -7,6 +7,7 @@ import useInputValidator from "../hooks/useInputValidator";
 import ConfirmCode from "./ConfirmCode";
 import { useCountdown } from "../hooks/useCountDown";
 import axios, { AxiosError } from "axios";
+import { useEnglishNums } from "../hooks/usePersianNums";
 
 const SignupComp = () => {
   const [persisitingPhone, setPersisitingPhone] = useState("");
@@ -26,7 +27,8 @@ const SignupComp = () => {
       toast.error(lnameMsg);
       return;
     }
-    const phoneMsg = useInputValidator(phoneRef.current?.value, "phone");
+    const phoneVal = useEnglishNums(phoneRef.current?.value ?? "");
+    const phoneMsg = useInputValidator(phoneVal, "phone");
     if (phoneMsg) {
       toast.error(phoneMsg);
       return;
@@ -36,10 +38,10 @@ const SignupComp = () => {
       await register({
         first_name: fnameRef.current!.value,
         last_name: lnameRef.current!.value,
-        phone: phoneRef.current!.value,
+        phone: phoneVal,
       });
       toast.success("ثبت نام با موفقیت انجام شد");
-      setPersisitingPhone(phoneRef.current!.value);
+      setPersisitingPhone(phoneVal);
       setStartCounting(true);
     } catch (error) {
       const errors = error as Error | AxiosError;

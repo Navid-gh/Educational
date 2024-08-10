@@ -7,6 +7,7 @@ import useInputValidator from "../hooks/useInputValidator";
 import { useCountdown } from "../hooks/useCountDown";
 import ConfirmCode from "./ConfirmCode";
 import axios, { AxiosError } from "axios";
+import { useEnglishNums } from "../hooks/usePersianNums";
 
 const LoginComp = () => {
   const [persisitingPhone, setPersisitingPhone] = useState("");
@@ -14,7 +15,10 @@ const LoginComp = () => {
   const { countDown, setStartCounting, resetCounter } = useCountdown(120);
 
   const checkUserHandler = async () => {
-    const phoneMsg = useInputValidator(phoneRef.current?.value, "phone");
+    console.log(phoneRef.current?.value);
+    const phoneVal = useEnglishNums(phoneRef.current?.value ?? "");
+    console.log(phoneVal);
+    const phoneMsg = useInputValidator(phoneVal, "phone");
     if (phoneMsg) {
       toast.error(phoneMsg);
       return;
@@ -22,10 +26,10 @@ const LoginComp = () => {
     const loader = toast.loading("در حال ارسال اطلاعات");
     try {
       await checkUser({
-        phone: phoneRef.current!.value,
+        phone: phoneVal,
       });
       toast.success("کد برای شما ارسال شد");
-      setPersisitingPhone(phoneRef.current!.value);
+      setPersisitingPhone(phoneVal);
       setStartCounting(true);
     } catch (error) {
       const errors = error as Error | AxiosError;

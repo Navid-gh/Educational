@@ -335,7 +335,7 @@ const Card = ({ details, type, theme }: Props) => {
             <img
               src={`${BASE_URL}${details.images[0]}`}
               alt="course-img"
-              className="w-full h-full rounded-2xl"
+              className="w-full h-full rounded-2xl object-cover"
             />
           </figure>
           <div className="flex flex-col gap-3 w-full justify-between text-sm tips2:text-xs">
@@ -343,9 +343,11 @@ const Card = ({ details, type, theme }: Props) => {
               <h1 className="font-bold">{details.title}</h1>
               <div className="flex justify-between items-center">
                 <span>قیمت :</span>
-                <span className="line-through">
-                  {usePersianNums(details.price, true)} تومان
-                </span>
+                {Number(details.discount) > 0 ? (
+                  <span className="line-through">
+                    {usePersianNums(details.price, true)} تومان
+                  </span>
+                ) : null}
                 <span>{usePersianNums(details.finalPrice, true)} تومان</span>
               </div>
             </div>

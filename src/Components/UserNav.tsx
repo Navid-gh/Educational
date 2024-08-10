@@ -15,6 +15,7 @@ import { useAppDispatch } from "../hooks/useReduxHooks";
 import { logOut } from "../redux/user/userSlice";
 import useCookie from "../hooks/useCookie";
 import useAuth from "../hooks/useAuth";
+import Class from "./UI/Icons/Class";
 
 const UserNav = () => {
   const { isActive, toggleActive } = useClickActive();
@@ -153,6 +154,12 @@ const UserNav = () => {
               >
                 {link === "" ? (
                   <Home
+                    className={cn("w-4 h-4", {
+                      "fill-purple": idx === activeTab,
+                    })}
+                  />
+                ) : link == "Free" ? (
+                  <Class
                     className={cn("w-4 h-4", {
                       "fill-purple": idx === activeTab,
                     })}
