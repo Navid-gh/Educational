@@ -54,7 +54,7 @@ const Hero = () => {
       <div className="flex-1 flex items-center justify-center">
         <video
           controls
-          className="rounded-xl shadow-main w-full object-cover"
+          className="rounded-xl shadow-main sumComment:w-full w-8/12 object-cover"
         >
           <source src="/videos/saber.mp4" type="video/mp4" />
           مرورگر شما از ویدیو پشتیبانی نمی‌کند.
