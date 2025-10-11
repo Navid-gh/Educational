@@ -32,6 +32,7 @@ const BasketOrderDetails = lazy(
 );
 const FailedBuy = lazy(() => import("./Pages/Public/FailedBuy"));
 const Help = lazy(() => import("./Pages/Public/Help"));
+const Landing = lazy(() => import("./Pages/Public/Landing"));
 
 const Admin = lazy(() => import("./Pages/Admin/Admin"));
 const AdminSummary = lazy(() => import("./Pages/Admin/AdminSummary"));
@@ -63,13 +64,16 @@ const Stress = lazy(() => import("./Pages/User/Stress"));
 function App() {
   const isReady = useInitialAuth();
   useInitialBasketProducts();
+
+  const isLandingPage = window.location.pathname === "/landing";
+
   return (
     <>
       <Router>
         {isReady ? (
           <>
             <ScrollToTop />
-            <Navbar />
+            {!isLandingPage && <Navbar />}
             <Toaster />
             <Routes>
               <Route
@@ -79,6 +83,16 @@ function App() {
                     <Home />
                   </ErrorBoundary>
                 }
+              />
+              <Route 
+                path="/Landing" 
+                element={
+                  <ErrorBoundary fallback={<ErrorComp />}>
+                    <Suspense fallback={<Loader />}>
+                      <Landing/>
+                    </Suspense>
+                  </ErrorBoundary>
+                } 
               />
               <Route
                 path="/Course/:id/:name"
@@ -433,9 +447,9 @@ function App() {
                 }
               />
             </Routes>
-            <Footer />
-            <FixedContactUs />
-            <ScrollToTopButton />
+          {!isLandingPage && <Footer />}
+          {!isLandingPage && <FixedContactUs />}
+          <ScrollToTopButton />
           </>
         ) : (
           <Loader />

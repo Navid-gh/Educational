@@ -6,7 +6,7 @@ import { Endpoints } from '../endpoints';
 type Data = {
     phone: string;
     name: string;
-    time: ContactTimes;
+    time?: ContactTimes;
     subject?: string;
     text?: string;
 };
