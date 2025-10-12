@@ -7,6 +7,7 @@ import Accordion from '../../Components/UI/Accordion';
 import MainButton from '../../Components/UI/MainButton';
 import LandingForm from '../../Components/LandingForm';
 import { usePersianNums } from '../../hooks/usePersianNums';
+import CustomerSatisfaction from '../../Components/UI/CustomerSatisfaction';
 
 export default function Landing() {
   return (
@@ -37,7 +38,7 @@ export default function Landing() {
             />
           </div>
         </section>
-        
+
         <section className='flex flex-col gap-4 items-center justify-center'>
           <div className='w-full flex flex-col gap-4 items-center justify-center bg-sky-100 p-7'>
             <h2 className='text-3xl md:text-4xl font-bold text-red-700'>
@@ -84,10 +85,10 @@ export default function Landing() {
             </div>
           </div>
           <div className='w-full flex justify-center'>
-            <div className='relative w-full max-w-3xl aspect-[16/9]'>
+            <div className='relative w-full max-w-3xl aspect-[16/9] mx-auto'>
               <iframe
-                src='https://www.aparat.com/video/video/embed/videohash/jjp213r/vt/frame'
-                className='absolute top-0 left-0 w-full h-full rounded-md'
+                src='https://www.aparat.com/video/video/embed/videohash/wozl8xr/vt/frame'
+                className='absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg'
                 allowFullScreen
                 title='Aparat Video'
               ></iframe>
@@ -97,7 +98,7 @@ export default function Landing() {
 
         <LandingCard />
 
-        <section className='flex userSummary:flex-col  gap-2 items-center'> 
+        <section className='flex userSummary:flex-col  gap-2 items-center'>
           <div className='flex flex-col gap-3 p-4 flex-1' id='faq'>
             <div className='space-y-3'>
               {landingFaqs.map(({ id, q, a }) => (
@@ -113,10 +114,14 @@ export default function Landing() {
 
           <div className='flex-1'>
             <LandingForm
-              title={'اگر تا اینجا سوالی داری شمارتو بزار تا سریع بهت زنگ بزنم!'}
+              title={
+                'اگر تا اینجا سوالی داری شمارتو بزار تا سریع بهت زنگ بزنم!'
+              }
             />
           </div>
         </section>
+
+        <CustomerSatisfaction />
       </main>
     </div>
   );

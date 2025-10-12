@@ -5,53 +5,53 @@ import Plus from '../Components/UI/Icons/Plus';
 import Tick from '../Components/UI/Icons/Tick';
 
 export const landingText = [
-    {
-        text: '• هزار تا فکر ناب داری، اما موقع صحبت ذهنت خالی میشه.',
-        id: uuidv4(),
-    },
-    {
-        text: '• از نگاه و قضاوت بقیه می‌ترسی، حتی وقتی حق با توئه.',
-        id: uuidv4(),
-    },
-    {
-        text: '• توی مصاحبه‌ها یا جلسات کاری نمی‌تونی خودت رو اون‌طور که هستی نشون بدی.',
-        id: uuidv4(),
-    },
-    {
-        text: '• می‌خوای بالاخره اعتمادبه‌نفس واقعی و صدای قاطع پیدا کنی؟',
-        id: uuidv4(),
-    },
-    {
-        text: 'فقط شماره‌ت رو بذار؛ خودم یا تیمم باهات تماس می‌گیریم و دقیق بهت می‌گیم چطور ترست رو کنترل کنی و شروع به اثرگذاری کنی.',
-        id: uuidv4()
-    },
+  {
+    text: '• هزار تا فکر ناب داری، اما موقع صحبت ذهنت خالی میشه.',
+    id: uuidv4(),
+  },
+  {
+    text: '• از نگاه و قضاوت بقیه می‌ترسی، حتی وقتی حق با توئه.',
+    id: uuidv4(),
+  },
+  {
+    text: '• توی مصاحبه‌ها یا جلسات کاری نمی‌تونی خودت رو اون‌طور که هستی نشون بدی.',
+    id: uuidv4(),
+  },
+  {
+    text: '• می‌خوای بالاخره اعتمادبه‌نفس واقعی و صدای قاطع پیدا کنی؟',
+    id: uuidv4(),
+  },
+  {
+    text: 'فقط شماره‌ت رو بذار؛ خودم یا تیمم باهات تماس می‌گیریم و دقیق بهت می‌گیم چطور ترست رو کنترل کنی و شروع به اثرگذاری کنی.',
+    id: uuidv4(),
+  },
 ];
 
 export const landingFeatures = [
-    {
-        title: 'دسترسی دائمی',
-        desc: 'به محتوای دوره برای همیشه دسترسی دارید',
-        Icon: AvatarBoy,
-        id: uuidv4(),
-    },
-    {
-        title: 'آپدیت رایگان',
-        desc: 'تمامی آپدیت‌های بعدی رایگان هستند',
-        Icon: Class,
-        id: uuidv4(),
-    },
-    {
-        title: 'پشتیبانی رایگان',
-        desc: 'تیم پشتیبانی همیشه پاسخ‌گوی شماست',
-        Icon: Plus,
-        id: uuidv4(),
-    },
-    {
-        title: 'مشاوره رایگان',
-        desc: 'سؤالات خود را از ما بپرسید',
-        Icon: Tick,
-        id: uuidv4(),
-    },
+  {
+    title: 'دسترسی دائمی',
+    desc: 'به محتوای دوره برای همیشه دسترسی دارید',
+    Icon: AvatarBoy,
+    id: uuidv4(),
+  },
+  {
+    title: 'آپدیت رایگان',
+    desc: 'تمامی آپدیت‌های بعدی رایگان هستند',
+    Icon: Class,
+    id: uuidv4(),
+  },
+  {
+    title: 'پشتیبانی رایگان',
+    desc: 'تیم پشتیبانی همیشه پاسخ‌گوی شماست',
+    Icon: Plus,
+    id: uuidv4(),
+  },
+  {
+    title: 'مشاوره رایگان',
+    desc: 'سؤالات خود را از ما بپرسید',
+    Icon: Tick,
+    id: uuidv4(),
+  },
 ];
 
 export const landingFaqs = [
@@ -93,3 +93,9 @@ export const landingFaqs = [
 ];
 
 export const GOLDEN_COURSE_ID = '68acbb0b360b62e084826e52';
+
+export const CUSTOMER_VIDEOS = [
+  'https://www.aparat.com/video/video/embed/videohash/zbn319g/vt/frame',
+  'https://www.aparat.com/video/video/embed/videohash/akql3j4/vt/frame',
+  'https://www.aparat.com/video/video/embed/videohash/mzv7ne4/vt/frame',
+];
