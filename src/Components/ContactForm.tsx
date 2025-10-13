@@ -59,6 +59,7 @@ const ContactForm = ({ type }: Props) => {
                 time,
                 subject,
                 text,
+                type: 'home',
             });
             toast.success('درخواست شما با موفقیت ثبت شد');
         } catch (error) {
@@ -107,7 +108,7 @@ const ContactForm = ({ type }: Props) => {
                         <RadioGroup
                             defaultValue='morning'
                             className='flex gap-3 books:flex-col'
-                            onValueChange={val => handleTimeChange(val as ContactTimes)}>
+                            onValueChange={(val) => handleTimeChange(val as ContactTimes)}>
                             <div className='flex items-center space-x-2'>
                                 <RadioGroupItem value='morning' id='morning' key={'morning'} />
                                 <label htmlFor='morning'>{usePersianNums('9-12')}</label>

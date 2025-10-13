@@ -9,6 +9,7 @@ type Data = {
     time: ContactTimes;
     subject?: string;
     text?: string;
+    type: 'home' | 'landing';
 };
 
 export const addContact = async (data: Data) => {

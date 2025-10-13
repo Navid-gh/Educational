@@ -39,7 +39,7 @@ const Navbar = () => {
     const [sideBar, setSideBar] = useState<boolean>(false);
 
     const { Auth, role } = useAuth();
-    const { products } = useAppSelector(state => state.basket);
+    const { products } = useAppSelector((state) => state.basket);
 
     const { pathname } = useLocation();
     let isSticky = true;
@@ -80,6 +80,7 @@ const Navbar = () => {
                 time,
                 subject: '',
                 text: '',
+                type: 'home',
             });
             toast.success('درخواست شما با موفقیت ثبت شد');
             setPopUpState(false);
@@ -96,7 +97,7 @@ const Navbar = () => {
             <header className={cn('flex flex-col gap-3 bg-white sticky top-0 p-[.5em] z-50 shadow-main', { static: !isSticky, hidden })}>
                 <div className='flex justify-between h-7 items-center navbar:h-auto'>
                     <div className='flex items-center gap-4'>
-                        <Hamburger className='w-8 h-8 hidden navbar:block cursor-pointer' onClick={() => setSideBar(prev => !prev)} />
+                        <Hamburger className='w-8 h-8 hidden navbar:block cursor-pointer' onClick={() => setSideBar((prev) => !prev)} />
                         <Link to='/'>
                             <LogoIcon id='logo-svg' className='w-8 h-8 rounded-lg overflow-hidden' />
                         </Link>
@@ -166,7 +167,7 @@ const Navbar = () => {
                         ))}
                     </ul>
                 </nav>
-                <Sidebar show={sideBar} func={() => setSideBar(prev => !prev)} />
+                <Sidebar show={sideBar} func={() => setSideBar((prev) => !prev)} />
             </header>
             <Popup zIndex={100} parentStateControl={popUpState}>
                 <div className='flex flex-col gap-8 items-center text-center max-w-[24.375rem] min-w-[20rem] tips2:min-w-[15rem]'>
@@ -201,7 +202,7 @@ const Navbar = () => {
                             <RadioGroup
                                 defaultValue='morning'
                                 className='flex gap-3 books:flex-col'
-                                onValueChange={val => handleTimeChange(val as ContactTimes)}>
+                                onValueChange={(val) => handleTimeChange(val as ContactTimes)}>
                                 <div className='flex items-center space-x-2'>
                                     <RadioGroupItem value='morning' id='morning' key={'morning'} />
                                     <label htmlFor='morning'>{usePersianNums('9-14')}</label>
