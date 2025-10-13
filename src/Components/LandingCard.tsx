@@ -25,11 +25,12 @@ const LandingCard = () => {
   return (
     <section className='flex userSummary:flex-col gap-4 items-center justify-center'>
       <div className='relative flex flex-col gap-4 items-center bg-white shadow-lg rounded-lg p-12'>
-        <div className='absolute top-1 -translate-y-1/2 -rotate-90 flex flex-col gap-6'>
+        <div className='absolute top-2 -translate-y-1/2 -rotate-90 flex flex-col gap-8'>
           {[...Array(4)].map((_, idx) => (
-            <LeftArrow key={idx} className='w-8 h-8' fill='#ccc' />
+            <LeftArrow key={idx} className='w-8 h-8' fill='#e0dada' />
           ))}
         </div>
+
         <h2 className='font-semibold text-xl'>الان وقت تصمیم گیری هست</h2>
         <div className='text-center'>
           <span className='text-green-600 font-semibold'>
@@ -44,7 +45,7 @@ const LandingCard = () => {
               {usePersianNums('9,870,000')} تومان
             </span>
             <span className='text-green-600 text-2xl font-bold'>
-              {usePersianNums('2,770')} هزار تومان
+              {usePersianNums('3,800,000')} تومان
             </span>
           </div>
           <MainButton

@@ -95,7 +95,7 @@ export const landingFaqs = [
 export const GOLDEN_COURSE_ID = '68acbb0b360b62e084826e52';
 
 export const CUSTOMER_VIDEOS = [
-  'https://www.aparat.com/video/video/embed/videohash/zbn319g/vt/frame',
-  'https://www.aparat.com/video/video/embed/videohash/akql3j4/vt/frame',
+  'https://www.aparat.com/video/video/embed/videohash/pzh9k26/vt/frame',
+  'https://www.aparat.com/video/video/embed/videohash/jjp213r/vt/frame',
   'https://www.aparat.com/video/video/embed/videohash/mzv7ne4/vt/frame',
 ];

@@ -21,6 +21,7 @@ export default {
       },
       backgroundImage: {
         "hero-pattern": "url('/images/hero.png')",
+        "landing-background": "url('/images/landing-bg.jpeg')",
       },
       boxShadow: {
         "book-shadow": "3px -2px 6px 0px black",

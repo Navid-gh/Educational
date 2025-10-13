@@ -1,6 +1,6 @@
 const LandingNavbar = () => {
   return (
-    <nav className='flex flex-col gap-5 items-center bg-white py-7 px-1'>
+    <nav className='flex flex-col gap-5 items-center py-7 px-1'>
       <h2 className='text-3xl md:text-4xl font-bold text-red-700'>
         ما اینجا فقط خوب حرف زدن یاد نمیدیم، یاد میدیم چطور اثرگذار باشی
       </h2>

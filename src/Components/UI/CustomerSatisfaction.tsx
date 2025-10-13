@@ -4,8 +4,8 @@ import MainHeader from './MainHeader';
 const CustomerSatisfaction = () => {
 
   return (
-    <section className='flex flex-col gap-6 p-4 justify-center items-center'>
-      <MainHeader>
+    <section className='flex flex-col gap-6 justify-center items-center'>
+      <MainHeader className='font-extrabold text-red-600'>
         رضایت برخی از هنرجوهای پرتلاشمون از دوره فن بیان
       </MainHeader>
       {CUSTOMER_VIDEOS.map((src, index) => (

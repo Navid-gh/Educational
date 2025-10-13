@@ -9,12 +9,28 @@ import LandingForm from '../../Components/LandingForm';
 import { usePersianNums } from '../../hooks/usePersianNums';
 import CustomerSatisfaction from '../../Components/UI/CustomerSatisfaction';
 
-export default function Landing() {
+const Landing = () => {
   return (
-    <div className='flex flex-col gap-6 min-h-screen bg-gray-50 text-gray-900'>
+    <div className='relative flex flex-col gap-6 min-h-screen text-gray-900 subHero:text-center p-4'>
+      <div
+        className='absolute inset-0'
+        style={{
+          backgroundImage: "url('/images/landing-bg.png')",
+          backgroundAttachment: 'fixed',
+          backgroundPosition: 'center',
+          backgroundSize: 'contain',
+          zIndex: -2,
+        }}
+      />
+      <div
+        className='absolute inset-0 bg-[#f3f3f3] opacity-95'
+        style={{ zIndex: -1 }}
+      ></div>
+
       <LandingNavbar />
-      <main className='flex flex-col gap-12'>
-        <section className='flex tips:flex-col gap-6 justify-center items-start p-6'>
+      <main className='flex flex-col gap-12 relative z-10'>
+
+        <section className='flex tips:flex-col gap-6 justify-center items-start'>
           <div className='flex flex-1 flex-col gap-4 items-center text-right bg-white p-6 rounded-2xl shadow-lg border-r-4 border-red-50'>
             <h2 className='text-xl font-bold text-gray-800'>
               اگه می‌خوای بالاخره حرفات شنیده بشه، بخونش{' '}
@@ -40,15 +56,15 @@ export default function Landing() {
         </section>
 
         <section className='flex flex-col gap-4 items-center justify-center'>
-          <div className='w-full flex flex-col gap-4 items-center justify-center bg-sky-100 p-7'>
-            <h2 className='text-3xl md:text-4xl font-bold text-red-700'>
+          <div className='w-full flex flex-col gap-4 items-center justify-center bg-sky-100 p-7 rounded-2xl'>
+            <h2 className='text-3xl md:text-4xl font-bold text-red-700 text-center'>
               آینده و مسیر زندگیتون و درآمدیتون با یادگیری همین آموزش تغییر
               میکنه
             </h2>
-            <p className='text-xl font-semibold'>
+            <p className='text-xl font-semibold text-center'>
               ما به ساده ترین روش ممکن بهتون آموزش میدیم
             </p>
-            <div className='flex items-center justify-center flex-wrap gap-4'>
+            <div className='flex items-center justify-center flex-wrap gap-4 mt-4'>
               <a
                 href='https://wa.me/message/U6DNQG63OTZ6N1'
                 target='_blank'
@@ -67,7 +83,7 @@ export default function Landing() {
                 />
               </a>
               <a
-                href='https://t.me/Saberzarei_support'
+                href='https://t.me/Saberzarei_support2'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -84,7 +100,7 @@ export default function Landing() {
               </a>
             </div>
           </div>
-          <div className='w-full flex justify-center'>
+          <div className='w-full flex justify-center mt-6'>
             <div className='relative w-full max-w-3xl aspect-[16/9] mx-auto'>
               <iframe
                 src='https://www.aparat.com/video/video/embed/videohash/wozl8xr/vt/frame'
@@ -98,8 +114,8 @@ export default function Landing() {
 
         <LandingCard />
 
-        <section className='flex userSummary:flex-col  gap-2 items-center'>
-          <div className='flex flex-col gap-3 p-4 flex-1' id='faq'>
+        <section className='flex userSummary:flex-col gap-2 items-center'>
+          <div className='flex flex-col gap-3 flex-1' id='faq'>
             <div className='space-y-3'>
               {landingFaqs.map(({ id, q, a }) => (
                 <Accordion
@@ -111,13 +127,8 @@ export default function Landing() {
               ))}
             </div>
           </div>
-
           <div className='flex-1'>
-            <LandingForm
-              title={
-                'اگر تا اینجا سوالی داری شمارتو بزار تا سریع بهت زنگ بزنم!'
-              }
-            />
+            <LandingForm title='اگر تا اینجا سوالی داری شمارتو بزار تا سریع بهت زنگ بزنم!' />
           </div>
         </section>
 
@@ -125,4 +136,6 @@ export default function Landing() {
       </main>
     </div>
   );
-}
+};
+
+export default Landing;
