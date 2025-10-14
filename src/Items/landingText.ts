@@ -4,7 +4,7 @@ import Class from '../Components/UI/Icons/Class';
 import Plus from '../Components/UI/Icons/Plus';
 import Tick from '../Components/UI/Icons/Tick';
 
-export const landingText = [
+export const LANDING_TEXT = [
   {
     text: '• هزار تا فکر ناب داری، اما موقع صحبت ذهنت خالی میشه.',
     id: uuidv4(),
@@ -22,12 +22,12 @@ export const landingText = [
     id: uuidv4(),
   },
   {
-    text: 'فقط شماره‌ت رو بذار؛ خودم یا تیمم باهات تماس می‌گیریم و دقیق بهت می‌گیم چطور ترست رو کنترل کنی و شروع به اثرگذاری کنی.',
+    text: 'فقط شمارت رو بذار؛ خودم یا تیمم باهات تماس می‌گیریم و دقیق بهت می‌گیم چطور ترست رو کنترل کنی و شروع به اثرگذاری کنی.',
     id: uuidv4(),
   },
 ];
 
-export const landingFeatures = [
+export const LANDING_FEATURES = [
   {
     title: 'دسترسی دائمی',
     desc: 'به محتوای دوره برای همیشه دسترسی دارید',
@@ -54,7 +54,7 @@ export const landingFeatures = [
   },
 ];
 
-export const landingFaqs = [
+export const LANDING_FAQS = [
   {
     q: 'آیا دوره غیرحضوری است؟',
     a: `بله، بسته طلایی کاملاً غیرحضوری و ترکیبی است:
@@ -99,3 +99,11 @@ export const CUSTOMER_VIDEOS = [
   'https://www.aparat.com/video/video/embed/videohash/jjp213r/vt/frame',
   'https://www.aparat.com/video/video/embed/videohash/mzv7ne4/vt/frame',
 ];
+
+export const GOLDEN_PACKAGE_TEXT = [
+    '• ۱۲ جلسه زنده و تعاملی (هر جلسه ۲ ساعت)',
+    '• ۱۵ ساعت آموزش آفلاین «فیل‌بیان» (دسترسی مادام‌العمر)',
+    '• دوره صوتی «۷ روز آرامش» + مدیتیشن اختصاصی',
+    '• پشتیبانی تمرینات در طول دوره + ۱ ماه پس از پایان',
+  ]
+

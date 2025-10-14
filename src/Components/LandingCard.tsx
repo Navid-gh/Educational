@@ -1,7 +1,7 @@
 import LeftArrow from './UI/Icons/LeftArrow';
 import { usePersianNums } from '../hooks/usePersianNums';
 import MainButton from './UI/MainButton';
-import { GOLDEN_COURSE_ID, landingFeatures } from '../Items/landingText';
+import { GOLDEN_COURSE_ID, LANDING_FEATURES } from '../Items/landingText';
 import { useAppDispatch, useAppSelector } from '../hooks/useReduxHooks';
 import useAddToBasket from '../hooks/useAddToBasket';
 import { useQuery } from '@tanstack/react-query';
@@ -23,8 +23,8 @@ const LandingCard = () => {
   }, [Auth, addToBasket, data, dispatch]);
 
   return (
-    <section className='flex userSummary:flex-col gap-4 items-center justify-center'>
-      <div className='relative flex flex-col gap-4 items-center bg-white shadow-lg rounded-lg p-12'>
+    <section className='flex userSummary:flex-col gap-4 items-stretch justify-center userSummary:items-center'>
+      <div className='relative flex flex-col gap-4 items-center bg-white shadow-lg rounded-lg p-12 justify-center'>
         <div className='absolute top-2 -translate-y-1/2 -rotate-90 flex flex-col gap-8'>
           {[...Array(4)].map((_, idx) => (
             <LeftArrow key={idx} className='w-8 h-8' fill='#e0dada' />
@@ -36,7 +36,7 @@ const LandingCard = () => {
           <span className='text-green-600 font-semibold'>
             فقط امروز ۶ میلیون تخفیف{' '}
           </span>
-          <span className='text-gray-800'>بیشتر می‌گیری ازمون</span>
+          <span className='text-gray-800'>بیشتر از ما میگیری</span>
         </div>
         <span>صفر تا صد آموزش فن بیان</span>
         <div className='w-full flex items-center justify-around gap-3'>
@@ -63,7 +63,7 @@ const LandingCard = () => {
       </div>
 
       <div className='max-w-2xl grid grid-cols-2 gap-6'>
-        {landingFeatures.map(({ title, desc, Icon, id }) => (
+        {LANDING_FEATURES.map(({ title, desc, Icon, id }) => (
           <div
             key={id}
             className='flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-12 hover:scale-105 transition-transform text-center'

@@ -1,5 +1,9 @@
 import LandingNavbar from '../../Components/UI/LandingNavbar';
-import { landingFaqs, landingText } from '../../Items/landingText';
+import {
+  GOLDEN_PACKAGE_TEXT,
+  LANDING_FAQS,
+  LANDING_TEXT,
+} from '../../Items/landingText';
 import Whatsapp from '../../Components/UI/Icons/Whatsapp';
 import Telegram from '../../Components/UI/Icons/Telegram';
 import LandingCard from '../../Components/LandingCard';
@@ -29,8 +33,7 @@ const Landing = () => {
 
       <LandingNavbar />
       <main className='flex flex-col gap-12 relative z-10'>
-
-        <section className='flex tips:flex-col gap-6 justify-center items-start'>
+        <section className='flex tips:flex-col gap-6 justify-center items-stretch'>
           <div className='flex flex-1 flex-col gap-4 items-center text-right bg-white p-6 rounded-2xl shadow-lg border-r-4 border-red-50'>
             <h2 className='text-xl font-bold text-gray-800'>
               اگه می‌خوای بالاخره حرفات شنیده بشه، بخونش{' '}
@@ -39,7 +42,7 @@ const Landing = () => {
               <p className='text-red-600 font-semibold'>
                 احتمالاً دنبال فن بیان اومدی چون:
               </p>
-              {landingText.map((text) => (
+              {LANDING_TEXT.map((text) => (
                 <p className='text-gray-700 leading-7' key={text.id}>
                   {text.text}
                 </p>
@@ -100,7 +103,7 @@ const Landing = () => {
               </a>
             </div>
           </div>
-          <div className='w-full flex justify-center mt-6'>
+          <div className='w-full flex sumComment:flex-col justify-center items-center gap-6'>
             <div className='relative w-full max-w-3xl aspect-[16/9] mx-auto'>
               <iframe
                 src='https://www.aparat.com/video/video/embed/videohash/wozl8xr/vt/frame'
@@ -109,15 +112,28 @@ const Landing = () => {
                 title='Aparat Video'
               ></iframe>
             </div>
+            <div className='flex flex-col gap-4 items-center justify-center bg-white shadow-lg rounded-lg p-12 w-full'>
+              <h3 className='text-2xl font-bold text-yellow-600'>
+                💎 بسته طلایی: مسیر نجات فن‌بیان
+              </h3>
+              <p className='text-lg font-semibold text-gray-700'>
+                ✨ مسیر کامل از استرس تا تسلط در حرف‌زدن ✨
+              </p>
+              <ul className='text-gray-600 leading-relaxed '>
+                {GOLDEN_PACKAGE_TEXT.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
         <LandingCard />
 
         <section className='flex userSummary:flex-col gap-2 items-center'>
-          <div className='flex flex-col gap-3 flex-1' id='faq'>
+          <div className='flex flex-col gap-3 flex-1 h-full' id='faq'>
             <div className='space-y-3'>
-              {landingFaqs.map(({ id, q, a }) => (
+              {LANDING_FAQS.map(({ id, q, a }) => (
                 <Accordion
                   key={id}
                   head={<span className='font-semibold'>{q}</span>}
