@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { Article, Book, Course } from "../../Types/apiTypes";
+import { Article, Book, Course, RobotsType } from "../../Types/apiTypes";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { editArticle } from "../../api/setters/articleAPI";
@@ -9,6 +9,7 @@ import { editBook } from "../../api/setters/bookAPI";
 import useAuth from "../../hooks/useAuth";
 import { useAuthHooks } from "../../hooks/useAuthHooks";
 import { editImages } from "../../api/setters/imageAPI";
+import ArticleRobotsSelect from "../../Components/ArticleRobotsSelect";
 
 const Edit = () => {
   const { parent } = useParams();
@@ -21,6 +22,7 @@ const Edit = () => {
   const textRef = useRef<HTMLTextAreaElement | null>(null);
   const [imgUrls, setImgUrls] = useState<string[] | null>(null);
   const imagesRef = useRef<HTMLInputElement | null>(null);
+  const canonicalHref = useRef<HTMLInputElement | null>(null);
   const { token } = useAuth();
   const auth = useAuthHooks();
 
@@ -43,6 +45,7 @@ const Edit = () => {
 
   if (parent === "Articles") {
     const details = location.state as Article;
+    const [robots, setRobots] = useState<RobotsType>(details.robots);
 
     const editArticleMutation = useMutation({
       mutationFn: (id: string) =>
@@ -55,6 +58,8 @@ const Edit = () => {
           category: "",
           images: imgUrls!,
           status: true,
+          robots: robots ?? details.robots,
+          canonicalHref: canonicalHref.current!.value,
         }),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["articles", "admin"] });
@@ -117,6 +122,17 @@ const Edit = () => {
           defaultValue={details.text}
           ref={textRef}
         ></textarea>
+        <ArticleRobotsSelect
+          value={robots}
+          onChange={setRobots}
+          disabled={editArticleMutation.isPending}
+        />
+        <input
+          type="url"
+          defaultValue={details?.canonicalHref}
+          placeholder="canonicalHref"
+          ref={canonicalHref}
+        />
         <button
           className="bg-pink max-w-fit"
           disabled={editArticleMutation.isPending}
@@ -153,8 +169,8 @@ const Edit = () => {
           price: priceRef.current!.value,
           type: typeRef.current!.value as "online" | "offline",
           spotPlayerID: spotRef.current!.value,
-          subCourse: subCourseRef.current!.value.split(','),
-          score: Number(scoreRef.current!.value), 
+          subCourse: subCourseRef.current!.value.split(","),
+          score: Number(scoreRef.current!.value),
         }),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
@@ -258,11 +274,11 @@ const Edit = () => {
           ref={subCourseRef}
           defaultValue={details.subCourse}
         />
-        <input 
-          type="number" 
+        <input
+          type="number"
           placeholder="امتیاز"
           ref={scoreRef}
-          defaultValue={details.score} 
+          defaultValue={details.score}
         />
         <button
           className="bg-pink max-w-fit"

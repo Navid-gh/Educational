@@ -56,4 +56,14 @@ export const adminNavItems = [
     link: "Manage-Slides",
     id: uuidv4(),
   },
+  {
+    name: "مدیریت لندینگ",
+    link: "Manage-Landing",
+    id: uuidv4(),
+  },
+  {
+    name: "سایت مپ",
+    link: "Sitemap",
+    id: uuidv4(),
+  },
 ];

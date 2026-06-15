@@ -3,7 +3,7 @@ import { cn } from '../utils/lib/Cn';
 import PhoneIcon from './UI/Icons/PhoneIcon';
 import useClickActive from '../hooks/useClickActive';
 import Close from './UI/Icons/Close';
-import Itaa from './UI/Icons/Itaa';
+import Bale from './UI/Icons/Bale';
 import GrayWhatsapp from './UI/Icons/GrayWhatsapp';
 import Instagram from './UI/Icons/Instagram';
 
@@ -60,7 +60,7 @@ const FixedContactUs = () => {
                             }
                         )}
                         onClick={toggleItaaActive}>
-                        <Itaa id='main-Telegram' />
+                        <Bale id='main-Telegram' />
                     </div>
                     <div
                         className={cn(
@@ -103,7 +103,7 @@ const FixedContactUs = () => {
                 <span>📱 واتساپ | 09330053028</span>
             </a>
             <a
-                href={`https://eitaa.com/Saberzarei_support2`}
+                href={`https://ble.ir/saberzareisupport`}
                 rel='noopener noreferrer'
                 target='_blank'
                 className={cn(
@@ -113,7 +113,7 @@ const FixedContactUs = () => {
                         'opacity-0 translate-x-2 pointer-events-none': !isActive,
                     }
                 )}>
-                <span>💬 ایتا | 09330053028</span>
+                <span>💬 بله | 09330053028</span>
             </a>
             <a
                 href={`https://www.instagram.com/saberzarei.ir?igsh=NWY2azhjNnVxZ25y`}

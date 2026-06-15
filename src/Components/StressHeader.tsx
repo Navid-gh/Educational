@@ -18,7 +18,7 @@ const StressHeader = () => {
       </div>
       <audio controls>
         <source
-          src="https://s9.uupload.ir/files/saberzarei/Track%2000.mp3?play"
+          src="https://s17.uupload.ir/files/cyberplaystore/Track%2000.mp3?play"
           type="audio/ogg"
         />
         مرورگر شما نمی تواند فایل صوتی را پشتیبانی کند.

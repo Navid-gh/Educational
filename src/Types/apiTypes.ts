@@ -106,6 +106,8 @@ export type Article = {
   sortByNumber: number;
   urlTitle: string;
   urlGoogle: string;
+  robots: "index,follow" | "noindex,follow";
+  canonicalHref: string;
 } & SingleSchema;
 
 export type View = SingleSchema & {
@@ -155,4 +157,60 @@ export type DiscountEvent = {
 
 export type Slide = IdSchema & {
   images: string[];
+};
+
+export type Faqs = {
+  q: string;
+  a: string;
+};
+
+export type VideoItem = {
+  url: string;
+};
+
+export type LandingType = {
+  title: string;
+  subtitle: string;
+  section1Title: string;
+  section1Text1: string;
+  section1Text2: string[];
+  section1Text3: string;
+  formTitle: string;
+  formTitle2: string;
+  packTitle: string;
+  packText1: string;
+  packText2: string[];
+  courseTitle: string;
+  courseText1: string;
+  courseText2: string;
+  courseText3: string;
+  courseId: string;
+  coursePrice: number | string;
+  coursePriceWithDiscount: number | string;
+  faqs: Faqs[];
+  videos: VideoItem[];
+  showTopForm: boolean;
+  showBottomForm: boolean;
+  showTelegramButton: boolean;
+  showWatsupButton: boolean;
+};
+
+export type RobotsType = "index,follow" | "noindex,follow";
+
+export type SitemapChangeFreq =
+  | "always"
+  | "hourly"
+  | "daily"
+  | "weekly"
+  | "monthly"
+  | "yearly"
+  | "never";
+
+export type SitemapItemType = {
+  _id: string;
+  url: string;
+  priority: number;
+  changefreq: SitemapChangeFreq;
+  createdAt?: string;
+  updatedAt?: string;
 };

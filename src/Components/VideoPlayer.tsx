@@ -16,6 +16,7 @@ const VideoPlayer = ({ videoUrl }: Props) => {
           className="absolute top-0 left-0 w-full h-full"
           src={videoUrl}
           allowFullScreen={true}
+          loading='lazy'
         ></iframe>
       </div>
     </section>

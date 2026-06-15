@@ -10,7 +10,7 @@ import { ContactTimes } from '../Types/ContactTimeType';
 import { RadioGroup } from '@radix-ui/react-radio-group';
 import { RadioGroupItem } from './UI/RadioGroup';
 
-const LandingForm = ({ title }: { title: String }) => {
+const LandingForm = ({ title }: { title: string }) => {
     const nameRef = useRef<HTMLInputElement>(null);
     const phoneRef = useRef<HTMLInputElement>(null);
     const timeRef = useRef<ContactTimes>('morning');

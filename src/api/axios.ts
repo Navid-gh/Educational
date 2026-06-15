@@ -6,6 +6,7 @@ import axios, {
 import { PrivateAuth } from "../Types/reqAuth";
 
 export const BASE_URL = "https://saberzarei.iran.liara.run";
+// export const BASE_URL = "https://localhost:3000";
 
 export default axios.create({
   baseURL: BASE_URL,

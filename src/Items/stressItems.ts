@@ -8,7 +8,7 @@ export const stressItems = [
         id: uuidv4(),
         day: 'روز اول',
         title: 'قطع چرخه استرس',
-        audioUrl: 'https://s9.uupload.ir/files/saberzarei/Track%2001.mp3?play',
+        audioUrl: 'https://s11.uupload.ir/files/cyberplaystore/Track%2001.mp3?play',
         anchor: 'من اینجام. کنترل با منه.',
         practices: {
             practice1: 'سه موقعیت استرس‌زا بنویس (مثلاً جلسه دفاع، معرفی خودت، تماس تلفنی سخت)',
@@ -22,7 +22,7 @@ export const stressItems = [
         id: uuidv4(),
         day: 'روز دوم',
         title: 'بازنویسی گفتگوی درونی',
-        audioUrl: 'https://s9.uupload.ir/files/saberzarei/Track%2002.mp3?play',
+        audioUrl: 'https://s31.uupload.ir/files/cyberplaystore/Track%2002.mp3?play',
         anchor: 'من شنیده میشم چون ارزش گفت‌وگو دارم.',
         practices: {
             practice1: 'بنویس: «آخرین بار که استرس گرفتم، صدای ذهنم چی گفت؟»',
@@ -37,7 +37,7 @@ export const stressItems = [
         id: uuidv4(),
         day: 'روز سوم',
         title: 'تنفس هدفمند ۴-۷-۸',
-        audioUrl: 'https://s9.uupload.ir/files/saberzarei/Track%2003.mp3?play',
+        audioUrl: 'https://s11.uupload.ir/files/cyberplaystore/Track%2003.mp3?play',
         anchor: 'من انتخاب می‌کنم که آماده باشم.',
         practices: {
             practice1: 'روزی ۲ بار، صبح و عصر، ۴ دور تنفس ۴-۷-۸ انجام بده',
@@ -51,7 +51,7 @@ export const stressItems = [
         id: uuidv4(),
         day: 'روز چهارم',
         title: 'نقشه برداری از استرس اجتماعی',
-        audioUrl: 'https://s9.uupload.ir/files/saberzarei/Track%2004.mp3?play',
+        audioUrl: 'https://s11.uupload.ir/files/cyberplaystore/Track%2004.mp3?play',
         anchor: 'صدای من یعنی حضور من.',
         practices: {
             practice1: 'سه موقعیت پر استرس اجتماعی رو یادداشت کن',
@@ -65,7 +65,7 @@ export const stressItems = [
         id: uuidv4(),
         day: 'روز پنجم',
         title: 'مهار افکار آینده نگر و ترس از قضاوت',
-        audioUrl: 'https://s9.uupload.ir/files/saberzarei/Track%2005.mp3?play',
+        audioUrl: 'https://s11.uupload.ir/files/cyberplaystore/Track%2005.mp3?play',
         anchor: 'من دیده و شنیده میشم.',
         practices: {
             practice1:
@@ -81,7 +81,7 @@ export const stressItems = [
         id: uuidv4(),
         day: 'روز ششم',
         title: 'صداسازی ضد اضطراب: صدای تو، کنترل تو',
-        audioUrl: 'https://s9.uupload.ir/files/saberzarei/Track%2006.mp3?play',
+        audioUrl: 'https://s5.uupload.ir/files/cyberplaystore/Track%2006.mp3?play',
         anchor: 'من آماده‌ام، بدنم هم با منه',
         practices: {
             practice1: 'روزی ۲ بار تمرین تنفس + صدای “آه” + “اُمممم” + جملات متمرکز رو انجام بده',
@@ -96,7 +96,7 @@ export const stressItems = [
         id: uuidv4(),
         day: 'روز هفتم',
         title: 'تثبیت مسیر جدید: لنگر آرامش و آینده امن',
-        audioUrl: 'https://s9.uupload.ir/files/saberzarei/Track%2007.mp3?play',
+        audioUrl: 'https://s11.uupload.ir/files/cyberplaystore/Track%2007.mp3?play',
         anchor: 'من این لحظه رو ساختم… من اینجام.',
         practices: {
             practice1: 'یک موقعیت استرس‌زای واقعی آینده رو بنویس (مثلاً سخنرانی، کلاس، مصاحبه، حضور در جمع خانواده و ...)',

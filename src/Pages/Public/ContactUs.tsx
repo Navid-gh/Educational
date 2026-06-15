@@ -1,8 +1,5 @@
 import ContactForm from "../../Components/ContactForm";
 import ParallaxHeader from "../../Components/ParallaxHeader";
-import ContactLink from "../../Components/UI/ContactLink";
-import SocialMediaWrapper from "../../Components/UI/SocialMediaWrapper";
-import { usePersianNums } from "../../hooks/usePersianNums";
 import SeoTags from "../../utils/lib/Helmet";
 
 const ContactUs = () => {
@@ -25,27 +22,23 @@ const ContactUs = () => {
             </div>
           </div>
         </ParallaxHeader>
-        <section className="p-4 px-8 max-w-[56rem] flex flex-col gap-9 font-semibold text-lg text-[#636363]">
-          <div>
-            <h3>مشاوره از ما : </h3>
-            <h4>
-              جهت مشاوره و ارتباط با ما و خدمات آموزشی کوچ و مشاوره فن بیان با
-              ما تماس بگیرید
-            </h4>
-          </div>
-          <div>
-            <span>شماره همراه جهت تماس و ارتباط در تلگرام و واتساپ : </span>
-            <span>{usePersianNums("09330042028")}</span>
-          </div>
+        <section className="p-4 px-8 max-w-[56rem] flex flex-col gap-9 font-semibold text-lg text-[#636363] leading-relaxed">
           <div className="flex flex-col gap-4">
-            <span>راه های ارتباطی با ما در فضای مجازی : </span>
-            <SocialMediaWrapper />
-          </div>
-          <div>
-            <span>راه ارتباطی ایمیل : </span>
-            <ContactLink type="mail" mail="saber.zarei99@gmail.com">
-              saber.zarei99@gmail.com
-            </ContactLink>
+            <h3 className="text-xl text-black font-bold">می‌خوای صدات شنیده بشه؟ از همین‌جا شروع کن.</h3>
+            <p>
+              آکادمی رسمی فن بیان «صابر زارعی» برای کودکان، نوجوانان و بزرگسالان دوره‌های تخصصی برگزار می‌کند تا هرکس بتواند واضح، قاطع و با اعتمادبه‌نفس حرف بزند؛ در خانه، محل تحصیل، محل کار و …
+            </p>
+            <p>
+              دوره‌ها به سه شکل برگزار می‌شوند:
+              <br />✅ حضوری
+              <br />✅ آنلاین زنده از سراسر کشور
+              <br />✅ آفلاین همراه با پشتیبانی مستقیم استاد
+            </p>
+            <p>
+              اگر می‌خواهی درباره‌ی دوره‌ی مناسب سن، زمان‌بندی یا شهریه اطلاعات بگیری، فرم زیر را پر کن تا مشاور آکادمی با شما تماس بگیرد.
+              <br />
+              اطلاعاتت کاملاً محرمانه است و فقط برای هماهنگی استفاده می‌شود.
+            </p>
           </div>
         </section>
         <ContactForm type="contactUs" />

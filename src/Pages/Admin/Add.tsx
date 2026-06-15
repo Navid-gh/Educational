@@ -8,6 +8,7 @@ import { addCourse } from "../../api/setters/courseAPI";
 import { addBook } from "../../api/setters/bookAPI";
 import useAuth from "../../hooks/useAuth";
 import { useAuthHooks } from "../../hooks/useAuthHooks";
+import { RobotsType } from "../../Types/apiTypes";
 
 const Add = () => {
   const [imgUrls, setImgUrls] = useState<string[] | null>(null);
@@ -19,6 +20,8 @@ const Add = () => {
   const urlGoogleRef = useRef<HTMLInputElement | null>(null);
   const shortTextRef = useRef<HTMLInputElement | null>(null);
   const textRef = useRef<HTMLTextAreaElement | null>(null);
+  const [robots, setRobots] = useState<RobotsType>("index,follow");
+  const canonicalHref = useRef<HTMLInputElement | null>(null);
 
   const { token } = useAuth();
   const auth = useAuthHooks();
@@ -53,6 +56,8 @@ const Add = () => {
             category: "",
             images: imgUrls!,
             status: true,
+            robots,
+            canonicalHref: canonicalHref.current!.value,
           }
         ),
       onSuccess: () => {
@@ -95,6 +100,15 @@ const Add = () => {
           rows={10}
           ref={textRef}
         ></textarea>
+        <select
+          value={robots}
+          onChange={(e) => setRobots(e.target.value as RobotsType)}
+          className="border px-2 py-1 rounded text-sm"
+        >
+          <option value="index,follow">Index</option>
+          <option value="noindex,follow">No Index</option>
+        </select>
+        <input type="url" placeholder="canonicalHref" ref={canonicalHref} />
         <button
           className="bg-pink max-w-fit"
           disabled={addArticleMutation.isPending}
@@ -131,7 +145,7 @@ const Add = () => {
             price: priceRef.current!.value,
             type: typeRef.current!.value as "online" | "offline",
             spotPlayerID: spotRef.current!.value,
-            subCourse: subCourseRef.current!.value.split(','),
+            subCourse: subCourseRef.current!.value.split(","),
             score: Number(scoreRef.current!.value),
           }
         ),

@@ -17,6 +17,8 @@ export const editArticle = async (
     | "status"
     | "urlTitle"
     | "urlGoogle"
+    | "robots"
+    | "canonicalHref"
   >
 ) => {
   const privateAxios = createPrivateAxios(auth);
@@ -45,6 +47,8 @@ export const addArticle = async (
     | "status"
     | "urlTitle"
     | "urlGoogle"
+    | "robots"
+    | "canonicalHref"
   >
 ) => {
   const privateAxios = createPrivateAxios(auth);
@@ -64,6 +68,24 @@ export const removeArticle = async (auth: PrivateAuth, articleID: string) => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.deleteArticle(articleID);
   const response = await privateAxios.delete(endpoint);
+  if (response.status === 200) {
+    return response.data;
+  } else {
+    throw new Error(response.statusText);
+  }
+};
+
+export const updateArticleRobots = async (
+  auth: PrivateAuth,
+  blogID: string,
+  robots: "index,follow" | "noindex,follow"
+) => {
+  const privateAxios = createPrivateAxios(auth);
+  const response = await privateAxios.patch(
+    Endpoints.updateArticleRobots,
+    { blogID, robots }
+  );
+
   if (response.status === 200) {
     return response.data;
   } else {

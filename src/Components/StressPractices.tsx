@@ -13,7 +13,7 @@ const StressPractices = () => {
         <span key={`contact-${i}`}>{line}</span>
       ))}
       <Link
-        to="https://s9.uupload.ir/files/saberzarei/تمرینات_دوره_7_روزه_آرامش_با_صابرزارعی_.pdf?download"
+        to="https://s11.uupload.ir/files/cyberplaystore/تمرینات_دوره_7_روزه_آرامش_با_صابرزارعی_%20(2).pdf?download"
         target="_blank"
         rel="noopener noreferrer"
         download

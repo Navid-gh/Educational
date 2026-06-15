@@ -52,6 +52,8 @@ const Book = () => {
     };
   }, []);
 
+  console.log(data?.robots)
+
   return (
     <WithLoaderAndError {...{ data, isLoading, isError, error }}>
       {data ? (
@@ -59,7 +61,7 @@ const Book = () => {
           <SeoTags
             titleTemplate={`${data?.urlTitle}`}
             description={`صفحه ی مقاله  ${data.title}`}
-            Url={window.location.href}
+            Url={data?.canonicalHref ? data.canonicalHref : window.location.href}
           >
             <meta property='og:title' content={`${data?.urlTitle}`} />
             <meta
@@ -71,6 +73,7 @@ const Book = () => {
               content={`${BASE_URL}${data.images[0]}`}
             />
             <meta property='og:url' content={window.location.href} />
+            <meta name='robots' content={data.robots} />
           </SeoTags>
           <main className='flex flex-col'>
             <ParallaxHeader

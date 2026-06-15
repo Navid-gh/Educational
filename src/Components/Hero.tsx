@@ -58,6 +58,7 @@ const Hero = () => {
             className='absolute top-0 left-0 w-full h-full rounded-md'
             allowFullScreen
             title='Aparat Video'
+            loading='lazy'
           ></iframe>
         </div>
       </div>

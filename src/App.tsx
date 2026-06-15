@@ -33,6 +33,7 @@ const BasketOrderDetails = lazy(
 const FailedBuy = lazy(() => import("./Pages/Public/FailedBuy"));
 const Help = lazy(() => import("./Pages/Public/Help"));
 const Landing = lazy(() => import("./Pages/Public/Landing"));
+const BaleForm = lazy(() => import("./Pages/Public/BaleForm"));
 
 const Admin = lazy(() => import("./Pages/Admin/Admin"));
 const AdminSummary = lazy(() => import("./Pages/Admin/AdminSummary"));
@@ -53,6 +54,8 @@ const ManageUsers = lazy(() => import("./Pages/Admin/ManageUsers"));
 const ManageEvents = lazy(() => import("./Pages/Admin/ManageEvents"));
 const ManageSlides = lazy(() => import("./Pages/Admin/ManageSlides"));
 const Sales = lazy(() => import("./Pages/Admin/Sales"));
+const ManageLanding = lazy(() => import("./Pages/Admin/ManageLanding"));
+const Sitemap = lazy(() => import("./Pages/Admin/Sitemap"));
 
 const User = lazy(() => import("./Pages/User/User"));
 const Summary = lazy(() => import("./Pages/User/Summary"));
@@ -65,7 +68,9 @@ function App() {
   const isReady = useInitialAuth();
   useInitialBasketProducts();
 
-  const isLandingPage = window.location.pathname === "/landing";
+const hideLayout =
+  window.location.pathname === "/landing" ||
+  window.location.pathname === "/bale-form";
 
   return (
     <>
@@ -73,7 +78,7 @@ function App() {
         {isReady ? (
           <>
             <ScrollToTop />
-            {!isLandingPage && <Navbar />}
+            {!hideLayout && <Navbar />}
             <Toaster />
             <Routes>
               <Route
@@ -93,6 +98,16 @@ function App() {
                     </Suspense>
                   </ErrorBoundary>
                 } 
+              />
+              <Route 
+                path="/Bale-Form"
+                element={
+                  <ErrorBoundary fallback={<ErrorComp />}>
+                    <Suspense fallback={<Loader />}>
+                      <BaleForm />
+                    </Suspense>
+                  </ErrorBoundary>
+                }
               />
               <Route
                 path="/Course/:id/:name"
@@ -383,6 +398,22 @@ function App() {
                     </Suspense>
                   }
                 />
+                <Route
+                  path="Manage-Landing"
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <ManageLanding />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="Sitemap"
+                  element={
+                    <Suspense fallback={<Loader />}>
+                      <Sitemap />
+                    </Suspense>
+                  }
+                />
               </Route>
               <Route
                 path="/User"
@@ -447,8 +478,8 @@ function App() {
                 }
               />
             </Routes>
-          {!isLandingPage && <Footer />}
-          {!isLandingPage && <FixedContactUs />}
+          {!hideLayout && <Footer />}
+          {!hideLayout && <FixedContactUs />}
           <ScrollToTopButton />
           </>
         ) : (

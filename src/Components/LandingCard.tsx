@@ -8,7 +8,23 @@ import { useQuery } from '@tanstack/react-query';
 import { getCourse } from '../api/getters/courseAPI';
 import { useCallback } from 'react';
 
-const LandingCard = () => {
+type LandingCardProps = {
+  title: string;
+  text1: string;
+  text2: string;
+  text3: string;
+  price: number | string;
+  priceWithDiscount: number | string;
+};
+
+const LandingCard = ({
+  title,
+  text1,
+  text2,
+  text3,
+  price,
+  priceWithDiscount,
+}: LandingCardProps) => {
   const dispatch = useAppDispatch();
   const addToBasket = useAddToBasket();
   const { Auth } = useAppSelector((state) => state.user);
@@ -31,21 +47,19 @@ const LandingCard = () => {
           ))}
         </div>
 
-        <h2 className='font-semibold text-xl'>الان وقت تصمیم گیری هست</h2>
+        <h2 className='font-semibold text-xl'>{title}</h2>
         <div className='text-center'>
-          <span className='text-green-600 font-semibold'>
-            فقط امروز ۶ میلیون تخفیف{' '}
-          </span>
-          <span className='text-gray-800'>بیشتر از ما میگیری</span>
+          <span className='text-green-600 font-semibold'>{text1} </span>
+          <span className='text-gray-800'>{text2}</span>
         </div>
-        <span>صفر تا صد آموزش فن بیان</span>
+        <span>{text3}</span>
         <div className='w-full flex items-center justify-around gap-3'>
           <div className='flex flex-col items-start w-full'>
             <span className='text-red-600 line-through'>
-              {usePersianNums('9,870,000')} تومان
+              {usePersianNums(price)} تومان
             </span>
             <span className='text-green-600 text-2xl font-bold'>
-              {usePersianNums('3,800,000')} تومان
+              {usePersianNums(priceWithDiscount)} تومان
             </span>
           </div>
           <MainButton
