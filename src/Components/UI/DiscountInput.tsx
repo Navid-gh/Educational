@@ -1,5 +1,5 @@
-import { forwardRef } from "react";
-import BasketTick from "./Icons/BasketTick";
+import { forwardRef } from 'react';
+import BasketTick from './Icons/BasketTick';
 
 type Props = {
   onClick: () => void;
@@ -23,7 +23,7 @@ const DiscountInput = forwardRef<HTMLInputElement, Props>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 export default DiscountInput;

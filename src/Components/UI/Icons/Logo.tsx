@@ -1,4 +1,4 @@
-import { FC, memo, HtmlHTMLAttributes } from "react";
+import { FC, memo, HtmlHTMLAttributes } from 'react';
 
 // type SVGElementProps = SVGProps<SVGSVGElement>;
 type DivProps = HtmlHTMLAttributes<HTMLDivElement>;

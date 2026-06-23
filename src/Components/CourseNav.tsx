@@ -1,12 +1,12 @@
-import { MouseEvent, memo } from "react";
-import { courseNavItems } from "../Items/courseNav";
-import { bookNavItems } from "../Items/bookNav";
-import useCurrentTab from "../hooks/useCurrentTab";
-import { cn } from "../utils/lib/Cn";
+import { MouseEvent, memo } from 'react';
+import { courseNavItems } from '../Items/courseNav';
+import { bookNavItems } from '../Items/bookNav';
+import useCurrentTab from '../hooks/useCurrentTab';
+import { cn } from '../utils/lib/Cn';
 
 type Props = {
   siwtchHandler: (id: string) => void;
-  type: "course" | "book";
+  type: 'course' | 'book';
 };
 
 const CourseNav = ({ siwtchHandler, type }: Props) => {
@@ -17,7 +17,7 @@ const CourseNav = ({ siwtchHandler, type }: Props) => {
     siwtchHandler(id);
   };
 
-  const items = type === "course" ? courseNavItems : bookNavItems;
+  const items = type === 'course' ? courseNavItems : bookNavItems;
   return (
     <nav className="sticky top-0 z-50 shadow-main overflow-x-auto scroll-x">
       <ul className="flex gap-7 bg-pink px-4 pt-4 min-w-[42.5rem]">
@@ -29,15 +29,15 @@ const CourseNav = ({ siwtchHandler, type }: Props) => {
               onMouseLeave={handleMouseLeave}
               key={id}
               className={cn(
-                "rounded-tr-xl rounded-tl-xl transition-all duration-300 text-sm",
+                'rounded-tr-xl rounded-tl-xl transition-all duration-300 text-sm',
                 {
-                  "bg-white": isActive,
-                }
+                  'bg-white': isActive,
+                },
               )}
             >
               <a
                 className="no-underline text-inherit w-full h-full block p-2 pb-5"
-                href={"#" + link}
+                href={'#' + link}
                 onClick={(e) => handleSwitch(e, link)}
               >
                 {name}

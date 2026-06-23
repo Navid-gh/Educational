@@ -1,11 +1,11 @@
-import Logo from "./UI/Icons/Logo";
-import FooterHeader from "./UI/FooterHeader";
-import { fastAccesItems, linkItems } from "../Items/footerItems";
-import { Link, useLocation } from "react-router-dom";
-import { usePersianNums } from "../hooks/usePersianNums";
-import { cn } from "../utils/lib/Cn";
-import ZarinPal from "./UI/images/ZarinPal";
-import SocialMediaWrapper from "./UI/SocialMediaWrapper";
+import Logo from './UI/Icons/Logo';
+import FooterHeader from './UI/FooterHeader';
+import { fastAccesItems, linkItems } from '../Items/footerItems';
+import { Link, useLocation } from 'react-router-dom';
+import { usePersianNums } from '../hooks/usePersianNums';
+import { cn } from '../utils/lib/Cn';
+import ZarinPal from './UI/images/ZarinPal';
+import SocialMediaWrapper from './UI/SocialMediaWrapper';
 
 const divClassNme = `flex flex-col gap-2 flex-1 text-sm tips:flex-[45%] hero:flex-[100%]`;
 const ulClassNme = `list-none flex flex-col gap-4`;
@@ -14,14 +14,14 @@ const liClassNme = `transition-all duration-300 hover:scale-105 max-w-fit`;
 const Footer = () => {
   const { pathname } = useLocation();
   let hidden = false;
-  if (pathname.includes("Login")) {
+  if (pathname.includes('Login')) {
     hidden = true;
   }
   return (
     <footer
       className={cn(
-        "bg-black flex flex-col text-white border border-white border-solid mt-4",
-        { hidden }
+        'bg-black flex flex-col text-white border border-white border-solid mt-4',
+        { hidden },
       )}
     >
       <div className="py-8 px-7 flex gap-12 border-b border-white border-solid flex-wrap">
@@ -44,7 +44,7 @@ const Footer = () => {
             </p>
             <div className="flex justify-between text-sm gap-2">
               <span className="whitespace-nowrap">شماره تماس :</span>
-              <span>{usePersianNums("09330042028")}</span>
+              <span>{usePersianNums('09330042028')}</span>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ const Footer = () => {
                   referrerPolicy="origin"
                   src="https://trustseal.enamad.ir/logo.aspx?id=361638&Code=KmuuRO5BU8JeKcoVTihf"
                   alt=""
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: 'pointer' }}
                   id="KmuuRO5BU8JeKcoVTihf"
                 />
               </a>

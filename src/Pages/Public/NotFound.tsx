@@ -1,6 +1,6 @@
-import SeoTags from "../../utils/lib/Helmet";
-import MainButton from "../../Components/UI/MainButton";
-import { Link } from "react-router-dom";
+import SeoTags from '../../utils/lib/Helmet';
+import MainButton from '../../Components/UI/MainButton';
+import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (

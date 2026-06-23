@@ -1,4 +1,4 @@
-import { RobotsType } from "../Types/apiTypes";
+import { RobotsType } from '../Types/apiTypes';
 
 interface Props {
   value: RobotsType;

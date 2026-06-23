@@ -1,4 +1,4 @@
-import { Checkbox } from "./CheckBox";
+import { Checkbox } from './CheckBox';
 
 type Props = {
   text: string;

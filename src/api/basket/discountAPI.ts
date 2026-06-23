@@ -1,6 +1,6 @@
-import { DiscountCode } from "../../Types/apiTypes";
-import axios from "../axios";
-import { Endpoints } from "../endpoints";
+import { DiscountCode } from '../../Types/apiTypes';
+import axios from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const getCodes = async (): Promise<DiscountCode[]> => {
   const response = await axios.get(Endpoints.getCodes);
@@ -17,9 +17,9 @@ export const checkCode = async (code: string): Promise<null | DiscountCode> => {
     { code },
     {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }
+    },
   );
   if (response.status === 200) {
     return response.data.result;
@@ -34,9 +34,9 @@ export const addCode = async (percent: string) => {
     { percent },
     {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }
+    },
   );
   if (response.status === 201) {
     return response.data;

@@ -1,8 +1,8 @@
-import WithLoaderAndError from "./WithLoaderAndError";
-import Carousel from "react-multi-carousel";
-import { useQuery } from "@tanstack/react-query";
-import ImageSlide from "./UI/ImageSlide";
-import { getSlides } from "../api/getters/slidesAPI";
+import WithLoaderAndError from './WithLoaderAndError';
+import Carousel from 'react-multi-carousel';
+import { useQuery } from '@tanstack/react-query';
+import ImageSlide from './UI/ImageSlide';
+import { getSlides } from '../api/getters/slidesAPI';
 
 const responsive = {
   desktop: {
@@ -29,7 +29,7 @@ const responsive = {
 
 const ImageSlideShow = () => {
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["slides"],
+    queryKey: ['slides'],
     queryFn: () => getSlides(),
   });
   return (

@@ -1,4 +1,4 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
@@ -51,7 +51,7 @@ const ContactImage: FC<SVGElementProps> = ({ id, ...props }) => {
       </defs>
       <g
         style={{
-          isolation: "isolate",
+          isolation: 'isolate',
         }}
       >
         <g id="Layer_2" data-name="Layer 2">

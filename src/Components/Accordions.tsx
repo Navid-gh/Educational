@@ -1,23 +1,23 @@
-import { memo, forwardRef } from "react";
-import MainHeader from "./UI/MainHeader";
-import Accordion from "./UI/Accordion";
-import { cn } from "../utils/lib/Cn";
-import NumberCircle from "./UI/images/NumberCircle";
-import Video from "./UI/Icons/Video";
-import { usePersianNums } from "../hooks/usePersianNums";
-import { Chapter, FAQ } from "../Types/apiTypes";
+import { memo, forwardRef } from 'react';
+import MainHeader from './UI/MainHeader';
+import Accordion from './UI/Accordion';
+import { cn } from '../utils/lib/Cn';
+import NumberCircle from './UI/images/NumberCircle';
+import Video from './UI/Icons/Video';
+import { usePersianNums } from '../hooks/usePersianNums';
+import { Chapter, FAQ } from '../Types/apiTypes';
 
 type Props =
   | {
       title: string;
-      type: "S";
+      type: 'S';
       drops: Chapter[];
       bg: string;
       id: string;
     }
   | {
       title: string;
-      type: "Q";
+      type: 'Q';
       drops: FAQ[];
       bg: string;
       id: string;
@@ -30,9 +30,9 @@ const Accordions = forwardRef<HTMLDivElement, Props>(
         <MainHeader intent="bgBlack" size="main">
           {title}
         </MainHeader>
-        <div className={cn("p-10 rounded-2xl subHero:px-2", bg)}>
+        <div className={cn('p-10 rounded-2xl subHero:px-2', bg)}>
           <ul className="flex flex-col gap-6">
-            {type === "Q"
+            {type === 'Q'
               ? drops.map(({ _id, answer, question }) => {
                   return (
                     <Accordion
@@ -90,7 +90,7 @@ const Accordions = forwardRef<HTMLDivElement, Props>(
         </div>
       </section>
     );
-  }
+  },
 );
 
 export default memo(Accordions);

@@ -13,10 +13,10 @@ const useErrorAndLoader = <T>({
 }: Props<T>) => {
   if (isError) {
     console.log(error);
-    return "error";
+    return 'error';
   }
 
-  if (isLoading) return "..loading";
+  if (isLoading) return '..loading';
 
   console.log(data);
 };

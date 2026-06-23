@@ -1,16 +1,16 @@
-import { useRef, useState } from "react";
-import MainInput from "./UI/MainInput";
-import MainButton from "./UI/MainButton";
-import { register } from "../api/auth/Register";
-import toast from "react-hot-toast";
-import useInputValidator from "../hooks/useInputValidator";
-import ConfirmCode from "./ConfirmCode";
-import { useCountdown } from "../hooks/useCountDown";
-import axios, { AxiosError } from "axios";
-import { useEnglishNums } from "../hooks/usePersianNums";
+import { useRef, useState } from 'react';
+import MainInput from './UI/MainInput';
+import MainButton from './UI/MainButton';
+import { register } from '../api/auth/Register';
+import toast from 'react-hot-toast';
+import useInputValidator from '../hooks/useInputValidator';
+import ConfirmCode from './ConfirmCode';
+import { useCountdown } from '../hooks/useCountDown';
+import axios, { AxiosError } from 'axios';
+import { useEnglishNums } from '../hooks/usePersianNums';
 
 const SignupComp = () => {
-  const [persisitingPhone, setPersisitingPhone] = useState("");
+  const [persisitingPhone, setPersisitingPhone] = useState('');
   const fnameRef = useRef<HTMLInputElement | null>(null);
   const lnameRef = useRef<HTMLInputElement | null>(null);
   const phoneRef = useRef<HTMLInputElement | null>(null);
@@ -27,20 +27,20 @@ const SignupComp = () => {
       toast.error(lnameMsg);
       return;
     }
-    const phoneVal = useEnglishNums(phoneRef.current?.value ?? "");
-    const phoneMsg = useInputValidator(phoneVal, "phone");
+    const phoneVal = useEnglishNums(phoneRef.current?.value ?? '');
+    const phoneMsg = useInputValidator(phoneVal, 'phone');
     if (phoneMsg) {
       toast.error(phoneMsg);
       return;
     }
-    const loader = toast.loading("در حال ارسال اطلاعات");
+    const loader = toast.loading('در حال ارسال اطلاعات');
     try {
       await register({
         first_name: fnameRef.current!.value,
         last_name: lnameRef.current!.value,
         phone: phoneVal,
       });
-      toast.success("ثبت نام با موفقیت انجام شد");
+      toast.success('ثبت نام با موفقیت انجام شد');
       setPersisitingPhone(phoneVal);
       setStartCounting(true);
     } catch (error) {
@@ -49,9 +49,9 @@ const SignupComp = () => {
         // do whatever you want with native error
       } else {
         if (errors.response?.status === 401) {
-          toast.error("شما قبلا با این شماره ثبت نام کرده اید");
+          toast.error('شما قبلا با این شماره ثبت نام کرده اید');
         } else {
-          toast.error("خطا در برقراری ارتباط");
+          toast.error('خطا در برقراری ارتباط');
         }
       }
       console.log(error);
@@ -61,7 +61,7 @@ const SignupComp = () => {
   };
   return (
     <>
-      {persisitingPhone !== "" ? (
+      {persisitingPhone !== '' ? (
         <ConfirmCode {...{ countDown, resetCounter, persisitingPhone }} />
       ) : (
         <div className="flex flex-col gap-12 p-4 px-8">

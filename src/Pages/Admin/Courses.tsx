@@ -1,16 +1,16 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getCourses } from "../../api/getters/courseAPI";
-import { removeCourse } from "../../api/setters/courseAPI";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
-import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { getCourses } from '../../api/getters/courseAPI';
+import { removeCourse } from '../../api/setters/courseAPI';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
+import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
 
 const Courses = () => {
   const queryClient = useQueryClient();
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["courses", "admin"],
+    queryKey: ['courses', 'admin'],
     queryFn: getCourses,
   });
 
@@ -20,24 +20,24 @@ const Courses = () => {
   const deleteCourseMutation = useMutation({
     mutationFn: (id: string) => removeCourse({ token, ...auth }, id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   return (
     <WithLoaderAndError {...{ data, isLoading, isError, error }}>
       <div className="flex flex-col gap-12">
-        <Link to={"Add"} className="border-b border-purple max-w-fit">
+        <Link to={'Add'} className="border-b border-purple max-w-fit">
           اضافه کردن دوره جدید
         </Link>
         <ul className="flex flex-col gap-6">
           {data?.map((item) => {
             const url = `/Course/${item?._id}/${encodeURIComponent(
-              item?.urlGoogle ?? item?.title
-            ).replace(/%20/g, "-")}`;
+              item?.urlGoogle ?? item?.title,
+            ).replace(/%20/g, '-')}`;
             return (
               <li
                 key={item._id}
@@ -66,21 +66,21 @@ const Courses = () => {
                   <span>تغییر دوره</span>
                 </Link>
                 <Link
-                  to={"Manage-Comments"}
+                  to={'Manage-Comments'}
                   className="text-yellow max-w-fit"
                   state={{ id: item._id, comments: item.comments }}
                 >
                   <span>مدیریت کامنت ها</span>
                 </Link>
                 <Link
-                  to={"Manage-FAQs"}
+                  to={'Manage-FAQs'}
                   className="text-yellow max-w-fit"
                   state={{ id: item._id, faqs: item.frequentlyAskedQuestions }}
                 >
                   <span>مدیریت سوالات متداول</span>
                 </Link>
                 <Link
-                  to={"Manage-Chpaters"}
+                  to={'Manage-Chpaters'}
                   className="text-yellow max-w-fit"
                   state={{ id: item._id, chapters: item.chapters }}
                 >

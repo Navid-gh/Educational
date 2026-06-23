@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const useClickActive = (initialState: boolean = false) => {
   const [isActive, setIsActive] = useState(initialState);

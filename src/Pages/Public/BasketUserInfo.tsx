@@ -65,7 +65,7 @@ const BasketUserInfo = () => {
         key: 'مبلغ کل با اعمال تخفیف',
         value: `${usePersianNums(
           Number(totlaPrice) + Number(postPrice),
-          true
+          true,
         )} تومان`,
         id: uuidv4(),
       },
@@ -163,7 +163,7 @@ const BasketUserInfo = () => {
                   item_type: item.item_type,
                 };
               }),
-            }
+            },
       );
       window.location.replace(res);
     } catch (error) {
@@ -222,65 +222,65 @@ const BasketUserInfo = () => {
     }
   };
   return (
-    <section className='flex gap-6 navbar:flex-col navbar:gap-6'>
-      <div className='flex flex-col gap-4 flex-[70%] text-sm'>
+    <section className="flex gap-6 navbar:flex-col navbar:gap-6">
+      <div className="flex flex-col gap-4 flex-[70%] text-sm">
         <div className={wrapperDiv}>
           <MainInput
-            label='نام *'
-            id='fname'
-            intent='login'
-            inputSize='base'
-            key='fname'
+            label="نام *"
+            id="fname"
+            intent="login"
+            inputSize="base"
+            key="fname"
             defaultValue={data?.first_name}
             disabled
-            className='disabled:opacity-60'
+            className="disabled:opacity-60"
             ref={fanameRef}
           />
           <MainInput
-            label='نام خانوادگی *'
-            id='lname'
-            intent='login'
-            inputSize='base'
-            key='lanme'
+            label="نام خانوادگی *"
+            id="lname"
+            intent="login"
+            inputSize="base"
+            key="lanme"
             defaultValue={data?.last_name}
             disabled
-            className='disabled:opacity-60'
+            className="disabled:opacity-60"
             ref={lnameRef}
           />
         </div>
         <div className={wrapperDiv}>
           <MainInput
-            label='تلفن همراه *'
-            id='mobile'
-            intent='login'
-            inputSize='base'
-            key='mobile'
+            label="تلفن همراه *"
+            id="mobile"
+            intent="login"
+            inputSize="base"
+            key="mobile"
             defaultValue={data?.phone}
             disabled
-            className='disabled:opacity-60'
+            className="disabled:opacity-60"
             ref={phoneRef}
           />
           <MainInput
-            label='تلفن ثابت'
-            id='phone'
-            intent='login'
-            inputSize='base'
-            key='phone'
+            label="تلفن ثابت"
+            id="phone"
+            intent="login"
+            inputSize="base"
+            key="phone"
             defaultValue={data?.fixPhone}
             disabled
-            className='disabled:opacity-60'
+            className="disabled:opacity-60"
           />
         </div>
         <div className={wrapperDiv}>
           <MainInput
-            label='ایمیل'
-            id='email'
-            intent='login'
-            inputSize='base'
-            key='email'
+            label="ایمیل"
+            id="email"
+            intent="login"
+            inputSize="base"
+            key="email"
             defaultValue={data?.email}
             disabled
-            className='disabled:opacity-60'
+            className="disabled:opacity-60"
           />
           {/* <MainInput
                         label='کد پستی'
@@ -299,11 +299,11 @@ const BasketUserInfo = () => {
               {...{ data: statesData, isLoading, isError, error }}
             >
               <div className={wrapperDiv}>
-                <div className='flex flex-col w-full gap-2'>
-                  <label htmlFor='state'>استان</label>
+                <div className="flex flex-col w-full gap-2">
+                  <label htmlFor="state">استان</label>
                   <select
-                    id='state'
-                    className='border-0 outline-0 rounded-full cursor-pointer font-body text-black bg-lowPink focus:bg-white focus:border-lowPink focus:border-2 transition-all duration-300 p-4 w-full'
+                    id="state"
+                    className="border-0 outline-0 rounded-full cursor-pointer font-body text-black bg-lowPink focus:bg-white focus:border-lowPink focus:border-2 transition-all duration-300 p-4 w-full"
                     ref={stateRef}
                     onChange={(e) => handleStateChange(e)}
                   >
@@ -317,15 +317,15 @@ const BasketUserInfo = () => {
                     ))}
                   </select>
                 </div>
-                <div className='flex flex-col w-full gap-2'>
+                <div className="flex flex-col w-full gap-2">
                   {isCityLoading ? (
                     <Loader />
                   ) : (
                     <>
-                      <label htmlFor='city'>شهر</label>
+                      <label htmlFor="city">شهر</label>
                       <select
-                        id='city'
-                        className='border-0 outline-0 rounded-full cursor-pointer font-body text-black bg-lowPink focus:bg-white focus:border-lowPink focus:border-2 transition-all duration-300 p-4 w-full'
+                        id="city"
+                        className="border-0 outline-0 rounded-full cursor-pointer font-body text-black bg-lowPink focus:bg-white focus:border-lowPink focus:border-2 transition-all duration-300 p-4 w-full"
                         ref={cityRef}
                         onChange={(e) => handleCityChange(e)}
                       >
@@ -349,11 +349,11 @@ const BasketUserInfo = () => {
                 <span>{usePersianNums(postPrice)} تومان</span>
               </div>
             ) : null}
-            <div className='flex flex-col w-full gap-2'>
-              <label htmlFor='address'>نشانی *</label>
+            <div className="flex flex-col w-full gap-2">
+              <label htmlFor="address">نشانی *</label>
               <textarea
-                className='bg-lowPink rounded-xl resize-none p-4 outline-none transition-all duration-300 focus:bg-white focus:border focus:border-pink'
-                id='address'
+                className="bg-lowPink rounded-xl resize-none p-4 outline-none transition-all duration-300 focus:bg-white focus:border focus:border-pink"
+                id="address"
                 cols={10}
                 rows={5}
                 defaultValue={data?.address}
@@ -363,11 +363,11 @@ const BasketUserInfo = () => {
           </>
         ) : null}
       </div>
-      <div className='flex-[40%] max-w-[21.5rem]'>
-        <CourseDetails header='جزئیات سفارش شما' key='2'>
+      <div className="flex-[40%] max-w-[21.5rem]">
+        <CourseDetails header="جزئیات سفارش شما" key="2">
           <DetailsUl details={details} />
           <CheckboxWithText
-            text='پرداخت آنلاین - درگاه زرین پال'
+            text="پرداخت آنلاین - درگاه زرین پال"
             isChecked={checkBoxes.pay}
             checkHandler={() => {
               changeCheckedHandler('pay');
@@ -375,16 +375,16 @@ const BasketUserInfo = () => {
             key={'pay'}
           />
           <CheckboxWithText
-            text='من شرایط و قوانین سایت را خوانده‌ام و آن را می‌پذیرم'
+            text="من شرایط و قوانین سایت را خوانده‌ام و آن را می‌پذیرم"
             isChecked={checkBoxes.policy}
             checkHandler={() => {
               changeCheckedHandler('policy');
             }}
-            key='policy'
+            key="policy"
           />
-          <div className='flex flex-col gap-2 p-3 border border-gray-300 rounded-lg leading-5 text-gray-700'>
-            <h3 className='block'>شرایط و قوانین سایت:</h3>
-            <ul className='list-disc ps-5 space-y-1'>
+          <div className="flex flex-col gap-2 p-3 border border-gray-300 rounded-lg leading-5 text-gray-700">
+            <h3 className="block">شرایط و قوانین سایت:</h3>
+            <ul className="list-disc ps-5 space-y-1">
               <li>به‌دلیل ماهیت دیجیتال، وجه پرداختی قابل بازگشت نیست.</li>
               <li>
                 دسترسی فقط برای خریدار است و اشتراک‌گذاری آن ممنوع می‌باشد.
@@ -392,10 +392,10 @@ const BasketUserInfo = () => {
               <li>
                 تمام حقوق محتوا متعلق به آقای صابر زارعی و وب‌سایت{' '}
                 <a
-                  href='https://www.saberzarei.com'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-blue'
+                  href="https://www.saberzarei.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue"
                 >
                   www.saberzarei.com
                 </a>{' '}
@@ -407,10 +407,10 @@ const BasketUserInfo = () => {
             </ul>
           </div>
           <MainButton
-            className='self-center w-full max-w-none'
+            className="self-center w-full max-w-none"
             text={`پرداخت`}
-            intent='purple'
-            size='medium'
+            intent="purple"
+            size="medium"
             onClick={handlePay}
             disabled={isPendingForBasket}
           />

@@ -1,19 +1,19 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import StressHeader from "../../Components/StressHeader";
-import StressPractices from "../../Components/StressPractices";
-import ImageSlide from "../../Components/UI/ImageSlide";
-import { usePersianNums } from "../../hooks/usePersianNums";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import StressHeader from '../../Components/StressHeader';
+import StressPractices from '../../Components/StressPractices';
+import ImageSlide from '../../Components/UI/ImageSlide';
+import { usePersianNums } from '../../hooks/usePersianNums';
 import {
   STRESS_COURSE_HERF,
   STRESS_COURSE_ID,
   stressItems,
-} from "../../Items/stressItems";
-import { getPurchasedOnline } from "../../api/getters/userAPI";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import useAuth from "../../hooks/useAuth";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
+} from '../../Items/stressItems';
+import { getPurchasedOnline } from '../../api/getters/userAPI';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import useAuth from '../../hooks/useAuth';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
 
 const Stress = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Stress = () => {
   const auth = useAuthHooks();
 
   const { data, isLoading, isError, error, isSuccess } = useQuery({
-    queryKey: ["onlineCourses", "user"],
+    queryKey: ['onlineCourses', 'user'],
     queryFn: () => getPurchasedOnline({ token, ...auth }, 5),
   });
 
@@ -58,7 +58,7 @@ const Stress = () => {
                     (practice, index) =>
                       practice && (
                         <p key={index} className="whitespace-pre-line">
-                          {usePersianNums(index + 1) + ". " + practice}
+                          {usePersianNums(index + 1) + '. ' + practice}
                         </p>
                       ),
                   )}
@@ -84,7 +84,7 @@ const Stress = () => {
             </span>
 
             <p className="whitespace-pre-line">
-              ✅️ مدیتیشنِ حواس پنج‌گانه :{"\n"}
+              ✅️ مدیتیشنِ حواس پنج‌گانه :{'\n'}
               از لمس شروع کن، بعد صدا، مزه، بو و در آخر تصویر پشت پلک. فقط ۲
               دقیقه، بدون هیچ وسیله‌ای، فقط با ذهن
             </p>

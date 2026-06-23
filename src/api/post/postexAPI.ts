@@ -1,5 +1,5 @@
-import { postAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { postAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export type State = {
   stateId: number;
@@ -56,9 +56,9 @@ export const getPostPrice = async (data: PriceData) => {
     JSON.stringify(data),
     {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-    }
+    },
   );
   if (response.status === 200) {
     return response.data;

@@ -1,8 +1,8 @@
 // getters/userAPI.ts
 
-import { Course } from "../../Types/apiTypes";
-import axios from "../axios";
-import { Endpoints } from "../endpoints";
+import { Course } from '../../Types/apiTypes';
+import axios from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const getCourses = async (): Promise<Course[]> => {
   const response = await axios.get(Endpoints.getCourses);

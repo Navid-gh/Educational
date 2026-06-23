@@ -1,7 +1,7 @@
-import { Book, Course, User } from "../../Types/apiTypes";
-import { PrivateAuth } from "../../Types/reqAuth";
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { Book, Course, User } from '../../Types/apiTypes';
+import { PrivateAuth } from '../../Types/reqAuth';
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 type PurchasedItem = {
   date: string;
@@ -23,7 +23,7 @@ export type AllUsersUserType = {
 };
 
 export const getUsers = async (
-  auth: PrivateAuth
+  auth: PrivateAuth,
 ): Promise<AllUsersUserType[]> => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.get(Endpoints.getUsers);
@@ -46,7 +46,7 @@ export const getUser = async (auth: PrivateAuth): Promise<User> => {
 
 export const getPurchasedBook = async (
   auth: PrivateAuth,
-  limit: number = 0
+  limit: number = 0,
 ): Promise<(Book & PurchasedItem)[]> => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.getPurchasedBook(limit);
@@ -60,7 +60,7 @@ export const getPurchasedBook = async (
 
 export const getPurchasedOnline = async (
   auth: PrivateAuth,
-  limit: number = 0
+  limit: number = 0,
 ): Promise<(Course & PurchasedItem)[]> => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.getPurchasedOnlineCourses(limit);
@@ -74,7 +74,7 @@ export const getPurchasedOnline = async (
 
 export const getPurchasedOffline = async (
   auth: PrivateAuth,
-  limit: number = 0
+  limit: number = 0,
 ): Promise<(Course & OfflinePurchased & PurchasedItem)[]> => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.getPurchasedOfflineCourses(limit);
@@ -88,7 +88,7 @@ export const getPurchasedOffline = async (
 
 export const getPurchasedInPerson = async (
   auth: PrivateAuth,
-  limit: number = 0
+  limit: number = 0,
 ): Promise<(Course & PurchasedItem)[]> => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.getPurchasedInPersonCourses(limit);

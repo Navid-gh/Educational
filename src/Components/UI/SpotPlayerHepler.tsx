@@ -1,5 +1,5 @@
-import { usePersianNums } from "../../hooks/usePersianNums";
-import Whatsapp from "./Icons/Whatsapp";
+import { usePersianNums } from '../../hooks/usePersianNums';
+import Whatsapp from './Icons/Whatsapp';
 
 const SpotPlayerHepler = () => {
   return (
@@ -34,7 +34,7 @@ const SpotPlayerHepler = () => {
         </div>
         <div className="flex gap-2">
           <span>شماره تماس : </span>
-          <span>{usePersianNums("09330042028")}</span>
+          <span>{usePersianNums('09330042028')}</span>
         </div>
         <div className="flex gap-2 items-center">
           <span>ارتباط با ادمین : </span>

@@ -1,12 +1,12 @@
-import { useRef, useState, useEffect, ChangeEvent } from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { addView, editView, removeView } from "../../api/setters/mainViewsAPI";
-import { getViews } from "../../api/getters/mainViewsAPI";
-import toast from "react-hot-toast";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
-import { View } from "../../Types/apiTypes";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
+import { useRef, useState, useEffect, ChangeEvent } from 'react';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { addView, editView, removeView } from '../../api/setters/mainViewsAPI';
+import { getViews } from '../../api/getters/mainViewsAPI';
+import toast from 'react-hot-toast';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
+import { View } from '../../Types/apiTypes';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
 
 const ManageViews = () => {
   const userRef = useRef<HTMLInputElement | null>(null);
@@ -15,7 +15,7 @@ const ManageViews = () => {
   const { token } = useAuth();
   const auth = useAuthHooks();
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["views", "admin"],
+    queryKey: ['views', 'admin'],
     queryFn: getViews,
   });
   const [items, setItems] = useState<View[] | undefined>(data);
@@ -29,11 +29,11 @@ const ManageViews = () => {
   const deleteViewMutation = useMutation({
     mutationFn: (id: string) => removeView(id, { token, ...auth }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["views", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['views', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
@@ -47,15 +47,15 @@ const ManageViews = () => {
           nameCourse: item.nameCourse,
           nameUser: item.nameUser,
         },
-        { token, ...auth }
+        { token, ...auth },
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["views", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['views', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   const addViewMutation = useMutation({
@@ -66,20 +66,20 @@ const ManageViews = () => {
           nameCourse: courseRef.current!.value,
           nameUser: userRef.current!.value,
         },
-        { token, ...auth }
+        { token, ...auth },
       ),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["views", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['views', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   const handleChange = (
     key: string,
     e: ChangeEvent<HTMLInputElement>,
-    id: string
+    id: string,
   ) => {
     const updatedItems = items?.map((item) => {
       if (item._id === id) {
@@ -116,7 +116,7 @@ const ManageViews = () => {
                 <input
                   type="text"
                   value={nameUser}
-                  onChange={(e) => handleChange("nameUser", e, _id)}
+                  onChange={(e) => handleChange('nameUser', e, _id)}
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -124,7 +124,7 @@ const ManageViews = () => {
                 <input
                   type="text"
                   value={description}
-                  onChange={(e) => handleChange("description", e, _id)}
+                  onChange={(e) => handleChange('description', e, _id)}
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -132,7 +132,7 @@ const ManageViews = () => {
                 <input
                   type="text"
                   value={nameCourse}
-                  onChange={(e) => handleChange("nameCourse", e, _id)}
+                  onChange={(e) => handleChange('nameCourse', e, _id)}
                 />
               </div>
               <div className="flex gap-2">

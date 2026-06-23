@@ -1,9 +1,9 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
 const Class: FC<SVGElementProps> = ({ id, fill, ...props }) => {
-  fill = fill || "#5b0888";
+  fill = fill || '#5b0888';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

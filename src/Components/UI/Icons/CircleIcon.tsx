@@ -1,4 +1,4 @@
-import { SVGProps, FC } from "react";
+import { SVGProps, FC } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 

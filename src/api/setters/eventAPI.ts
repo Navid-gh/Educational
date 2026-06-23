@@ -1,7 +1,7 @@
-import { PrivateAuth } from "../../Types/reqAuth";
+import { PrivateAuth } from '../../Types/reqAuth';
 
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 type AddEventData = {
   text: string;
@@ -15,7 +15,7 @@ export const addEvent = async (auth: PrivateAuth, data: AddEventData) => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.post(Endpoints.addEvent, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 201) {

@@ -1,7 +1,7 @@
-import { PrivateAuth } from "../../Types/reqAuth";
+import { PrivateAuth } from '../../Types/reqAuth';
 
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export type Data = {
   phone?: string;
@@ -16,7 +16,7 @@ export const editUser = async (auth: PrivateAuth, data: Data) => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.patch(Endpoints.editUser, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 200) {

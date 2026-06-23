@@ -1,24 +1,24 @@
-import { memo } from "react";
-import HeadTitle from "./UI/HeadTitle";
-import SumComment from "./UI/SumComment";
-import MainHeader from "./UI/MainHeader";
-import AddComment from "./AddComment";
-import { getViews } from "../api/getters/mainViewsAPI";
-import { useQuery } from "@tanstack/react-query";
-import WithLoaderAndError from "./WithLoaderAndError";
-import { CardTypes } from "../Types/cardTypes";
-import type { Comment } from "../Types/apiTypes";
+import { memo } from 'react';
+import HeadTitle from './UI/HeadTitle';
+import SumComment from './UI/SumComment';
+import MainHeader from './UI/MainHeader';
+import AddComment from './AddComment';
+import { getViews } from '../api/getters/mainViewsAPI';
+import { useQuery } from '@tanstack/react-query';
+import WithLoaderAndError from './WithLoaderAndError';
+import { CardTypes } from '../Types/cardTypes';
+import type { Comment } from '../Types/apiTypes';
 
 type Props =
   | {
-      type: "home";
+      type: 'home';
     }
   | { type: CardTypes; comments: Comment[]; id: string; parentId?: string };
 
 const SumComments = (props: Props) => {
-  if (props.type === "home") {
+  if (props.type === 'home') {
     const { data, isLoading, isError, error } = useQuery({
-      queryKey: ["views", "admin"],
+      queryKey: ['views', 'admin'],
       queryFn: getViews,
     });
     return (
@@ -28,9 +28,9 @@ const SumComments = (props: Props) => {
             <HeadTitle>نظرات هنرجویان</HeadTitle>
             <ul className="flex flex-wrap justify-between gap-10 sumComment:gap-3">
               {data?.map(({ __v, _id, ...rest }, idx) => {
-                let theme = "girl";
+                let theme = 'girl';
                 if (idx === 0 || idx % 2 === 0) {
-                  theme = "boy";
+                  theme = 'boy';
                 }
                 return (
                   <SumComment
@@ -38,7 +38,7 @@ const SumComments = (props: Props) => {
                     data={rest}
                     key={_id}
                     wordLimit={300}
-                    theme={theme as "girl" | "boy"}
+                    theme={theme as 'girl' | 'boy'}
                   />
                 );
               })}
@@ -56,16 +56,16 @@ const SumComments = (props: Props) => {
       <AddComment type={props.type} id={props.id} parentId={props.parentId} />
       <ul className="flex flex-wrap justify-between gap-10 sumComment:gap-3">
         {props.comments?.map((comment, idx) => {
-          let theme = "girl";
+          let theme = 'girl';
           if (idx === 0 || idx % 2 === 0) {
-            theme = "boy";
+            theme = 'boy';
           }
           return (
             <SumComment
               type="comment"
               data={comment}
               key={idx}
-              theme={theme as "girl" | "boy"}
+              theme={theme as 'girl' | 'boy'}
               wordLimit={3000}
               full={true}
             />

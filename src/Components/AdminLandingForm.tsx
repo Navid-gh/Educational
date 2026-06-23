@@ -59,7 +59,7 @@ export const AdminLandingForm = ({
             ref.current.value = JSON.stringify(
               (selectedLanding.faqs || []).map(({ q, a }: any) => ({ q, a })),
               null,
-              2
+              2,
             );
             break;
 
@@ -67,7 +67,7 @@ export const AdminLandingForm = ({
             ref.current.value = JSON.stringify(
               (selectedLanding.videos || []).map(({ url }: any) => ({ url })),
               null,
-              2
+              2,
             );
             break;
 
@@ -179,8 +179,8 @@ export const AdminLandingForm = ({
   };
 
   return (
-    <div className='flex flex-col gap-4 border p-4 rounded-2xl'>
-      <h2 className='text-lg font-semibold'>
+    <div className="flex flex-col gap-4 border p-4 rounded-2xl">
+      <h2 className="text-lg font-semibold">
         {selectedLanding ? 'ویرایش لندینگ' : 'افزودن لندینگ'}
       </h2>
 
@@ -205,15 +205,15 @@ export const AdminLandingForm = ({
           ].includes(key)
         ) {
           return (
-            <label key={key} className='flex items-center gap-2'>
-              <input type='checkbox' ref={ref} />
+            <label key={key} className="flex items-center gap-2">
+              <input type="checkbox" ref={ref} />
               <span>{key}</span>
             </label>
           );
         }
 
         return (
-          <MainInput key={key} ref={ref} placeholder={key} inputSize='medium' />
+          <MainInput key={key} ref={ref} placeholder={key} inputSize="medium" />
         );
       })}
 
@@ -229,7 +229,7 @@ export const AdminLandingForm = ({
           intent={'white'}
           size={'medium'}
           onClick={() => setSelectedLanding(null)}
-          text='لغو ویرایش'
+          text="لغو ویرایش"
         />
       )}
     </div>

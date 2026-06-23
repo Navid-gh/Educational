@@ -1,7 +1,7 @@
-import { Book, Course } from "../../Types/apiTypes";
-import { PrivateAuth } from "../../Types/reqAuth";
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { Book, Course } from '../../Types/apiTypes';
+import { PrivateAuth } from '../../Types/reqAuth';
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 type OrderDetail = {
   factor: string;
@@ -14,7 +14,7 @@ type OrderDetail = {
 
 export const getOrderDetail = async (
   auth: PrivateAuth,
-  id: string
+  id: string,
 ): Promise<OrderDetail> => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.orderDetail(id);

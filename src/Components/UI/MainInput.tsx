@@ -1,31 +1,32 @@
-import { forwardRef } from "react";
-import { cva, VariantProps } from "class-variance-authority";
-import { InputHTMLAttributes } from "react";
-import { cn } from "../../utils/lib/Cn";
+import { forwardRef } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import { InputHTMLAttributes } from 'react';
+import { cn } from '../../utils/lib/Cn';
 
-const InputStyles = cva("border-0 outline-0 rounded-full font-body", {
+const InputStyles = cva('border-0 outline-0 rounded-full font-body', {
   variants: {
     intent: {
-      primary: "bg-pink",
-      white: "bg-white text-black",
+      primary: 'bg-pink',
+      white: 'bg-white text-black',
       login:
-        "text-black bg-lowPink focus:bg-white focus:border focus:border-lowPink focus:border-2 transition-all duration-300",
+        'text-black bg-lowPink focus:bg-white focus:border focus:border-lowPink focus:border-2 transition-all duration-300',
     },
     inputSize: {
-      base: ["w-full", "p-4"],
-      small: ["py-2", "px-8", "max-w-[8.125rem]", "text-xs"],
-      medium: ["py-2", "px-10", "text-base"],
-      editUser: ["h-10 w-full p-4 py-2"],
+      base: ['w-full', 'p-4'],
+      small: ['py-2', 'px-8', 'max-w-[8.125rem]', 'text-xs'],
+      medium: ['py-2', 'px-10', 'text-base'],
+      editUser: ['h-10 w-full p-4 py-2'],
     },
     defaultVariants: {
-      intent: "primary",
-      inputSize: "small",
+      intent: 'primary',
+      inputSize: 'small',
     },
   },
 });
 
 interface InputProps
-  extends VariantProps<typeof InputStyles>,
+  extends
+    VariantProps<typeof InputStyles>,
     InputHTMLAttributes<HTMLInputElement> {
   placeHolder?: string;
   label?: string;
@@ -45,7 +46,7 @@ const MainInput = forwardRef<HTMLInputElement, InputProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 export default MainInput;

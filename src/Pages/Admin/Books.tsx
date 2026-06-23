@@ -1,15 +1,15 @@
-import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
-import { getBooks } from "../../api/getters/bookAPI";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
-import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
-import { removeBook } from "../../api/setters/bookAPI";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
+import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query';
+import { getBooks } from '../../api/getters/bookAPI';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
+import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { removeBook } from '../../api/setters/bookAPI';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
 
 const Books = () => {
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["books", "admin"],
+    queryKey: ['books', 'admin'],
     queryFn: getBooks,
   });
 
@@ -21,25 +21,25 @@ const Books = () => {
   const deleteBookMutation = useMutation({
     mutationFn: (id: string) => removeBook({ token, ...auth }, id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["books", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['books', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
   return (
     <WithLoaderAndError {...{ data, isLoading, isError, error }}>
       <div className="flex flex-col gap-12">
-        <Link to={"Add"} className="border-b border-purple max-w-fit">
+        <Link to={'Add'} className="border-b border-purple max-w-fit">
           اضافه کردن کتاب جدید
         </Link>
         <ul className="flex flex-col gap-6">
           {data?.map((item) => {
             const url = `/Book/${item?._id}/${encodeURIComponent(
-              item?.urlGoogle ?? item?.title
-            ).replace(/%20/g, "-")}`;
+              item?.urlGoogle ?? item?.title,
+            ).replace(/%20/g, '-')}`;
             return (
               <li
                 key={item._id}
@@ -68,7 +68,7 @@ const Books = () => {
                   <span>تغییر کتاب</span>
                 </Link>
                 <Link
-                  to={"Manage-Comments"}
+                  to={'Manage-Comments'}
                   className="text-yellow max-w-fit"
                   state={{ id: item._id, comments: item.comments }}
                 >

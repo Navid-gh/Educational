@@ -1,6 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./user/userSlice";
-import basketReducer from "./basket/basketSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import userReducer from './user/userSlice';
+import basketReducer from './basket/basketSlice';
 
 const store = configureStore({
   reducer: {

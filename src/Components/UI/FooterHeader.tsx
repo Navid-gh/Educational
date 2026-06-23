@@ -1,4 +1,4 @@
-import { ReactNode, HtmlHTMLAttributes } from "react";
+import { ReactNode, HtmlHTMLAttributes } from 'react';
 
 type Props = HtmlHTMLAttributes<HTMLSpanElement> & {
   children: ReactNode;

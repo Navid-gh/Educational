@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { submitView, getIp } from "../api/view/viewAPI";
+import { useEffect } from 'react';
+import { submitView, getIp } from '../api/view/viewAPI';
 
 const useSubmitView = (type: string, id: string | undefined) => {
   useEffect(() => {

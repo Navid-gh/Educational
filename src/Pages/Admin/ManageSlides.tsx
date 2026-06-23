@@ -1,11 +1,11 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import toast from "react-hot-toast";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import { useRef, useState } from "react";
-import { addImages } from "../../api/setters/imageAPI";
-import { addSlide, removeSlide } from "../../api/setters/slidesAPI";
-import { getSlides } from "../../api/getters/slidesAPI";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import { useRef, useState } from 'react';
+import { addImages } from '../../api/setters/imageAPI';
+import { addSlide, removeSlide } from '../../api/setters/slidesAPI';
+import { getSlides } from '../../api/getters/slidesAPI';
 
 const ManageSlides = () => {
   const [imgUrls, setImgUrls] = useState<string[] | null>(null);
@@ -16,21 +16,21 @@ const ManageSlides = () => {
   const auth = useAuthHooks();
 
   const { data, isLoading } = useQuery({
-    queryKey: ["slides"],
+    queryKey: ['slides'],
     queryFn: () => getSlides(),
   });
 
   const submitImages = async () => {
     if (imagesRef.current?.files) {
       const images = Array.from(imagesRef.current.files);
-      const loadToast = toast.loading("درحال بارگذاری");
+      const loadToast = toast.loading('درحال بارگذاری');
       try {
         const res = await addImages({ token, ...auth }, images);
-        toast.success("بارگذاری شد");
+        toast.success('بارگذاری شد');
         setImgUrls([...res]);
       } catch (err) {
         console.log(err);
-        toast.error("خطا در بارگذاری");
+        toast.error('خطا در بارگذاری');
       } finally {
         toast.dismiss(loadToast);
       }
@@ -40,21 +40,21 @@ const ManageSlides = () => {
   const addSlideMutation = useMutation({
     mutationFn: () => addSlide({ token, ...auth }, imgUrls!),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["slides"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['slides'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   const removeSlideMutation = useMutation({
     mutationFn: (id: string) => removeSlide({ token, ...auth }, id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["slides"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['slides'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   return (

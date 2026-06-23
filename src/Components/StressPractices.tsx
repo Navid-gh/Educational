@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { pdfText, contactInfo } from "../Items/stressItems";
+import { Link } from 'react-router-dom';
+import { pdfText, contactInfo } from '../Items/stressItems';
 
 const StressPractices = () => {
   return (

@@ -1,1 +1,1 @@
-export type ContactTimes = "morning" | "after-noon" | "evening" | "night";
+export type ContactTimes = 'morning' | 'after-noon' | 'evening' | 'night';

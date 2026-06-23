@@ -1,4 +1,4 @@
-import { memo, ReactNode } from "react";
+import { memo, ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;

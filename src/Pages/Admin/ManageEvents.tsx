@@ -1,13 +1,13 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
-import { getEvents } from "../../api/getters/eventAPI";
-import toast from "react-hot-toast";
-import { addEvent, removeEvent } from "../../api/setters/eventAPI";
-import { useRef, useState } from "react";
-import { addImages } from "../../api/setters/imageAPI";
-import { BASE_URL } from "../../api/axios";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
+import { getEvents } from '../../api/getters/eventAPI';
+import toast from 'react-hot-toast';
+import { addEvent, removeEvent } from '../../api/setters/eventAPI';
+import { useRef, useState } from 'react';
+import { addImages } from '../../api/setters/imageAPI';
+import { BASE_URL } from '../../api/axios';
 
 const ManageEvents = () => {
   const titleRef = useRef<HTMLInputElement>(null);
@@ -20,21 +20,21 @@ const ManageEvents = () => {
   const auth = useAuthHooks();
   const queryClient = useQueryClient();
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["events", "admin"],
+    queryKey: ['events', 'admin'],
     queryFn: () => getEvents(),
   });
 
   const submitImages = async () => {
     if (imagesRef.current?.files) {
       const images = Array.from(imagesRef.current.files);
-      const loadToast = toast.loading("درحال بارگذاری");
+      const loadToast = toast.loading('درحال بارگذاری');
       try {
         const res = await addImages({ token, ...auth }, images);
-        toast.success("بارگذاری شد");
+        toast.success('بارگذاری شد');
         setImgUrls([...res]);
       } catch (err) {
         console.log(err);
-        toast.error("خطا در بارگذاری");
+        toast.error('خطا در بارگذاری');
       } finally {
         toast.dismiss(loadToast);
       }
@@ -44,11 +44,11 @@ const ManageEvents = () => {
   const removeEventMutation = useMutation({
     mutationFn: (id: string) => removeEvent({ token, ...auth }, id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["events", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['events', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
@@ -61,18 +61,18 @@ const ManageEvents = () => {
         {
           title: titleRef.current!.value,
           text: textRef.current!.value,
-          courses: coursesVal !== "" ? coursesVal.split("-") : [],
-          books: booksVal !== "" ? booksVal.split("-") : [],
+          courses: coursesVal !== '' ? coursesVal.split('-') : [],
+          books: booksVal !== '' ? booksVal.split('-') : [],
           images: imgUrls ? imgUrls : [],
-        }
+        },
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["events", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['events', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 

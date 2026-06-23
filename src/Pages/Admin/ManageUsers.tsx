@@ -1,9 +1,9 @@
-import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { AllUsersUserType, getUsers } from "../../api/getters/userAPI";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { AllUsersUserType, getUsers } from '../../api/getters/userAPI';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
 
 const ManageUsers = () => {
   const [items, setItems] = useState<AllUsersUserType[]>([]);
@@ -11,13 +11,13 @@ const ManageUsers = () => {
   const { token } = useAuth();
   const auth = useAuthHooks();
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["users", "admin"],
+    queryKey: ['users', 'admin'],
     queryFn: () => getUsers({ token, ...auth }),
   });
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const newItems = data!.filter((item) =>
-      item.phone.includes(e.target.value)
+      item.phone.includes(e.target.value),
     );
     setItems(newItems);
   };
@@ -42,7 +42,7 @@ const ManageUsers = () => {
           {items?.map(({ email, first_name, _id, last_name, phone }) => (
             <li key={_id}>
               <div className="flex flex-col gap-2 border-b border-black">
-                <span>اسم : {first_name + " " + last_name}</span>
+                <span>اسم : {first_name + ' ' + last_name}</span>
                 <span>ایمیل : {email}</span>
                 <span>شماره همراه : {phone}</span>
               </div>

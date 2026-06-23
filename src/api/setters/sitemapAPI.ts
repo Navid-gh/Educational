@@ -1,14 +1,14 @@
-import { SitemapChangeFreq } from "../../Types/apiTypes";
-import { PrivateAuth } from "../../Types/reqAuth";
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { SitemapChangeFreq } from '../../Types/apiTypes';
+import { PrivateAuth } from '../../Types/reqAuth';
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const addSitemapUrl = async (
   auth: PrivateAuth,
   data: {
-  url: string;
-  priority: number;
-  changefreq: SitemapChangeFreq;
+    url: string;
+    priority: number;
+    changefreq: SitemapChangeFreq;
   },
 ) => {
   const privateAxios = createPrivateAxios(auth);

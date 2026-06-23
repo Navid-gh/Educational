@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 type CookieOptions = {
   path?: string;
   expires?: number | Date;
   domain?: string;
   secure?: boolean;
-  sameSite?: "strict" | "lax" | "none";
+  sameSite?: 'strict' | 'lax' | 'none';
 };
 
 type CookieSetter = (
   name: string,
   value: string,
-  options?: CookieOptions
+  options?: CookieOptions,
 ) => void;
 type CookieRemover = (name: string) => void;
 
 // type UseCookie = [string | undefined, CookieSetter, CookieRemover];
 
-const useCookie = (cookieName: string, initialValue = "") => {
+const useCookie = (cookieName: string, initialValue = '') => {
   const [cookieValue] = useState<string | undefined>(() => {
     const cookieValue = getCookie(cookieName);
     return cookieValue || initialValue;
@@ -31,11 +31,11 @@ const useCookie = (cookieName: string, initialValue = "") => {
 
   const setCookie: CookieSetter = (name, value, options = {}) => {
     let cookieString = `${encodeURIComponent(name)}=${encodeURIComponent(
-      value
+      value,
     )}`;
 
     if (options.expires) {
-      if (typeof options.expires === "number") {
+      if (typeof options.expires === 'number') {
         const date = new Date();
         date.setTime(date.getTime() + options.expires * 24 * 60 * 60 * 1000);
         options.expires = date;
@@ -52,7 +52,7 @@ const useCookie = (cookieName: string, initialValue = "") => {
     }
 
     if (options.secure) {
-      cookieString += "; secure";
+      cookieString += '; secure';
     }
 
     if (options.sameSite) {
@@ -63,7 +63,7 @@ const useCookie = (cookieName: string, initialValue = "") => {
   };
 
   const removeCookie: CookieRemover = (name) => {
-    setCookie(name, "", { expires: new Date(0) });
+    setCookie(name, '', { expires: new Date(0) });
   };
 
   return { cookieValue, setCookie, removeCookie };
@@ -78,7 +78,7 @@ export const setCookie: CookieSetter = (name, value, options = {}) => {
   let cookieString = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
 
   if (options.expires) {
-    if (typeof options.expires === "number") {
+    if (typeof options.expires === 'number') {
       const date = new Date();
       date.setTime(date.getTime() + options.expires * 24 * 60 * 60 * 1000);
       options.expires = date;
@@ -95,7 +95,7 @@ export const setCookie: CookieSetter = (name, value, options = {}) => {
   }
 
   if (options.secure) {
-    cookieString += "; secure";
+    cookieString += '; secure';
   }
 
   if (options.sameSite) {

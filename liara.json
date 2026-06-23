@@ -1,7 +1,7 @@
 {
-    "app": "saberzareifront",
-    "platform": "react",
-    "react": {
-        "mirror": true
-    }
+  "app": "saberzareifront",
+  "platform": "react",
+  "react": {
+    "mirror": true
+  }
 }

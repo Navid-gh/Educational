@@ -1,11 +1,11 @@
-import { useRef, useState } from "react";
-import MainButton from "../../Components/UI/MainButton";
-import MainInput from "../../Components/UI/MainInput";
-import { useEnglishNums } from "../../hooks/usePersianNums";
-import useInputValidator from "../../hooks/useInputValidator";
-import toast from "react-hot-toast";
-import { addContact } from "../../api/contactUs/contactAPI";
-import HeadTitle from "../../Components/UI/HeadTitle";
+import { useRef, useState } from 'react';
+import MainButton from '../../Components/UI/MainButton';
+import MainInput from '../../Components/UI/MainInput';
+import { useEnglishNums } from '../../hooks/usePersianNums';
+import useInputValidator from '../../hooks/useInputValidator';
+import toast from 'react-hot-toast';
+import { addContact } from '../../api/contactUs/contactAPI';
+import HeadTitle from '../../Components/UI/HeadTitle';
 
 const BaleForm = () => {
   const nameRef = useRef<HTMLInputElement>(null);
@@ -23,27 +23,27 @@ const BaleForm = () => {
       return;
     }
 
-    const phoneMsg = useInputValidator(phone, "phone");
+    const phoneMsg = useInputValidator(phone, 'phone');
     if (phoneMsg) {
       toast.error(phoneMsg);
       return;
     }
 
-    const loader = toast.loading("در حال ثبت درخواست شما");
+    const loader = toast.loading('در حال ثبت درخواست شما');
 
     try {
       await addContact({
         name,
         phone,
-        type: "landing",
-        time: "morning",
+        type: 'landing',
+        time: 'morning',
       });
 
       setShowMessage(true);
-      toast.success("درخواست شما با موفقیت ثبت شد");
+      toast.success('درخواست شما با موفقیت ثبت شد');
     } catch (error) {
       console.log(error);
-      toast.error("خطا در برقرای ارتباط");
+      toast.error('خطا در برقرای ارتباط');
     } finally {
       toast.dismiss(loader);
     }
@@ -59,9 +59,7 @@ const BaleForm = () => {
             (در صورت مشکل یا عدم دسترسی به ما پیام دهید: 09330042028)
           </p>
 
-          <p className="font-semibold">
-            لینک کانال دوره «۷ روز تا آرامش» 👇
-          </p>
+          <p className="font-semibold">لینک کانال دوره «۷ روز تا آرامش» 👇</p>
 
           <a
             href="https://ble.ir/join/8izZiiszhZ"
@@ -80,7 +78,9 @@ const BaleForm = () => {
     <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-pink to-lowPink">
       <div className="flex flex-col gap-4 p-6 px-8 shadow-contactForm rounded-2xl max-w-md w-full text-center">
         <HeadTitle>دریافت دوره‌ مدیریت استرس</HeadTitle>
-        <h2 className="font-bold">آکادمی فن بیان و رشد فردی استاد صابر زارعی</h2>
+        <h2 className="font-bold">
+          آکادمی فن بیان و رشد فردی استاد صابر زارعی
+        </h2>
         <div className="flex flex-col gap-4">
           <MainInput
             label="نام و نام خانوادگی"
@@ -99,7 +99,7 @@ const BaleForm = () => {
           <MainButton
             intent="purple"
             size="login"
-            text={"ارسال"}
+            text={'ارسال'}
             onClick={submitHandler}
           />
         </div>

@@ -1,6 +1,6 @@
-import { useAppDispatch } from "./useReduxHooks";
-import useRefreshToken from "./useRefreshToken";
-import { updateAccessToken } from "../redux/user/userSlice";
+import { useAppDispatch } from './useReduxHooks';
+import useRefreshToken from './useRefreshToken';
+import { updateAccessToken } from '../redux/user/userSlice';
 
 export const useAuthHooks = () => {
   const dispatch = useAppDispatch();

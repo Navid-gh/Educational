@@ -1,4 +1,4 @@
-import { Book, Course } from "../Types/apiTypes";
+import { Book, Course } from '../Types/apiTypes';
 
 export function useLocalStorage<T>(key: string, defaultValue: T) {
   return useStorage(key, defaultValue, window.localStorage);
@@ -13,14 +13,14 @@ type OutPut<T> = [(Book | Course)[] | T, <T>(value: T) => void, () => void];
 function useStorage<T>(
   key: string,
   defaultValue: T,
-  storageObject: Storage
+  storageObject: Storage,
 ): OutPut<T> {
   let value;
   const jsonValue = storageObject.getItem(key);
   if (jsonValue != null) {
     value = JSON.parse(jsonValue);
   } else {
-    if (typeof defaultValue === "function") {
+    if (typeof defaultValue === 'function') {
       value = defaultValue();
     } else {
       value = defaultValue;

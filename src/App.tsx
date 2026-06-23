@@ -1,76 +1,76 @@
-import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Public/Home";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import ScrollToTop from "./utils/ScrollToTop";
-import ScrollToTopButton from "./utils/ScrollToTopBtn";
-import { ErrorBoundary } from "react-error-boundary";
-import RequireAuth from "./utils/RequireAuth";
-import useInitialAuth from "./hooks/useInitialAuth";
-import useInitialBasketProducts from "./hooks/useInitialBasketProducts";
-import Loader from "./Components/UI/Loader";
-import NotFound from "./Pages/Public/NotFound";
-import ErrorComp from "./Components/UI/ErrorComp";
-import { Toaster } from "react-hot-toast";
-import FixedContactUs from "./Components/FixedContactUs";
+import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Public/Home';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import ScrollToTop from './utils/ScrollToTop';
+import ScrollToTopButton from './utils/ScrollToTopBtn';
+import { ErrorBoundary } from 'react-error-boundary';
+import RequireAuth from './utils/RequireAuth';
+import useInitialAuth from './hooks/useInitialAuth';
+import useInitialBasketProducts from './hooks/useInitialBasketProducts';
+import Loader from './Components/UI/Loader';
+import NotFound from './Pages/Public/NotFound';
+import ErrorComp from './Components/UI/ErrorComp';
+import { Toaster } from 'react-hot-toast';
+import FixedContactUs from './Components/FixedContactUs';
 
-const Course = lazy(() => import("./Pages/Public/Course"));
-const Book = lazy(() => import("./Pages/Public/Book"));
-const Article = lazy(() => import("./Pages/Public/Article"));
-const Login = lazy(() => import("./Pages/Public/Login"));
-const Courses = lazy(() => import("./Pages/Public/Courses"));
-const Books = lazy(() => import("./Pages/Public/Books"));
-const Articles = lazy(() => import("./Pages/Public/Articles"));
-const AboutUs = lazy(() => import("./Pages/Public/AboutUs"));
-const ContactUs = lazy(() => import("./Pages/Public/ContactUs"));
-const Basket = lazy(() => import("./Pages/Public/Basket"));
-const BasketProducts = lazy(() => import("./Pages/Public/BasketProducts"));
-const BasketUserInfo = lazy(() => import("./Pages/Public/BasketUserInfo"));
+const Course = lazy(() => import('./Pages/Public/Course'));
+const Book = lazy(() => import('./Pages/Public/Book'));
+const Article = lazy(() => import('./Pages/Public/Article'));
+const Login = lazy(() => import('./Pages/Public/Login'));
+const Courses = lazy(() => import('./Pages/Public/Courses'));
+const Books = lazy(() => import('./Pages/Public/Books'));
+const Articles = lazy(() => import('./Pages/Public/Articles'));
+const AboutUs = lazy(() => import('./Pages/Public/AboutUs'));
+const ContactUs = lazy(() => import('./Pages/Public/ContactUs'));
+const Basket = lazy(() => import('./Pages/Public/Basket'));
+const BasketProducts = lazy(() => import('./Pages/Public/BasketProducts'));
+const BasketUserInfo = lazy(() => import('./Pages/Public/BasketUserInfo'));
 const BasketOrderDetails = lazy(
-  () => import("./Pages/Public/BasketOrderDetails")
+  () => import('./Pages/Public/BasketOrderDetails'),
 );
-const FailedBuy = lazy(() => import("./Pages/Public/FailedBuy"));
-const Help = lazy(() => import("./Pages/Public/Help"));
-const Landing = lazy(() => import("./Pages/Public/Landing"));
-const BaleForm = lazy(() => import("./Pages/Public/BaleForm"));
+const FailedBuy = lazy(() => import('./Pages/Public/FailedBuy'));
+const Help = lazy(() => import('./Pages/Public/Help'));
+const Landing = lazy(() => import('./Pages/Public/Landing'));
+const BaleForm = lazy(() => import('./Pages/Public/BaleForm'));
 
-const Admin = lazy(() => import("./Pages/Admin/Admin"));
-const AdminSummary = lazy(() => import("./Pages/Admin/AdminSummary"));
-const AdminCourses = lazy(() => import("./Pages/Admin/Courses"));
-const AdminBooks = lazy(() => import("./Pages/Admin/Books"));
-const AdminArticles = lazy(() => import("./Pages/Admin/Articles"));
-const Add = lazy(() => import("./Pages/Admin/Add"));
-const Edit = lazy(() => import("./Pages/Admin/Edit"));
-const ManageComments = lazy(() => import("./Pages/Admin/ManageComments"));
-const ManageFaqs = lazy(() => import("./Pages/Admin/ManageFaqs"));
-const ManageChapters = lazy(() => import("./Pages/Admin/ManageChapters"));
-const ManageViews = lazy(() => import("./Pages/Admin/ManageViews"));
+const Admin = lazy(() => import('./Pages/Admin/Admin'));
+const AdminSummary = lazy(() => import('./Pages/Admin/AdminSummary'));
+const AdminCourses = lazy(() => import('./Pages/Admin/Courses'));
+const AdminBooks = lazy(() => import('./Pages/Admin/Books'));
+const AdminArticles = lazy(() => import('./Pages/Admin/Articles'));
+const Add = lazy(() => import('./Pages/Admin/Add'));
+const Edit = lazy(() => import('./Pages/Admin/Edit'));
+const ManageComments = lazy(() => import('./Pages/Admin/ManageComments'));
+const ManageFaqs = lazy(() => import('./Pages/Admin/ManageFaqs'));
+const ManageChapters = lazy(() => import('./Pages/Admin/ManageChapters'));
+const ManageViews = lazy(() => import('./Pages/Admin/ManageViews'));
 const ManageDiscountCode = lazy(
-  () => import("./Pages/Admin/ManageDiscountCode")
+  () => import('./Pages/Admin/ManageDiscountCode'),
 );
-const ManageContactUs = lazy(() => import("./Pages/Admin/ManageContactUs"));
-const ManageUsers = lazy(() => import("./Pages/Admin/ManageUsers"));
-const ManageEvents = lazy(() => import("./Pages/Admin/ManageEvents"));
-const ManageSlides = lazy(() => import("./Pages/Admin/ManageSlides"));
-const Sales = lazy(() => import("./Pages/Admin/Sales"));
-const ManageLanding = lazy(() => import("./Pages/Admin/ManageLanding"));
-const Sitemap = lazy(() => import("./Pages/Admin/Sitemap"));
+const ManageContactUs = lazy(() => import('./Pages/Admin/ManageContactUs'));
+const ManageUsers = lazy(() => import('./Pages/Admin/ManageUsers'));
+const ManageEvents = lazy(() => import('./Pages/Admin/ManageEvents'));
+const ManageSlides = lazy(() => import('./Pages/Admin/ManageSlides'));
+const Sales = lazy(() => import('./Pages/Admin/Sales'));
+const ManageLanding = lazy(() => import('./Pages/Admin/ManageLanding'));
+const Sitemap = lazy(() => import('./Pages/Admin/Sitemap'));
 
-const User = lazy(() => import("./Pages/User/User"));
-const Summary = lazy(() => import("./Pages/User/Summary"));
-const Info = lazy(() => import("./Pages/User/Info"));
-const Orders = lazy(() => import("./Pages/User/Orders"));
-const Free = lazy(() => import("./Pages/User/Free"));
-const Stress = lazy(() => import("./Pages/User/Stress"));
+const User = lazy(() => import('./Pages/User/User'));
+const Summary = lazy(() => import('./Pages/User/Summary'));
+const Info = lazy(() => import('./Pages/User/Info'));
+const Orders = lazy(() => import('./Pages/User/Orders'));
+const Free = lazy(() => import('./Pages/User/Free'));
+const Stress = lazy(() => import('./Pages/User/Stress'));
 
 function App() {
   const isReady = useInitialAuth();
   useInitialBasketProducts();
 
-const hideLayout =
-  window.location.pathname === "/landing" ||
-  window.location.pathname === "/bale-form";
+  const hideLayout =
+    window.location.pathname === '/landing' ||
+    window.location.pathname === '/bale-form';
 
   return (
     <>
@@ -89,17 +89,17 @@ const hideLayout =
                   </ErrorBoundary>
                 }
               />
-              <Route 
-                path="/Landing" 
+              <Route
+                path="/Landing"
                 element={
                   <ErrorBoundary fallback={<ErrorComp />}>
                     <Suspense fallback={<Loader />}>
-                      <Landing/>
+                      <Landing />
                     </Suspense>
                   </ErrorBoundary>
-                } 
+                }
               />
-              <Route 
+              <Route
                 path="/Bale-Form"
                 element={
                   <ErrorBoundary fallback={<ErrorComp />}>
@@ -225,7 +225,7 @@ const hideLayout =
                 path="/Basket"
                 element={
                   <ErrorBoundary fallback={<ErrorComp />}>
-                    <RequireAuth allowedRoles={["USER", "ADMIN"]}>
+                    <RequireAuth allowedRoles={['USER', 'ADMIN']}>
                       <Suspense fallback={<Loader />}>
                         <Basket />
                       </Suspense>
@@ -262,7 +262,7 @@ const hideLayout =
                 path="/Admin"
                 element={
                   <ErrorBoundary fallback={<ErrorComp />}>
-                    <RequireAuth allowedRoles={["ADMIN"]}>
+                    <RequireAuth allowedRoles={['ADMIN']}>
                       <Suspense fallback={<Loader />}>
                         <Admin />
                       </Suspense>
@@ -419,7 +419,7 @@ const hideLayout =
                 path="/User"
                 element={
                   <ErrorBoundary fallback={<ErrorComp />}>
-                    <RequireAuth allowedRoles={["USER", "ADMIN"]}>
+                    <RequireAuth allowedRoles={['USER', 'ADMIN']}>
                       <Suspense fallback={<Loader />}>
                         <User />
                       </Suspense>
@@ -478,9 +478,9 @@ const hideLayout =
                 }
               />
             </Routes>
-          {!hideLayout && <Footer />}
-          {!hideLayout && <FixedContactUs />}
-          <ScrollToTopButton />
+            {!hideLayout && <Footer />}
+            {!hideLayout && <FixedContactUs />}
+            <ScrollToTopButton />
           </>
         ) : (
           <Loader />

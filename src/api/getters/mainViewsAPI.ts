@@ -1,7 +1,7 @@
-import { View } from "../../Types/apiTypes";
+import { View } from '../../Types/apiTypes';
 
-import axios from "../axios";
-import { Endpoints } from "../endpoints";
+import axios from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const getViews = async (): Promise<View[]> => {
   const response = await axios.get(Endpoints.getViews);

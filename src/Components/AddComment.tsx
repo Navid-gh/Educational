@@ -1,14 +1,14 @@
-import { useRef } from "react";
-import MainHeader from "./UI/MainHeader";
-import OwnerProfile from "./UI/OwnerProfile";
-import MainButton from "./UI/MainButton";
-import MainTextArea from "./UI/MainTextArea";
-import { CardTypes } from "../Types/cardTypes";
-import { useMutation } from "@tanstack/react-query";
-import toast from "react-hot-toast";
-import { addComment } from "../api/setters/commentAPI";
-import useAuth from "../hooks/useAuth";
-import { useAuthHooks } from "../hooks/useAuthHooks";
+import { useRef } from 'react';
+import MainHeader from './UI/MainHeader';
+import OwnerProfile from './UI/OwnerProfile';
+import MainButton from './UI/MainButton';
+import MainTextArea from './UI/MainTextArea';
+import { CardTypes } from '../Types/cardTypes';
+import { useMutation } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
+import { addComment } from '../api/setters/commentAPI';
+import useAuth from '../hooks/useAuth';
+import { useAuthHooks } from '../hooks/useAuthHooks';
 
 type Props = {
   type: CardTypes;
@@ -18,27 +18,27 @@ type Props = {
 
 const AddComment = ({ id, type, parentId }: Props) => {
   const commentRef = useRef<HTMLTextAreaElement>(null);
-  const loadNotifRef = useRef<ReturnType<typeof toast.loading>>("");
+  const loadNotifRef = useRef<ReturnType<typeof toast.loading>>('');
   const { Auth, token } = useAuth();
   const auth = useAuthHooks();
   const addCommentMutation = useMutation({
     mutationFn: () => {
-      loadNotifRef.current = toast.loading("درحال ثبت نظر شما");
+      loadNotifRef.current = toast.loading('درحال ثبت نظر شما');
       return addComment(
         type,
         { token, ...auth },
         {
           comment: commentRef.current!.value,
           id,
-          parent: parentId ?? "",
-        }
+          parent: parentId ?? '',
+        },
       );
     },
     onSuccess: () => {
-      toast.success("نظر شما با موفقیت ثبت شد");
+      toast.success('نظر شما با موفقیت ثبت شد');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
     onSettled() {
       toast.dismiss(loadNotifRef.current);

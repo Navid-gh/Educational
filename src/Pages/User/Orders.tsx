@@ -97,64 +97,64 @@ const Orders = () => {
         data?.map((item, idx) => {
           return (
             <TableRow key={idx}>
-              <TableCell className='text-right' key='1'>
+              <TableCell className="text-right" key="1">
                 {usePersianNums(idx + 1)}
               </TableCell>
-              <TableCell className='text-center' key='2'>
+              <TableCell className="text-center" key="2">
                 {item?.title}
               </TableCell>
-              <TableCell className='text-center' key='3'>
+              <TableCell className="text-center" key="3">
                 {usePersianNums(
-                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss')
+                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss'),
                 )}
               </TableCell>
-              <TableCell className='text-center'>
+              <TableCell className="text-center">
                 <Link
-                  className='text-blue'
+                  className="text-blue"
                   to={OrderUrlCreator(item?.authority)}
                 >
                   مشاهده جزئیات
                 </Link>
               </TableCell>
-              <TableCell className='text-center' key='4'>
+              <TableCell className="text-center" key="4">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
                       <img
-                        className='w-8 h-8 rounded-full object-cover shadow-userProf'
-                        src='/images/saber.jpg'
-                        alt='profile'
+                        className="w-8 h-8 rounded-full object-cover shadow-userProf"
+                        src="/images/saber.jpg"
+                        alt="profile"
                       />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className='text-black'>صابر زارعی</p>
+                      <p className="text-black">صابر زارعی</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </TableCell>
-              <TableCell className='text-center' key='5'>
+              <TableCell className="text-center" key="5">
                 <Link
                   to={`/Course/${item?._id}/${encodeURIComponent(item?.title)}`}
                 >
                   <MainButton
-                    className='bg-black hover:bg-purple max-w-fit'
+                    className="bg-black hover:bg-purple max-w-fit"
                     text={`مشاهده دوره`}
-                    intent='purple'
-                    size='medium'
+                    intent="purple"
+                    size="medium"
                   />
                 </Link>
               </TableCell>
             </TableRow>
           );
         }),
-      [data]
+      [data],
     );
     return (
       <WithLoaderAndError {...{ data, isLoading, error, isError }}>
         {data?.length && data.length > 0 ? (
           <TableWrapper
-            caption=' دوره های آنلاین خریداری شده توسط شما'
-            title='دوره های آنلاین'
+            caption=" دوره های آنلاین خریداری شده توسط شما"
+            title="دوره های آنلاین"
             headers={['دوره', 'تاریخ ثبت نام', 'جزئیات سفارش', 'مدرس']}
             key={'onlineCourses'}
             tableRows={Rows}
@@ -174,40 +174,40 @@ const Orders = () => {
         data?.map((item, idx) => {
           return (
             <TableRow key={idx}>
-              <TableCell className='text-right' key='1'>
+              <TableCell className="text-right" key="1">
                 {usePersianNums(idx + 1)}
               </TableCell>
-              <TableCell className='text-center' key='2'>
+              <TableCell className="text-center" key="2">
                 {item?.title}
               </TableCell>
-              <TableCell className='text-center' key='3'>
+              <TableCell className="text-center" key="3">
                 <ElipsisContentWithTT text={item?.tokenSP ?? ''} />
               </TableCell>
-              <TableCell className='text-center' key='4'>
+              <TableCell className="text-center" key="4">
                 {usePersianNums(
-                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss')
+                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss'),
                 )}
               </TableCell>
-              <TableCell className='text-center'>
+              <TableCell className="text-center">
                 <Link
-                  className='text-blue'
+                  className="text-blue"
                   to={OrderUrlCreator(item?.authority)}
                 >
                   مشاهده جزئیات
                 </Link>
               </TableCell>
-              <TableCell className='text-center' key='5'>
+              <TableCell className="text-center" key="5">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
                       <img
-                        className='w-8 h-8 rounded-full object-cover shadow-userProf'
-                        src='/images/saber.jpg'
-                        alt='profile'
+                        className="w-8 h-8 rounded-full object-cover shadow-userProf"
+                        src="/images/saber.jpg"
+                        alt="profile"
                       />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className='text-black'>صابر زارعی</p>
+                      <p className="text-black">صابر زارعی</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -225,15 +225,15 @@ const Orders = () => {
             </TableRow>
           );
         }),
-      [data]
+      [data],
     );
     return (
-      <div className='flex flex-col gap-6'>
+      <div className="flex flex-col gap-6">
         <WithLoaderAndError {...{ data, isLoading, error, isError }}>
           {data?.length && data.length > 0 ? (
             <TableWrapper
-              caption=' دوره های آفلاین خریداری شده توسط شما'
-              title='دوره های آفلاین'
+              caption=" دوره های آفلاین خریداری شده توسط شما"
+              title="دوره های آفلاین"
               headers={[
                 'دوره',
                 'لایسنس اسپات پلیر',
@@ -261,64 +261,64 @@ const Orders = () => {
         data?.map((item, idx) => {
           return (
             <TableRow key={idx}>
-              <TableCell className='text-right' key='1'>
+              <TableCell className="text-right" key="1">
                 {usePersianNums(idx + 1)}
               </TableCell>
-              <TableCell className='text-center' key='2'>
+              <TableCell className="text-center" key="2">
                 {item.title}
               </TableCell>
-              <TableCell className='text-center' key='3'>
+              <TableCell className="text-center" key="3">
                 {usePersianNums(
-                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss')
+                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss'),
                 )}
               </TableCell>
-              <TableCell className='text-center'>
+              <TableCell className="text-center">
                 <Link
-                  className='text-blue'
+                  className="text-blue"
                   to={OrderUrlCreator(item?.authority)}
                 >
                   مشاهده جزئیات
                 </Link>
               </TableCell>
-              <TableCell className='text-center' key='4'>
+              <TableCell className="text-center" key="4">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
                       <img
-                        className='w-8 h-8 rounded-full object-cover shadow-userProf'
-                        src='/images/saber.jpg'
-                        alt='profile'
+                        className="w-8 h-8 rounded-full object-cover shadow-userProf"
+                        src="/images/saber.jpg"
+                        alt="profile"
                       />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className='text-black'>صابر زارعی</p>
+                      <p className="text-black">صابر زارعی</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </TableCell>
-              <TableCell className='text-center' key='5'>
+              <TableCell className="text-center" key="5">
                 <Link
                   to={`/Course/${item._id}/${encodeURIComponent(item.title)}`}
                 >
                   <MainButton
-                    className='bg-black hover:bg-purple max-w-fit'
+                    className="bg-black hover:bg-purple max-w-fit"
                     text={`مشاهده دوره`}
-                    intent='purple'
-                    size='medium'
+                    intent="purple"
+                    size="medium"
                   />
                 </Link>
               </TableCell>
             </TableRow>
           );
         }),
-      [data]
+      [data],
     );
     return (
       <WithLoaderAndError {...{ data, isLoading, error, isError }}>
         {data?.length && data.length > 0 ? (
           <TableWrapper
-            caption=' دوره های حضوری خریداری شده توسط شما'
-            title='دوره های حضوری'
+            caption=" دوره های حضوری خریداری شده توسط شما"
+            title="دوره های حضوری"
             headers={['دوره', 'تاریخ ثبت نام', 'جزئیات سفارش', 'مدرس']}
             key={'inPersonCourses'}
             tableRows={Rows}
@@ -338,64 +338,64 @@ const Orders = () => {
         data?.map((item, idx) => {
           return (
             <TableRow key={idx}>
-              <TableCell className='text-right' key='1'>
+              <TableCell className="text-right" key="1">
                 {usePersianNums(idx + 1)}
               </TableCell>
-              <TableCell className='text-center' key='2'>
+              <TableCell className="text-center" key="2">
                 {item.title}
               </TableCell>
-              <TableCell className='text-center' key='3'>
+              <TableCell className="text-center" key="3">
                 {usePersianNums(
-                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss')
+                  moment(item?.date).format('jYYYY/jMM/jDD HH:mm:ss'),
                 )}
               </TableCell>
-              <TableCell className='text-center'>
+              <TableCell className="text-center">
                 <Link
-                  className='text-blue'
+                  className="text-blue"
                   to={OrderUrlCreator(item?.authority)}
                 >
                   مشاهده جزئیات
                 </Link>
               </TableCell>
-              <TableCell className='text-center' key='4'>
+              <TableCell className="text-center" key="4">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
                       <img
-                        className='w-8 h-8 rounded-full object-cover shadow-userProf'
-                        src='/images/saber.jpg'
-                        alt='profile'
+                        className="w-8 h-8 rounded-full object-cover shadow-userProf"
+                        src="/images/saber.jpg"
+                        alt="profile"
                       />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className='text-black'>صابر زارعی</p>
+                      <p className="text-black">صابر زارعی</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </TableCell>
-              <TableCell className='text-center' key='5'>
+              <TableCell className="text-center" key="5">
                 <Link
                   to={`/Course/${item._id}/${encodeURIComponent(item.title)}`}
                 >
                   <MainButton
-                    className='bg-black hover:bg-purple max-w-fit'
+                    className="bg-black hover:bg-purple max-w-fit"
                     text={`مشاهده دوره`}
-                    intent='purple'
-                    size='medium'
+                    intent="purple"
+                    size="medium"
                   />
                 </Link>
               </TableCell>
             </TableRow>
           );
         }),
-      [data]
+      [data],
     );
     return (
       <WithLoaderAndError {...{ data, isLoading, error, isError }}>
         {data?.length && data.length > 0 ? (
           <TableWrapper
-            caption=' کتاب های خریداری شده توسط شما'
-            title='کتاب ها'
+            caption=" کتاب های خریداری شده توسط شما"
+            title="کتاب ها"
             headers={['کتاب', 'تاریخ ثبت خرید', 'جزئیات سفارش', 'مدرس']}
             key={'books'}
             tableRows={Rows}

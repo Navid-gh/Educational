@@ -1,5 +1,5 @@
-import { Endpoints } from "../endpoints";
-import axios from "../axios";
+import { Endpoints } from '../endpoints';
+import axios from '../axios';
 
 export const getRefreshToken = async (token: string) => {
   const response = await axios.post(
@@ -7,9 +7,9 @@ export const getRefreshToken = async (token: string) => {
     { refreshtoken: token },
     {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }
+    },
   );
   if (response.status === 200) {
     return response.data;

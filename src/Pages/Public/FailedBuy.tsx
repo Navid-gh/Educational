@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import Tick from "../../Components/UI/Icons/Tick";
-import MainButton from "../../Components/UI/MainButton";
-import SeoTags from "../../utils/lib/Helmet";
+import { Link } from 'react-router-dom';
+import Tick from '../../Components/UI/Icons/Tick';
+import MainButton from '../../Components/UI/MainButton';
+import SeoTags from '../../utils/lib/Helmet';
 
 const FailedBuy = () => {
   return (

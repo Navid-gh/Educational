@@ -1,4 +1,4 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
@@ -17,7 +17,7 @@ const Online: FC<SVGElementProps> = ({ id, ...props }) => {
       </defs>
       <g
         style={{
-          isolation: "isolate",
+          isolation: 'isolate',
         }}
       >
         <g id="Layer_2" data-name="Layer 2">
@@ -170,7 +170,7 @@ const Online: FC<SVGElementProps> = ({ id, ...props }) => {
             <path
               d="M124.62 62.74c-2 .79-4 1.54-4.33 2.94a2.3 2.3 0 00.1 1.41h-8.07l-1-1.81-1.63-2.82a9.62 9.62 0 001.84-1.34 9.59 9.59 0 005.53.72 11.06 11.06 0 004.25-2.5 12.58 12.58 0 013-2 5.4 5.4 0 014-.05 1.92 1.92 0 011 1.35c.37 1.98-1.7 2.94-4.69 4.1z"
               style={{
-                mixBlendMode: "multiply",
+                mixBlendMode: 'multiply',
               }}
               fill="#c1c0c6"
             />

@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 
 type Props = {
   videoUrl: string;
@@ -10,13 +10,13 @@ const VideoPlayer = ({ videoUrl }: Props) => {
       <div className="relative">
         <span
           className="block w-full h-auto"
-          style={{ display: "block", paddingTop: "57%" }}
+          style={{ display: 'block', paddingTop: '57%' }}
         ></span>
         <iframe
           className="absolute top-0 left-0 w-full h-full"
           src={videoUrl}
           allowFullScreen={true}
-          loading='lazy'
+          loading="lazy"
         ></iframe>
       </div>
     </section>

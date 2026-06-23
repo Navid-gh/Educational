@@ -7,7 +7,7 @@ import { Endpoints } from '../endpoints';
 export const editLanding = async (
   auth: PrivateAuth,
   landingID: string,
-  data: LandingType
+  data: LandingType,
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.editLanding(landingID);
@@ -23,10 +23,7 @@ export const editLanding = async (
   }
 };
 
-export const addLanding = async (
-  auth: PrivateAuth,
-  data: LandingType,
-) => {
+export const addLanding = async (auth: PrivateAuth, data: LandingType) => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.post(Endpoints.addLanding, data, {
     headers: {

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import useDebounceFunc from "./useDebounceFunc";
+import { useState, useEffect } from 'react';
+import useDebounceFunc from './useDebounceFunc';
 
 const useScrollBtn = () => {
   const [showButton, setShowButton] = useState(false);
@@ -16,14 +16,14 @@ const useScrollBtn = () => {
   // const throttledScroll = useThrottle(handleScroll, 100); // Uncomment this line for using throttle instead
 
   useEffect(() => {
-    window.addEventListener("scroll", debouncedScroll);
+    window.addEventListener('scroll', debouncedScroll);
     return () => {
-      window.removeEventListener("scroll", debouncedScroll);
+      window.removeEventListener('scroll', debouncedScroll);
     };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return { showButton, scrollToTop };

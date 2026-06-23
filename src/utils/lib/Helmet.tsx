@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { ReactNode } from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 type Props = {
   titleTemplate: string;

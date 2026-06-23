@@ -2,10 +2,10 @@ import axios, {
   InternalAxiosRequestConfig,
   AxiosError,
   AxiosResponse,
-} from "axios";
-import { PrivateAuth } from "../Types/reqAuth";
+} from 'axios';
+import { PrivateAuth } from '../Types/reqAuth';
 
-export const BASE_URL = "https://saberzarei.iran.liara.run";
+export const BASE_URL = 'https://saberzarei.iran.liara.run';
 // export const BASE_URL = "https://localhost:3000";
 
 export default axios.create({
@@ -15,7 +15,7 @@ export default axios.create({
 const postexToken = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJDdXN0b21lcklkIjo0NTc1NjkzOCwiZXhwIjoxODU3NTkxNTQ1fQ.WMpe8NsssRy-qUGKUnEhYRWStkjPvVc8Ka8nL40mcUo`;
 
 export const postAxios = axios.create({
-  baseURL: "https://postex.ir/api",
+  baseURL: 'https://postex.ir/api',
   headers: {
     token: postexToken,
   },
@@ -36,12 +36,12 @@ export const createPrivateAxios = ({
   });
   axiosPrivate.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
-      if (!config!.headers!["Authorization"]) {
-        config!.headers!["Authorization"] = `Bearer ${token}`;
+      if (!config!.headers!['Authorization']) {
+        config!.headers!['Authorization'] = `Bearer ${token}`;
       }
       return config;
     },
-    (error: AxiosError) => Promise.reject(error)
+    (error: AxiosError) => Promise.reject(error),
   );
 
   axiosPrivate.interceptors.response.use(
@@ -50,7 +50,7 @@ export const createPrivateAxios = ({
       if (error?.response?.status === 401) {
         try {
           const newAccessToken = await refresh();
-          error!.config!.headers["Authorization"] = `Bearer ${newAccessToken}`;
+          error!.config!.headers['Authorization'] = `Bearer ${newAccessToken}`;
           dispatch(updateAccessToken({ token: newAccessToken }));
           return axiosPrivate.request(error.config!);
         } catch (refreshError) {
@@ -59,7 +59,7 @@ export const createPrivateAxios = ({
         }
       }
       return Promise.reject(error);
-    }
+    },
   );
   return axiosPrivate;
 };

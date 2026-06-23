@@ -1,7 +1,7 @@
-import SeoTags from "../../utils/lib/Helmet";
-import LogoIcon from "../../Components/UI/Icons/Logo";
-import TabController from "../../Components/TabController";
-import { Link } from "react-router-dom";
+import SeoTags from '../../utils/lib/Helmet';
+import LogoIcon from '../../Components/UI/Icons/Logo';
+import TabController from '../../Components/TabController';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (

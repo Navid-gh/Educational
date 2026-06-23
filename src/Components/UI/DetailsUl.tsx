@@ -1,5 +1,5 @@
-import { memo } from "react";
-import { Detail } from "../../Types/CourseDetail";
+import { memo } from 'react';
+import { Detail } from '../../Types/CourseDetail';
 
 type Props = {
   details: Detail[];

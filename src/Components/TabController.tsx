@@ -1,7 +1,7 @@
-import { useState } from "react";
-import LoginComp from "../Components/LoginComp";
-import SignupComp from "./SignupComp";
-import { cn } from "../utils/lib/Cn";
+import { useState } from 'react';
+import LoginComp from '../Components/LoginComp';
+import SignupComp from './SignupComp';
+import { cn } from '../utils/lib/Cn';
 
 const TabController = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -11,10 +11,10 @@ const TabController = () => {
       <div className="flex">
         <span
           className={cn(
-            "p-4 flex-1 bg-[#f1dcfc] text-xl transition-all duration-300 flex items-center justify-center font-bold  rounded-tr-3xl border-b border-b-pink cursor-pointer",
+            'p-4 flex-1 bg-[#f1dcfc] text-xl transition-all duration-300 flex items-center justify-center font-bold  rounded-tr-3xl border-b border-b-pink cursor-pointer',
             {
-              "bg-white": !isLogin,
-            }
+              'bg-white': !isLogin,
+            },
           )}
           onClick={() => setIsLogin(false)}
         >
@@ -22,10 +22,10 @@ const TabController = () => {
         </span>
         <span
           className={cn(
-            "p-4 flex-1 bg-[#f1dcfc] text-xl transition-all duration-300 flex items-center justify-center font-bold  rounded-tl-3xl border-b border-b-pink cursor-pointer",
+            'p-4 flex-1 bg-[#f1dcfc] text-xl transition-all duration-300 flex items-center justify-center font-bold  rounded-tl-3xl border-b border-b-pink cursor-pointer',
             {
-              "bg-white": isLogin,
-            }
+              'bg-white': isLogin,
+            },
           )}
           onClick={() => setIsLogin(true)}
         >

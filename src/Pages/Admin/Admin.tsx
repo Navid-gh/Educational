@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom";
-import AdminNav from "../../Components/AdminNav";
-import SeoTags from "../../utils/lib/Helmet";
+import { Outlet } from 'react-router-dom';
+import AdminNav from '../../Components/AdminNav';
+import SeoTags from '../../utils/lib/Helmet';
 
 const Admin = () => {
   return (

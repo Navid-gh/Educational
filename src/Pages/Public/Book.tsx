@@ -115,38 +115,38 @@ const Book = () => {
             description={`صفحه ی کتاب  ${data.title}`}
             Url={window.location.href}
           >
-            <meta property='og:title' content={`${data?.urlTitle}`} />
+            <meta property="og:title" content={`${data?.urlTitle}`} />
             <meta
-              property='og:description'
+              property="og:description"
               content={`صفحه ی کتاب  ${data?.title}`}
             />
             <meta
-              property='og:image'
+              property="og:image"
               content={`${BASE_URL}${data.images[0]}`}
             />
-            <meta property='og:url' content={window.location.href} />
+            <meta property="og:url" content={window.location.href} />
           </SeoTags>
-          <main className='flex flex-col'>
+          <main className="flex flex-col">
             <ParallaxHeader
               bg={`${BASE_URL}${data.images[1]}`}
-              className='flex items-center'
+              className="flex items-center"
             >
-              <div className='flex flex-col text-white gap-6 px-12 w-full z-10'>
-                <div className='flex flex-col gap-2'>
-                  <h1 className='text-2xl font-bold'>{data.title}</h1>
-                  <h2 className='text-xl font-bold'>{data.short_text}</h2>
+              <div className="flex flex-col text-white gap-6 px-12 w-full z-10">
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-2xl font-bold">{data.title}</h1>
+                  <h2 className="text-xl font-bold">{data.short_text}</h2>
                 </div>
-                <div className='flex justify-between tips2:flex-col tips2:gap-4'>
+                <div className="flex justify-between tips2:flex-col tips2:gap-4">
                   <IconWrapper
-                    className='bg-transparent p-2 border border-white border-solid max-w-[2rem] max-h-8'
+                    className="bg-transparent p-2 border border-white border-solid max-w-[2rem] max-h-8"
                     onClick={() => handleSwitch('overview')}
                   >
-                    <LeftArrow className='fill-white w-4 h-4 -rotate-90' />
+                    <LeftArrow className="fill-white w-4 h-4 -rotate-90" />
                   </IconWrapper>
                 </div>
               </div>
             </ParallaxHeader>
-            <div className='hidden hero:block'>
+            <div className="hidden hero:block">
               <CourseInfo
                 markdown={data.text}
                 details={details}
@@ -154,15 +154,15 @@ const Book = () => {
                 book={bookDetails}
                 infoHeader={`درباره کتاب ${data.title}`}
                 ref={infoRef}
-                type='book'
+                type="book"
                 buyHandler={buyHandler}
                 isInBasket={
                   products.find((item) => item._id === data._id) ? true : false
                 }
               />
             </div>
-            <CourseNav type='book' siwtchHandler={handleSwitch} />
-            <div className='block hero:hidden'>
+            <CourseNav type="book" siwtchHandler={handleSwitch} />
+            <div className="block hero:hidden">
               <CourseInfo
                 markdown={data.text}
                 details={details}
@@ -170,24 +170,24 @@ const Book = () => {
                 book={bookDetails}
                 infoHeader={`درباره کتاب ${data.title}`}
                 ref={infoRef}
-                type='book'
+                type="book"
                 buyHandler={buyHandler}
                 isInBasket={
                   products.find((item) => item._id === data._id) ? true : false
                 }
               />
             </div>
-            <div className='p-4' id='comments' ref={commentsef}>
-              <SumComments type='book' comments={data.comments} id={data._id} />
+            <div className="p-4" id="comments" ref={commentsef}>
+              <SumComments type="book" comments={data.comments} id={data._id} />
             </div>
             <ProductsSlider
-              apiUrl=''
-              header='کتاب های مرتبط'
-              theme='black'
-              type='book'
+              apiUrl=""
+              header="کتاب های مرتبط"
+              theme="black"
+              type="book"
               inCoursePage={true}
               ref={relatedRef}
-              id='related-courses'
+              id="related-courses"
             />
           </main>
         </>

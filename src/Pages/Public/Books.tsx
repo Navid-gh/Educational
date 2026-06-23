@@ -1,15 +1,15 @@
-import { useRef } from "react";
-import SeoTags from "../../utils/lib/Helmet";
-import ParallaxHeader from "../../Components/ParallaxHeader";
-import IconWrapper from "../../Components/UI/IconWrapper";
-import LeftArrow from "../../Components/UI/Icons/LeftArrow";
-import CardsWithFilter from "../../Components/CardsWithFilter";
+import { useRef } from 'react';
+import SeoTags from '../../utils/lib/Helmet';
+import ParallaxHeader from '../../Components/ParallaxHeader';
+import IconWrapper from '../../Components/UI/IconWrapper';
+import LeftArrow from '../../Components/UI/Icons/LeftArrow';
+import CardsWithFilter from '../../Components/CardsWithFilter';
 
 const Courses = () => {
   const CardsRef = useRef<HTMLDivElement | null>(null);
 
   const handleSwitch = () => {
-    CardsRef.current?.scrollIntoView({ behavior: "smooth" });
+    CardsRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

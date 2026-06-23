@@ -1,34 +1,34 @@
-import Avatar from "./UI/Icons/Avatar";
-import { userNavItems } from "../Items/userNav";
-import { NavLink, useNavigate } from "react-router-dom";
-import useClickActive from "../hooks/useClickActive";
-import IconWrapper from "./UI/IconWrapper";
-import Plus from "./UI/Icons/Plus";
-import useCurrentTab from "../hooks/useCurrentTab";
-import { cn } from "../utils/lib/Cn";
-import LeftArrow from "./UI/Icons/LeftArrow";
-import Info from "./UI/Icons/Info";
-import Order from "./UI/Icons/Order";
-import Exit from "./UI/Icons/Exit";
-import Home from "./UI/Icons/Home";
-import { useAppDispatch } from "../hooks/useReduxHooks";
-import { logOut } from "../redux/user/userSlice";
-import useCookie from "../hooks/useCookie";
-import useAuth from "../hooks/useAuth";
-import Class from "./UI/Icons/Class";
+import Avatar from './UI/Icons/Avatar';
+import { userNavItems } from '../Items/userNav';
+import { NavLink, useNavigate } from 'react-router-dom';
+import useClickActive from '../hooks/useClickActive';
+import IconWrapper from './UI/IconWrapper';
+import Plus from './UI/Icons/Plus';
+import useCurrentTab from '../hooks/useCurrentTab';
+import { cn } from '../utils/lib/Cn';
+import LeftArrow from './UI/Icons/LeftArrow';
+import Info from './UI/Icons/Info';
+import Order from './UI/Icons/Order';
+import Exit from './UI/Icons/Exit';
+import Home from './UI/Icons/Home';
+import { useAppDispatch } from '../hooks/useReduxHooks';
+import { logOut } from '../redux/user/userSlice';
+import useCookie from '../hooks/useCookie';
+import useAuth from '../hooks/useAuth';
+import Class from './UI/Icons/Class';
 
 const UserNav = () => {
   const { isActive, toggleActive } = useClickActive();
   const { activeTab, handleMouseEnter, handleMouseLeave } = useCurrentTab();
-  const { removeCookie } = useCookie("sbr_token");
+  const { removeCookie } = useCookie('sbr_token');
   const { data } = useAuth();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch(logOut());
-    removeCookie("sbr_token");
-    navigate("/");
+    removeCookie('sbr_token');
+    navigate('/');
   };
   return (
     <nav className="flex-[25%] userSummary:flex-[100%] userSummary:self-auto max-w-[15.625rem] flex flex-col gap-4 py-8 pb-16 shadow-userSidebar rounded-tl-xl rounded-bl-xl self-start">
@@ -45,18 +45,18 @@ const UserNav = () => {
               <li
                 key={id}
                 className={cn(
-                  " border border-pink overflow-hidden max-h-[3.125rem] text-lowBlack transition-all duration-300",
+                  ' border border-pink overflow-hidden max-h-[3.125rem] text-lowBlack transition-all duration-300',
                   {
-                    "max-h-[1000px] bg-[white]": isActive,
-                  }
+                    'max-h-[1000px] bg-[white]': isActive,
+                  },
                 )}
               >
                 <div
                   className={cn(
-                    "flex items-center justify-between h-[3.125rem] px-5 cursor-pointer transition-all duration-300",
+                    'flex items-center justify-between h-[3.125rem] px-5 cursor-pointer transition-all duration-300',
                     {
-                      "bg-lowPurple  text-purple": idx === activeTab,
-                    }
+                      'bg-lowPurple  text-purple': idx === activeTab,
+                    },
                   )}
                   onClick={toggleActive}
                   onMouseEnter={() => handleMouseEnter(idx)}
@@ -64,18 +64,18 @@ const UserNav = () => {
                 >
                   <div className="flex items-center gap-2">
                     <Order
-                      className={cn("w-4 h-4", {
-                        "fill-purple": idx === activeTab,
+                      className={cn('w-4 h-4', {
+                        'fill-purple': idx === activeTab,
                       })}
                     />
                     <span className="">{name}</span>
                   </div>
                   {isActive ? (
-                    "-"
+                    '-'
                   ) : (
                     <Plus
-                      className={cn("w-4 h-4", {
-                        "fill-purple": idx === activeTab,
+                      className={cn('w-4 h-4', {
+                        'fill-purple': idx === activeTab,
                       })}
                     />
                   )}
@@ -92,8 +92,8 @@ const UserNav = () => {
                         end
                         style={({ isActive }) => {
                           return {
-                            backgroundColor: isActive ? "white" : "",
-                            fontWeight: isActive ? "bold" : "",
+                            backgroundColor: isActive ? 'white' : '',
+                            fontWeight: isActive ? 'bold' : '',
                           };
                         }}
                       >
@@ -106,23 +106,23 @@ const UserNav = () => {
               </li>
             );
           }
-          if (link === "Logout") {
+          if (link === 'Logout') {
             return (
               <li
                 key={id}
                 className={cn(
-                  " border border-pink h-[3.125rem] flex items-center gap-2 px-5 cursor-pointer text-lowBlack transition-all duration-300",
+                  ' border border-pink h-[3.125rem] flex items-center gap-2 px-5 cursor-pointer text-lowBlack transition-all duration-300',
                   {
-                    "bg-lowPurple  text-purple": idx === activeTab,
-                  }
+                    'bg-lowPurple  text-purple': idx === activeTab,
+                  },
                 )}
                 onClick={handleLogout}
                 onMouseEnter={() => handleMouseEnter(idx)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Exit
-                  className={cn("w-4 h-4", {
-                    "fill-purple": idx === activeTab,
+                  className={cn('w-4 h-4', {
+                    'fill-purple': idx === activeTab,
                   })}
                 />
                 <span>{name}</span>
@@ -133,10 +133,10 @@ const UserNav = () => {
             <li
               key={id}
               className={cn(
-                "border border-pink h-[3.125rem] text-lowBlack transition-all duration-300",
+                'border border-pink h-[3.125rem] text-lowBlack transition-all duration-300',
                 {
-                  "bg-lowPurple  text-purple fill-purple": idx === activeTab,
-                }
+                  'bg-lowPurple  text-purple fill-purple': idx === activeTab,
+                },
               )}
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={handleMouseLeave}
@@ -147,27 +147,27 @@ const UserNav = () => {
                 end
                 style={({ isActive }) => {
                   return {
-                    backgroundColor: isActive ? "white" : "",
-                    fontWeight: isActive ? "bold" : "",
+                    backgroundColor: isActive ? 'white' : '',
+                    fontWeight: isActive ? 'bold' : '',
                   };
                 }}
               >
-                {link === "" ? (
+                {link === '' ? (
                   <Home
-                    className={cn("w-4 h-4", {
-                      "fill-purple": idx === activeTab,
+                    className={cn('w-4 h-4', {
+                      'fill-purple': idx === activeTab,
                     })}
                   />
-                ) : link == "Free" ? (
+                ) : link == 'Free' ? (
                   <Class
-                    className={cn("w-4 h-4", {
-                      "fill-purple": idx === activeTab,
+                    className={cn('w-4 h-4', {
+                      'fill-purple': idx === activeTab,
                     })}
                   />
                 ) : (
                   <Info
-                    className={cn("w-4 h-4", {
-                      "fill-purple": idx === activeTab,
+                    className={cn('w-4 h-4', {
+                      'fill-purple': idx === activeTab,
                     })}
                   />
                 )}

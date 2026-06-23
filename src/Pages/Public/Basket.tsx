@@ -1,10 +1,10 @@
-import SeoTags from "../../utils/lib/Helmet";
-import { Outlet } from "react-router-dom";
-import BasketNav from "../../Components/BasketNav";
-import { useLocation } from "react-router-dom";
+import SeoTags from '../../utils/lib/Helmet';
+import { Outlet } from 'react-router-dom';
+import BasketNav from '../../Components/BasketNav';
+import { useLocation } from 'react-router-dom';
 
 const Basket = () => {
-  const url = useLocation().pathname.replace("/Basket", "");
+  const url = useLocation().pathname.replace('/Basket', '');
   return (
     <>
       <SeoTags

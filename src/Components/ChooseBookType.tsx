@@ -1,6 +1,6 @@
-import { memo } from "react";
-import MainButton from "./UI/MainButton";
-import { usePersianNums } from "../hooks/usePersianNums";
+import { memo } from 'react';
+import MainButton from './UI/MainButton';
+import { usePersianNums } from '../hooks/usePersianNums';
 // import IconWrapper from "./UI/IconWrapper";
 // import Book from "./UI/Icons/Book";
 // import Pdf from "./UI/Icons/Pdf";
@@ -95,7 +95,7 @@ const ChooseBookType = ({
             onClick={() => buyHandler()}
           />
         )}
-        <a href={"/" + pdf}>
+        <a href={'/' + pdf}>
           <MainButton
             text="لینک خرید نسخه PDF"
             intent="purple"

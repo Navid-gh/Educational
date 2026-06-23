@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 const useDebounceFunc = <T extends unknown[], R>(
   func: (...args: T) => R,
-  delay: number
+  delay: number,
 ): ((...args: T) => void) => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 

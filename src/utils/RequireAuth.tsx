@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
-import { useLocation, Navigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
-import type { Roles } from "../Types/Roles";
+import { ReactNode } from 'react';
+import { useLocation, Navigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
+import type { Roles } from '../Types/Roles';
 
 type Props = {
   allowedRoles: Roles[];

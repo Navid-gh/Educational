@@ -1,15 +1,15 @@
-import { useRef, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import { Article, Book, Course, RobotsType } from "../../Types/apiTypes";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import toast from "react-hot-toast";
-import { editArticle } from "../../api/setters/articleAPI";
-import { editCourse } from "../../api/setters/courseAPI";
-import { editBook } from "../../api/setters/bookAPI";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import { editImages } from "../../api/setters/imageAPI";
-import ArticleRobotsSelect from "../../Components/ArticleRobotsSelect";
+import { useRef, useState } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
+import { Article, Book, Course, RobotsType } from '../../Types/apiTypes';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
+import { editArticle } from '../../api/setters/articleAPI';
+import { editCourse } from '../../api/setters/courseAPI';
+import { editBook } from '../../api/setters/bookAPI';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import { editImages } from '../../api/setters/imageAPI';
+import ArticleRobotsSelect from '../../Components/ArticleRobotsSelect';
 
 const Edit = () => {
   const { parent } = useParams();
@@ -29,21 +29,21 @@ const Edit = () => {
   const submitImages = async (id: string) => {
     if (imagesRef.current?.files) {
       const images = Array.from(imagesRef.current.files);
-      const loadToast = toast.loading("درحال بارگذاری");
+      const loadToast = toast.loading('درحال بارگذاری');
       try {
         const res = await editImages({ token, ...auth }, id, images);
-        toast.success("بارگذاری شد");
+        toast.success('بارگذاری شد');
         setImgUrls([...res]);
       } catch (err) {
         console.log(err);
-        toast.error("خطا در بارگذاری");
+        toast.error('خطا در بارگذاری');
       } finally {
         toast.dismiss(loadToast);
       }
     }
   };
 
-  if (parent === "Articles") {
+  if (parent === 'Articles') {
     const details = location.state as Article;
     const [robots, setRobots] = useState<RobotsType>(details.robots);
 
@@ -55,18 +55,18 @@ const Edit = () => {
           title: titleRef.current!.value,
           urlTitle: urlTitleRef.current!.value,
           urlGoogle: urlGoogleRef.current!.value,
-          category: "",
+          category: '',
           images: imgUrls!,
           status: true,
           robots: robots ?? details.robots,
           canonicalHref: canonicalHref.current!.value,
         }),
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["articles", "admin"] });
-        toast.success("موفقیت آمیز");
+        queryClient.invalidateQueries({ queryKey: ['articles', 'admin'] });
+        toast.success('موفقیت آمیز');
       },
       onError: (err) => {
-        toast.error("خطا در برقراری ارتباط");
+        toast.error('خطا در برقراری ارتباط');
         console.log(err);
       },
     });
@@ -144,7 +144,7 @@ const Edit = () => {
         </button>
       </div>
     );
-  } else if (parent === "Courses") {
+  } else if (parent === 'Courses') {
     const priceRef = useRef<HTMLInputElement | null>(null);
     const discountRef = useRef<HTMLInputElement | null>(null);
     const typeRef = useRef<HTMLSelectElement | null>(null);
@@ -162,22 +162,22 @@ const Edit = () => {
           title: titleRef.current!.value,
           urlTitle: urlTitleRef.current!.value,
           urlGoogle: urlGoogleRef.current!.value,
-          category: "",
+          category: '',
           images: imgUrls!,
           discount: discountRef.current!.value,
           level: levelRef.current!.value,
           price: priceRef.current!.value,
-          type: typeRef.current!.value as "online" | "offline",
+          type: typeRef.current!.value as 'online' | 'offline',
           spotPlayerID: spotRef.current!.value,
-          subCourse: subCourseRef.current!.value.split(","),
+          subCourse: subCourseRef.current!.value.split(','),
           score: Number(scoreRef.current!.value),
         }),
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-        toast.success("موفقیت آمیز");
+        queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+        toast.success('موفقیت آمیز');
       },
       onError: () => {
-        toast.error("خطا در برقراری ارتباط");
+        toast.error('خطا در برقراری ارتباط');
       },
     });
     return (
@@ -308,7 +308,7 @@ const Edit = () => {
           title: titleRef.current!.value,
           urlTitle: urlTitleRef.current!.value,
           urlGoogle: urlGoogleRef.current!.value,
-          category: "",
+          category: '',
           images: imgUrls!,
           discount: discountRef.current!.value,
           pricePhysical: phPriceRef.current!.value,
@@ -318,11 +318,11 @@ const Edit = () => {
           link: LinkRef.current!.value,
         }),
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-        toast.success("موفقیت آمیز");
+        queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+        toast.success('موفقیت آمیز');
       },
       onError: () => {
-        toast.error("خطا در برقراری ارتباط");
+        toast.error('خطا در برقراری ارتباط');
       },
     });
     return (

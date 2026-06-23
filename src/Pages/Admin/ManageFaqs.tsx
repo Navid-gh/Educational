@@ -1,11 +1,11 @@
-import { useRef, useState, ChangeEvent } from "react";
-import { useLocation } from "react-router-dom";
-import { FAQ } from "../../Types/apiTypes";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addFaq, editFaq, removeFaq } from "../../api/setters/FaqAPI";
-import toast from "react-hot-toast";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
+import { useRef, useState, ChangeEvent } from 'react';
+import { useLocation } from 'react-router-dom';
+import { FAQ } from '../../Types/apiTypes';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { addFaq, editFaq, removeFaq } from '../../api/setters/FaqAPI';
+import toast from 'react-hot-toast';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
 
 type State = {
   id: string;
@@ -29,11 +29,11 @@ const ManageFaqs = () => {
         question: reqRef.current!.value,
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   const editFaqMutation = useMutation({
@@ -43,28 +43,28 @@ const ManageFaqs = () => {
         question: faqsState[idx].question,
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   const removeFaqMutation = useMutation({
     mutationFn: (idx: number) =>
       removeFaq({ token, ...auth }, faqsState[idx]._id),
     onSuccess: (_: any, variables: number) => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      toast.success('موفقیت آمیز');
       setFaqsState((prev) => [...prev.splice(variables, 1)]);
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   const handleQuestionChange = (
     event: ChangeEvent<HTMLInputElement>,
-    id: string
+    id: string,
   ) => {
     const updatedFaqs = faqsState.map((faq) => {
       if (faq._id === id) {
@@ -77,7 +77,7 @@ const ManageFaqs = () => {
 
   const handleAnswerChange = (
     event: ChangeEvent<HTMLInputElement>,
-    id: string
+    id: string,
   ) => {
     const updatedFaqs = faqsState.map((faq) => {
       if (faq._id === id) {

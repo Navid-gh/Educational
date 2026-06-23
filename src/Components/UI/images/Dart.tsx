@@ -1,4 +1,4 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
@@ -186,7 +186,7 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
       </defs>
       <g
         style={{
-          isolation: "isolate",
+          isolation: 'isolate',
         }}
       >
         <g id="Layer_2" data-name="Layer 2">
@@ -195,12 +195,12 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="M341.42 404c-3.78 1.9-13.69 2.72-16.36 1.87-17.77-5.67-51.74-14.12-61.82-31.06-1.73-2.89 9-13.91 9-17.64 5.1-8.68 7.41-11.37 8.21-22 2.37-31.39-60.57-44.64-26.7-87.27 24.81-31.22 58.77-38.41 22.22-85S217.74.91 292.5 0c42.91-.52 41 61.47 77.08 81.8 34.26 19.32 38.17 51.69 19.07 90.18s6.56 40.72 34.34 62.31c33.38 26-13.81 66.55-37.19 83.44-18.8 13.6-57.6 60.93-44.38 86.27Z"
               transform="translate(0 6)"
               style={{
-                fill: "#ffbf00",
+                fill: '#ffbf00',
               }}
             />
             <g
               style={{
-                clipPath: "url(#dart-clip-path)",
+                clipPath: 'url(#dart-clip-path)',
               }}
             >
               <path
@@ -216,7 +216,7 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
             </g>
             <g
               style={{
-                clipPath: "url(#dart-clip-path-2)",
+                clipPath: 'url(#dart-clip-path-2)',
               }}
             >
               <path
@@ -239,35 +239,35 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="M443.16 697.18a30.38 30.38 0 0 0 20.15-22.87l15-74.1 128.08 4.55L622.12 682c2.21 10.81-6.63 21.65-16.81 25.64l-53.58 21a69.68 69.68 0 0 1-31.33 4.54l-113.24-9.69a7 7 0 0 1-6.35-6.22c-.39-3.34-2.71-7.09.45-8.13Z"
               transform="translate(0 6)"
               style={{
-                fill: "#97a6b7",
+                fill: '#97a6b7',
               }}
             />
             <path
               d="M441.9 692.68a30.13 30.13 0 0 0 20.1-22.59l15-73.17 124.95 4.5 15.75 76.22A22.31 22.31 0 0 1 603.88 703l-53.53 20.7a70.31 70.31 0 0 1-31.29 4.48l-113.13-9.56a7 7 0 0 1-1.59-13.62Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient)",
+                fill: 'url(#dart-linear-gradient)',
               }}
             />
             <path
               d="M237.37 548.69V216.42a13.09 13.09 0 0 1 12.5-12.89l570.84-22.95c8.69-.35 15.82 5.65 15.82 13.34v367.21Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-2)",
+                fill: 'url(#dart-linear-gradient-2)',
               }}
             />
             <path
               d="M818.87 245v286.87c0 7.16-6.62 12.83-14.68 12.6l-541.77-15.41a12.12 12.12 0 0 1-11.75-11.95V261.28Z"
               transform="translate(0 6)"
               style={{
-                fill: "#fff",
+                fill: '#fff',
               }}
             />
             <path
               d="M250.67 261.28v-29.36a12 12 0 0 1 11.51-11.8l542.31-20.23c7.9-.29 14.38 5.2 14.38 12.21V245Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-3)",
+                fill: 'url(#dart-linear-gradient-3)',
               }}
             />
             <path
@@ -279,7 +279,7 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="M836.53 561.13v73.33c0 7.69-7.13 13.68-15.82 13.31l-570.84-24.13a13.13 13.13 0 0 1-12.5-12.92v-64.16Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-4)",
+                fill: 'url(#dart-linear-gradient-4)',
               }}
             />
             <path
@@ -353,17 +353,17 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="M377.86 264.54a2.81 2.81 0 0 0 1.26-.3 2.15 2.15 0 0 0 .95-3.1l-69.62-68.56a2.71 2.71 0 0 0-3.47-.84 2.14 2.14 0 0 0-.94 3.1l69.61 68.56a2.62 2.62 0 0 0 2.21 1.14Z"
               transform="translate(0 6)"
               style={{
-                mixBlendMode: "multiply",
+                mixBlendMode: 'multiply',
                 opacity: 0.29,
-                fill: "#f8485e",
+                fill: '#f8485e',
               }}
             />
             <path
               d="M461.9 234.58a175.65 175.65 0 0 1 127 34.54l64.26-88.84a2.7 2.7 0 0 1 3.5-.71 2.13 2.13 0 0 1 .8 3.13l-64.67 89.43c41.63 33.28 69.12 85.55 69.12 147.36 0 115.19-95.43 197.59-200 185.57-92.39-10.62-159.77-93-159.77-185S369.51 245.5 461.9 234.58Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-5)",
-                mixBlendMode: "multiply",
+                fill: 'url(#dart-linear-gradient-5)',
+                mixBlendMode: 'multiply',
                 opacity: 0.29,
               }}
             />
@@ -371,7 +371,7 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="M277.21 420.08c0 92 67.37 174.36 159.77 185 104.56 12 200-70.38 200-185.57S541.53 222.22 437 234.58c-92.42 10.92-159.79 93.48-159.79 185.5Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-6)",
+                fill: 'url(#dart-linear-gradient-6)',
               }}
             />
             <path
@@ -403,49 +403,49 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="M53.67 331.46c-.3-.22 56.73 6.36 56.73 6.36l-23-36.89c-7.71-12.39-60-14.39-72.76-13.49l-.65 4.5Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-7)",
+                fill: 'url(#dart-linear-gradient-7)',
               }}
             />
             <path
               d="m300.26 408.38 124.25 16.89c1 .13 1.36-2.17.36-2.46l-121.79-34.05Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-8)",
+                fill: 'url(#dart-linear-gradient-8)',
               }}
             />
             <path
               d="M47.31 364.74c-.35.08 56.94 15.88 56.94 15.88l-31.92 25.55C61.6 414.75 11.73 395.61 0 389.66l.65-4.51Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-9)",
+                fill: 'url(#dart-linear-gradient-9)',
               }}
             />
             <path
               d="M53.81 366.05c-.34.08 56.68 15.82 56.68 15.82L78.7 407.36c-10.68 8.57-23.61 10.26-35 4.49L0 389.66Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-10)",
+                fill: 'url(#dart-linear-gradient-10)',
               }}
             />
             <path
               d="M58.8 331.3c-.3-.22 57.83 7.86 57.83 7.86l-22.84-36.79c-7.67-12.37-19.38-19.15-31.7-18.28l-47.4 3.35Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-11)",
+                fill: 'url(#dart-linear-gradient-11)',
               }}
             />
             <path
               d="m250.72 420.57 33.55 6.54c11.79 2.29 23.25-9.63 25.69-26.62 2.44-17-5-32.83-16.78-35.4l-33.43-7.33Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-12)",
+                fill: 'url(#dart-linear-gradient-12)',
               }}
             />
             <path
               d="M278.42 403.9c12.08-3 22.37-10.66 30.86-19.64a43.3 43.3 0 0 1 .68 16.23c-2.44 17-13.9 28.91-25.69 26.62l-33.55-6.54 2.65-18.45a39.1 39.1 0 0 0 25.05 1.78Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-13)",
+                fill: 'url(#dart-linear-gradient-13)',
               }}
               className="cls-26"
             />
@@ -453,14 +453,14 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="m42.09 363 208.63 57.58c13.11 2.4 22.14-60.4 9-62.81l-213-27.19Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-14)",
+                fill: 'url(#dart-linear-gradient-14)',
               }}
             />
             <path
               d="M107.73 369.7c41.86 5.61 49.81-6.72 86.39 4.32 33.7 10.17 49.14 27.34 68.05 30.61-2.81 9.69-6.88 16.78-11.45 15.94L42.09 363l1.81-12.6a214 214 0 0 0 63.83 19.3Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-15)",
+                fill: 'url(#dart-linear-gradient-15)',
               }}
               className="cls-26"
             />
@@ -468,7 +468,7 @@ const Dart: FC<SVGElementProps> = ({ id, ...props }) => {
               d="M40.32 346.06c-1.3 9-.52 16.72 1.74 17.17s5.12-6.48 6.41-15.49.53-16.69-1.72-17.17-5.13 6.43-6.43 15.49Z"
               transform="translate(0 6)"
               style={{
-                fill: "url(#dart-linear-gradient-16)",
+                fill: 'url(#dart-linear-gradient-16)',
               }}
             />
           </g>

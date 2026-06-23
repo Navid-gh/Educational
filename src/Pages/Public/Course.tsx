@@ -137,51 +137,51 @@ const Course = () => {
             description={`صفحه ی دوره  ${data.title}`}
             Url={window.location.href}
           >
-            <meta property='og:title' content={`${data?.title}`} />
+            <meta property="og:title" content={`${data?.title}`} />
             <meta
-              property='og:description'
+              property="og:description"
               content={`صفحه ی دوره  ${data.title}`}
             />
             <meta
-              property='og:image'
+              property="og:image"
               content={`${BASE_URL}${data.images[1]}`}
             />
-            <meta property='og:url' content={window.location.href} />
+            <meta property="og:url" content={window.location.href} />
           </SeoTags>
-          <main className='flex flex-col'>
+          <main className="flex flex-col">
             <ParallaxHeader
               bg={`${BASE_URL}${data.images[0]}`}
-              className='flex items-center'
+              className="flex items-center"
             >
-              <div className='flex flex-col text-white gap-6 px-12 w-full z-10'>
-                <h1 className='text-2xl font-bold'>{data.title}</h1>
-                <div className='flex justify-between tips2:flex-col tips2:gap-4'>
+              <div className="flex flex-col text-white gap-6 px-12 w-full z-10">
+                <h1 className="text-2xl font-bold">{data.title}</h1>
+                <div className="flex justify-between tips2:flex-col tips2:gap-4">
                   <IconWrapper
-                    className='bg-transparent p-2 border border-white border-solid max-w-[2rem] max-h-8'
+                    className="bg-transparent p-2 border border-white border-solid max-w-[2rem] max-h-8"
                     onClick={() => handleSwitch('overview')}
                   >
-                    <LeftArrow className='fill-white w-4 h-4 -rotate-90' />
+                    <LeftArrow className="fill-white w-4 h-4 -rotate-90" />
                   </IconWrapper>
                   <MainButton
-                    text={<BuyText className='text-white' />}
+                    text={<BuyText className="text-white" />}
                     // text={`خرید انلاین ${usePersianNums(
                     //   data.finalPrice,
                     //   true
                     // )} تومان`}
-                    intent='purple'
-                    size='medium'
+                    intent="purple"
+                    size="medium"
                   />
                 </div>
               </div>
             </ParallaxHeader>
-            <CourseNav type='course' siwtchHandler={handleSwitch} />
+            <CourseNav type="course" siwtchHandler={handleSwitch} />
             <CourseInfo
               markdown={data.text}
               details={details}
               teacher={teacher}
               infoHeader={`درباره ${data.title}`}
               ref={infoRef}
-              type='course'
+              type="course"
               isInBasket={
                 products.find((item) => item._id === data._id) ? true : false
               }
@@ -189,38 +189,38 @@ const Course = () => {
             />
             {/* <VideoPlayer videoUrl="https://www.aparat.com/video/video/embed/videohash/BWOCi/vt/frame?titleShow=true&autoplay=true" /> */}
             <DropDowns
-              title='سوالات متداول'
-              type='Q'
+              title="سوالات متداول"
+              type="Q"
               drops={data.frequentlyAskedQuestions}
-              bg='bg-lowPink'
+              bg="bg-lowPink"
               key={1}
-              id='freq-questions'
+              id="freq-questions"
               ref={asksRef}
             />
             <DropDowns
-              title='سر فصل های دوره'
-              type='S'
+              title="سر فصل های دوره"
+              type="S"
               drops={data.chapters}
-              bg='bg-lowYellow'
+              bg="bg-lowYellow"
               key={2}
-              id='chapters'
+              id="chapters"
               ref={chaptersRef}
             />
-            <div className='p-4 z-10' id='comments' ref={commentsef}>
+            <div className="p-4 z-10" id="comments" ref={commentsef}>
               <SumComments
-                type='course'
+                type="course"
                 comments={data.comments}
                 id={data._id}
               />
             </div>
             <ProductsSlider
-              apiUrl=''
-              header='دوره های مرتبط'
-              theme='black'
-              type='course'
+              apiUrl=""
+              header="دوره های مرتبط"
+              theme="black"
+              type="course"
               inCoursePage={true}
               ref={relatedRef}
-              id='related-courses'
+              id="related-courses"
             />
           </main>
         </>

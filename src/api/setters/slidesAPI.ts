@@ -1,7 +1,7 @@
-import { PrivateAuth } from "../../Types/reqAuth";
+import { PrivateAuth } from '../../Types/reqAuth';
 
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const addSlide = async (auth: PrivateAuth, images: string[]) => {
   const privateAxios = createPrivateAxios(auth);
@@ -11,9 +11,9 @@ export const addSlide = async (auth: PrivateAuth, images: string[]) => {
     { images },
     {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }
+    },
   );
   if (response.status === 201) {
     return response.data;

@@ -1,9 +1,9 @@
-import { PrivateAuth } from "../../Types/reqAuth";
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { PrivateAuth } from '../../Types/reqAuth';
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 type PaymentBasket = {
-  item_type: "book";
+  item_type: 'book';
   id: string;
 };
 
@@ -16,12 +16,12 @@ export const payment = async (
     address?: string;
     code?: string;
     bascket: PaymentBasket[];
-  }
+  },
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.post(Endpoints.payment, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 200) {

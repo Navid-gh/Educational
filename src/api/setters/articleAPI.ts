@@ -1,31 +1,31 @@
-import { Article } from "../../Types/apiTypes";
+import { Article } from '../../Types/apiTypes';
 
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
-import type { PrivateAuth } from "../../Types/reqAuth";
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
+import type { PrivateAuth } from '../../Types/reqAuth';
 
 export const editArticle = async (
   auth: PrivateAuth,
   articleID: string,
   data: Pick<
     Article,
-    | "short_text"
-    | "text"
-    | "title"
-    | "category"
-    | "images"
-    | "status"
-    | "urlTitle"
-    | "urlGoogle"
-    | "robots"
-    | "canonicalHref"
-  >
+    | 'short_text'
+    | 'text'
+    | 'title'
+    | 'category'
+    | 'images'
+    | 'status'
+    | 'urlTitle'
+    | 'urlGoogle'
+    | 'robots'
+    | 'canonicalHref'
+  >,
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.editArticle(articleID);
   const response = await privateAxios.put(endpoint, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 200) {
@@ -39,22 +39,22 @@ export const addArticle = async (
   auth: PrivateAuth,
   data: Pick<
     Article,
-    | "short_text"
-    | "text"
-    | "title"
-    | "category"
-    | "images"
-    | "status"
-    | "urlTitle"
-    | "urlGoogle"
-    | "robots"
-    | "canonicalHref"
-  >
+    | 'short_text'
+    | 'text'
+    | 'title'
+    | 'category'
+    | 'images'
+    | 'status'
+    | 'urlTitle'
+    | 'urlGoogle'
+    | 'robots'
+    | 'canonicalHref'
+  >,
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.post(Endpoints.addArticle, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 201) {
@@ -78,13 +78,13 @@ export const removeArticle = async (auth: PrivateAuth, articleID: string) => {
 export const updateArticleRobots = async (
   auth: PrivateAuth,
   blogID: string,
-  robots: "index,follow" | "noindex,follow"
+  robots: 'index,follow' | 'noindex,follow',
 ) => {
   const privateAxios = createPrivateAxios(auth);
-  const response = await privateAxios.patch(
-    Endpoints.updateArticleRobots,
-    { blogID, robots }
-  );
+  const response = await privateAxios.patch(Endpoints.updateArticleRobots, {
+    blogID,
+    robots,
+  });
 
   if (response.status === 200) {
     return response.data;

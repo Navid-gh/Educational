@@ -40,7 +40,7 @@ export const Endpoints = {
   addArticle: `/admin/blog/add`,
   deleteArticle: (articleID: string) => `/admin/blog/remove/${articleID}`,
   editArticle: (articleID: string) => `/admin/blog/edit/${articleID}`,
-  updateArticleRobots: "/admin/blog/robots",
+  updateArticleRobots: '/admin/blog/robots',
 
   // Chapter endpoints
   getChapters: (courseID: string) => `/api/chapter/list/${courseID}`,
@@ -86,7 +86,7 @@ export const Endpoints = {
 
   // filter endpoints
   filterProducts: (
-    type: "course" | "blog" | "book",
+    type: 'course' | 'blog' | 'book',
     search?: string | null,
     query?: string | null,
   ) => `/api/filter/${search}/${query}/${type}`,

@@ -1,20 +1,20 @@
-import { Chapter } from "../../Types/apiTypes";
-import { PrivateAuth } from "../../Types/reqAuth";
+import { Chapter } from '../../Types/apiTypes';
+import { PrivateAuth } from '../../Types/reqAuth';
 
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const addChapter = async (
   auth: PrivateAuth,
-  data: Pick<Chapter, "numberOfSessions" | "text" | "title"> & {
+  data: Pick<Chapter, 'numberOfSessions' | 'text' | 'title'> & {
     id: string;
     time: string;
-  }
+  },
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.post(Endpoints.addChapter, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 201) {
@@ -27,15 +27,15 @@ export const addChapter = async (
 export const editChapter = async (
   auth: PrivateAuth,
   ChapterId: string,
-  data: Pick<Chapter, "numberOfSessions" | "text" | "title"> & {
+  data: Pick<Chapter, 'numberOfSessions' | 'text' | 'title'> & {
     time: string;
-  }
+  },
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.editChapter(ChapterId);
   const response = await privateAxios.patch(endpoint, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 200) {

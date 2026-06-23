@@ -1,4 +1,4 @@
-import useScrollToTop from "../hooks/useScrollToTop";
+import useScrollToTop from '../hooks/useScrollToTop';
 
 function ScrollToTop() {
   useScrollToTop();

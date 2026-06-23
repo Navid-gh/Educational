@@ -69,7 +69,7 @@ const BasketProducts = () => {
         key: 'مبلغ کل با اعمال تخفیف',
         value: usePersianNums(
           discountedPrice === 0 ? totlaPrice : finalPrice,
-          true
+          true,
         ),
         id: uuidv4(),
       },
@@ -107,16 +107,16 @@ const BasketProducts = () => {
     }
   };
   return (
-    <section className='flex gap-3 navbar:flex-col navbar:gap-6'>
-      <div className='flex flex-col gap-3 flex-[70%] text-sm'>
-        <div className='flex gap-4 border-b-2 border-pink pb-2'>
-          <span className='w-4 h-4'></span>
-          <span className='flex-[45%] max-w-[45%]'>محصول</span>
-          <span className='flex-[22%] max-w-[22%]'>نوع</span>
-          <span className='flex-[22%] max-w-[22%]'>قیمت</span>
+    <section className="flex gap-3 navbar:flex-col navbar:gap-6">
+      <div className="flex flex-col gap-3 flex-[70%] text-sm">
+        <div className="flex gap-4 border-b-2 border-pink pb-2">
+          <span className="w-4 h-4"></span>
+          <span className="flex-[45%] max-w-[45%]">محصول</span>
+          <span className="flex-[22%] max-w-[22%]">نوع</span>
+          <span className="flex-[22%] max-w-[22%]">قیمت</span>
         </div>
         {products.length > 0 ? (
-          <ul className='flex flex-col gap-4'>
+          <ul className="flex flex-col gap-4">
             {products.map((data) => {
               let img,
                 title,
@@ -135,15 +135,15 @@ const BasketProducts = () => {
                 price = data.finalPrice;
               }
               return (
-                <li key={data._id} className='flex gap-4 items-center'>
+                <li key={data._id} className="flex gap-4 items-center">
                   <Delete
-                    id='basket-delete'
-                    className='w-4 h-4 cursor-pointer'
+                    id="basket-delete"
+                    className="w-4 h-4 cursor-pointer"
                     onClick={() => {
                       handleRemove(data._id, price);
                     }}
                   />
-                  <div className='flex-[45%] max-w-[45%] flex gap-2 items-center'>
+                  <div className="flex-[45%] max-w-[45%] flex gap-2 items-center">
                     <Link
                       to={
                         data.item_type === 'book'
@@ -151,22 +151,22 @@ const BasketProducts = () => {
                           : `/Course/${data._id}`
                       }
                     >
-                      <figure className='w-14 h-14 rounded-xl'>
+                      <figure className="w-14 h-14 rounded-xl">
                         <img
                           src={img}
-                          alt='basket-item-img'
-                          className='w-full h-full object-cover rounded-xl'
+                          alt="basket-item-img"
+                          className="w-full h-full object-cover rounded-xl"
                         />
                       </figure>
                     </Link>
                     <span>{title}</span>
                   </div>
-                  <span className='flex-[22%] max-w-[22%]'>
+                  <span className="flex-[22%] max-w-[22%]">
                     {typeConvertor(type)}
                   </span>
-                  <span className='flex-[22%] max-w-[22%]'>{`${usePersianNums(
+                  <span className="flex-[22%] max-w-[22%]">{`${usePersianNums(
                     price,
-                    true
+                    true,
                   )} تومان`}</span>
                 </li>
               );
@@ -176,8 +176,8 @@ const BasketProducts = () => {
           <p>محصولی در سبد شما وجود ندارد.</p>
         )}
       </div>
-      <div className='flex-[30%] max-w-[17.5rem]'>
-        <CourseDetails header='جزییات سفارش شما' key='2'>
+      <div className="flex-[30%] max-w-[17.5rem]">
+        <CourseDetails header="جزییات سفارش شما" key="2">
           <DiscountInput ref={discountRef} onClick={discountHandler} />
           <DetailsUl details={details} />
           <Link
@@ -192,10 +192,10 @@ const BasketProducts = () => {
           >
             {products.length > 0 ? (
               <MainButton
-                className='self-center w-full max-w-none'
+                className="self-center w-full max-w-none"
                 text={`ثبت سفارش`}
-                intent='purple'
-                size='medium'
+                intent="purple"
+                size="medium"
               />
             ) : null}
           </Link>

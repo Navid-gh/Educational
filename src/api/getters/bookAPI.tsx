@@ -1,7 +1,7 @@
-import { Book } from "../../Types/apiTypes";
+import { Book } from '../../Types/apiTypes';
 
-import axios from "../axios";
-import { Endpoints } from "../endpoints";
+import axios from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const getBooks = async (): Promise<Book[]> => {
   const response = await axios.get(Endpoints.getProducts);

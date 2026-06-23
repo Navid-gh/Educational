@@ -1,55 +1,55 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
 export const userNavItems = [
   {
-    name: "پیشخوان",
-    link: "",
+    name: 'پیشخوان',
+    link: '',
     id: uuidv4(),
   },
   {
-    name: "مشخصات",
-    link: "Information",
+    name: 'مشخصات',
+    link: 'Information',
     id: uuidv4(),
   },
   {
-    name: "سفارش ها",
+    name: 'سفارش ها',
     arr: [
       {
-        _name: "دوره های آنلاین",
-        _link: "Orders/Online-courses",
+        _name: 'دوره های آنلاین',
+        _link: 'Orders/Online-courses',
         _id: uuidv4(),
       },
       {
-        _name: "دوره های آفلاین",
-        _link: "Orders/Offline-courses",
+        _name: 'دوره های آفلاین',
+        _link: 'Orders/Offline-courses',
         _id: uuidv4(),
       },
       {
-        _name: "دوره های حضوری",
-        _link: "Orders/inPerson-courses",
+        _name: 'دوره های حضوری',
+        _link: 'Orders/inPerson-courses',
         _id: uuidv4(),
       },
       {
-        _name: "کتاب ها",
-        _link: "Orders/Books",
+        _name: 'کتاب ها',
+        _link: 'Orders/Books',
         _id: uuidv4(),
       },
     ],
     id: uuidv4(),
   },
   {
-    name: "دوره های رایگان",
-    link: "Free",
+    name: 'دوره های رایگان',
+    link: 'Free',
     id: uuidv4(),
   },
   {
-    name: "دوره کنترل استرس",
-    link: "Stress",
+    name: 'دوره کنترل استرس',
+    link: 'Stress',
     id: uuidv4(),
   },
   {
-    name: "خروج",
-    link: "Logout",
+    name: 'خروج',
+    link: 'Logout',
     id: uuidv4(),
   },
 ];

@@ -11,12 +11,12 @@ const useAddToBasket = () => {
     Auth: boolean,
     dispatch: ReturnType<typeof useAppDispatch>,
     product: Course | Book,
-    type: 'course' | 'book'
+    type: 'course' | 'book',
   ) => {
     if (!Auth) {
       localStorage.setItem(
         'basketItem',
-        JSON.stringify({ type, data: product })
+        JSON.stringify({ type, data: product }),
       );
       navigate('/Login');
       return;

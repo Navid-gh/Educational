@@ -1,7 +1,7 @@
-import { Book, Course } from "../../Types/apiTypes";
-import { PrivateAuth } from "../../Types/reqAuth";
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { Book, Course } from '../../Types/apiTypes';
+import { PrivateAuth } from '../../Types/reqAuth';
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export type SalesResponse = {
   book: Book[];
@@ -22,7 +22,7 @@ export type SalesResponse = {
 };
 
 export const getAdminSales = async (
-  auth: PrivateAuth
+  auth: PrivateAuth,
 ): Promise<SalesResponse[]> => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.get(Endpoints.getSales);

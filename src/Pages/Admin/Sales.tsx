@@ -1,12 +1,12 @@
-import { useRef, useState, ChangeEvent, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { SalesResponse, getAdminSales } from "../../api/getters/saleAPI";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
-import { Link } from "react-router-dom";
-import { usePersianNums } from "../../hooks/usePersianNums";
-import moment from "moment-jalaali";
+import { useRef, useState, ChangeEvent, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { SalesResponse, getAdminSales } from '../../api/getters/saleAPI';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
+import { Link } from 'react-router-dom';
+import { usePersianNums } from '../../hooks/usePersianNums';
+import moment from 'moment-jalaali';
 
 const Sales = () => {
   const [items, setItems] = useState<SalesResponse[]>([]);
@@ -14,13 +14,13 @@ const Sales = () => {
   const auth = useAuthHooks();
   const searchRef = useRef<HTMLInputElement>(null);
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["sales", "admin"],
+    queryKey: ['sales', 'admin'],
     queryFn: () => getAdminSales({ token, ...auth }),
   });
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const newItems = data!.filter((item) =>
-      item.factor.includes(e.target.value)
+      item.factor.includes(e.target.value),
     );
     setItems(newItems);
   };
@@ -56,7 +56,7 @@ const Sales = () => {
                   amount,
                   date,
                 },
-                idx
+                idx,
               ) => {
                 return (
                   <li key={idx} className="border-b border-black">
@@ -64,9 +64,9 @@ const Sales = () => {
                       <span>شناسه خرید : {factor}</span>
                       <div className="flex gap-6">
                         <span>
-                          تاریخ :{" "}
+                          تاریخ :{' '}
                           {usePersianNums(
-                            moment(date).format("jYYYY/jMM/jDD HH:mm:ss")
+                            moment(date).format('jYYYY/jMM/jDD HH:mm:ss'),
                           )}
                         </span>
                         <span>
@@ -109,7 +109,7 @@ const Sales = () => {
                       </div>
                       <div className="flex flex-col gap-2">
                         <span>
-                          دوره های حضوری خریداری شده توسط این کاربر :{" "}
+                          دوره های حضوری خریداری شده توسط این کاربر :{' '}
                         </span>
                         <ol className="flex flex-col gap-2 list-decimal">
                           {courseIDOInPerson?.map((inPersonCourseItem) => (
@@ -124,7 +124,7 @@ const Sales = () => {
                                     to={`/Course/${
                                       inPersonCourseItem?._id
                                     }/${encodeURIComponent(
-                                      inPersonCourseItem?.title
+                                      inPersonCourseItem?.title,
                                     )}`}
                                   >
                                     <span>لینک صفحه</span>
@@ -137,8 +137,8 @@ const Sales = () => {
                       </div>
                       <div className="flex flex-col gap-2">
                         <span>
-                          {" "}
-                          دوره های آفلاین خریداری شده توسط این کاربر :{" "}
+                          {' '}
+                          دوره های آفلاین خریداری شده توسط این کاربر :{' '}
                         </span>
                         <ol className="flex flex-col gap-2 list-decimal">
                           {courseIDOnline?.map((onlineCourseItem) => (
@@ -153,7 +153,7 @@ const Sales = () => {
                                     to={`/Course/${
                                       onlineCourseItem?._id
                                     }/${encodeURIComponent(
-                                      onlineCourseItem?.title
+                                      onlineCourseItem?.title,
                                     )}`}
                                   >
                                     <span>لینک صفحه</span>
@@ -166,8 +166,8 @@ const Sales = () => {
                       </div>
                       <div className="flex flex-col gap-2">
                         <span>
-                          {" "}
-                          دوره های آنلاین خریداری شده توسط این کاربر :{" "}
+                          {' '}
+                          دوره های آنلاین خریداری شده توسط این کاربر :{' '}
                         </span>
                         <ol className="flex flex-col gap-2 list-decimal">
                           {courseIDOffline?.map((offlineCourseItem) => (
@@ -182,7 +182,7 @@ const Sales = () => {
                                     to={`/Course/${
                                       offlineCourseItem?._id
                                     }/${encodeURIComponent(
-                                      offlineCourseItem?.title
+                                      offlineCourseItem?.title,
                                     )}`}
                                   >
                                     <span>لینک صفحه</span>
@@ -196,7 +196,7 @@ const Sales = () => {
                     </div>
                   </li>
                 );
-              }
+              },
             )}
           </ol>
         </div>

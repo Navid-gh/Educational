@@ -1,36 +1,36 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useRef } from "react";
-import { addCode, getCodes, removeCode } from "../../api/basket/discountAPI";
-import toast from "react-hot-toast";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useRef } from 'react';
+import { addCode, getCodes, removeCode } from '../../api/basket/discountAPI';
+import toast from 'react-hot-toast';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
 
 const ManageDiscountCode = () => {
   const percentRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["codes", "admin"],
+    queryKey: ['codes', 'admin'],
     queryFn: getCodes,
   });
 
   const addCodeMutation = useMutation({
     mutationFn: () => addCode(percentRef.current!.value),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["codes", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['codes', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   const removeCodeMutation = useMutation({
     mutationFn: (id: string) => removeCode(id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["codes", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['codes', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   return (

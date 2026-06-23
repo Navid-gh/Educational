@@ -1,13 +1,13 @@
-declare module "persian-date" {
+declare module 'persian-date' {
   interface PersianDateOptions {
     timezone?: string;
-    calendar?: "persian" | "gregorian";
+    calendar?: 'persian' | 'gregorian';
   }
 
   class PersianDate {
     constructor(
       dateString?: string | number | Date,
-      options?: PersianDateOptions
+      options?: PersianDateOptions,
     );
     format(formatString: string): string;
     // Declare other methods and properties here if needed

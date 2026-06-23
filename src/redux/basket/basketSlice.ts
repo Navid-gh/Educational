@@ -61,7 +61,7 @@ export const basketSlice = createSlice({
     // },
     removeProduct: (state, action: PayloadAction<RemovePayload>) => {
       state.products = state.products.filter(
-        (item) => item._id !== action.payload.id
+        (item) => item._id !== action.payload.id,
       );
       state.qty -= 1;
       state.total -= Number(action.payload.price);

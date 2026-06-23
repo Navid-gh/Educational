@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom";
-import UserNav from "../../Components/UserNav";
-import SeoTags from "../../utils/lib/Helmet";
+import { Outlet } from 'react-router-dom';
+import UserNav from '../../Components/UserNav';
+import SeoTags from '../../utils/lib/Helmet';
 
 const User = () => {
   return (

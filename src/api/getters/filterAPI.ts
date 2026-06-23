@@ -1,9 +1,9 @@
-import { Article, Book, Course } from "../../Types/apiTypes";
-import axios from "../axios";
-import { Endpoints } from "../endpoints";
+import { Article, Book, Course } from '../../Types/apiTypes';
+import axios from '../axios';
+import { Endpoints } from '../endpoints';
 
 export type FilterData = {
-  type: "course" | "blog" | "book";
+  type: 'course' | 'blog' | 'book';
   search?: string | null;
   query?: string | null;
   curseCategory?: string | null;
@@ -11,13 +11,13 @@ export type FilterData = {
 };
 
 const curseCategoryValues = {
-  Special: "getCourseSpecial",
-  Fanbayan: "getCourseFanbayan",
-  PersonalDevelopment: "getCoursePersonalDevelopment",
+  Special: 'getCourseSpecial',
+  Fanbayan: 'getCourseFanbayan',
+  PersonalDevelopment: 'getCoursePersonalDevelopment',
 };
 const articleCategoryValues = {
-  Educational: "getEducationalArticles",
-  Other: "getOtherArticles",
+  Educational: 'getEducationalArticles',
+  Other: 'getOtherArticles',
 };
 
 export const filterProducts = async ({
@@ -28,15 +28,15 @@ export const filterProducts = async ({
   categoryBlog,
 }: FilterData): Promise<Article[] | Book[] | Course[]> => {
   let endpoint;
-  if (type === "blog") {
+  if (type === 'blog') {
     endpoint = categoryBlog
       ? Object.keys(articleCategoryValues).includes(categoryBlog)
         ? Endpoints.getArticlesWithCategory(
             articleCategoryValues[
               categoryBlog as keyof typeof articleCategoryValues
-            ]
+            ],
           )
-        : "list"
+        : 'list'
       : null;
   } else {
     endpoint = curseCategory
@@ -44,9 +44,9 @@ export const filterProducts = async ({
         ? Endpoints.getCoursesWithCategory(
             curseCategoryValues[
               curseCategory as keyof typeof curseCategoryValues
-            ]
+            ],
           )
-        : "list"
+        : 'list'
       : null;
   }
   endpoint = endpoint ?? Endpoints.filterProducts(type, search, query);

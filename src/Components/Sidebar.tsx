@@ -1,14 +1,14 @@
-import { memo } from "react";
-import { tabs } from "../Items/navbarTabs";
-import useCurrentUrlTab from "../hooks/useCurrentUrlTab";
-import useCurrentTab from "../hooks/useCurrentTab";
-import IconWrapper from "./UI/IconWrapper";
-import Close from "./UI/Icons/Close";
-import SearchInput from "./UI/SearchInput";
-import Tab from "./UI/Tab";
-import { cn } from "../utils/lib/Cn";
-import Backdrop from "./UI/Backdrop";
-import { SideBarProps } from "../Types/Sidebar";
+import { memo } from 'react';
+import { tabs } from '../Items/navbarTabs';
+import useCurrentUrlTab from '../hooks/useCurrentUrlTab';
+import useCurrentTab from '../hooks/useCurrentTab';
+import IconWrapper from './UI/IconWrapper';
+import Close from './UI/Icons/Close';
+import SearchInput from './UI/SearchInput';
+import Tab from './UI/Tab';
+import { cn } from '../utils/lib/Cn';
+import Backdrop from './UI/Backdrop';
+import { SideBarProps } from '../Types/Sidebar';
 
 const Sidebar = ({ show, func }: SideBarProps) => {
   const currentTabIndex = useCurrentUrlTab(tabs);
@@ -18,8 +18,8 @@ const Sidebar = ({ show, func }: SideBarProps) => {
     <>
       <aside
         className={cn(
-          "flex flex-col gap-6 fixed top-0 right-0 bottom-8 p-6 bg-pink z-[70] rounded-xl rounded-r-none transition-all duration-300 opacity-0 translate-x-full",
-          { "opacity-100 translate-x-0": show }
+          'flex flex-col gap-6 fixed top-0 right-0 bottom-8 p-6 bg-pink z-[70] rounded-xl rounded-r-none transition-all duration-300 opacity-0 translate-x-full',
+          { 'opacity-100 translate-x-0': show },
         )}
       >
         <div className="flex items-center gap-5">

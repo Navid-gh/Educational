@@ -1,7 +1,7 @@
-import HeadTitle from "./UI/HeadTitle";
-import Tick from "./UI/Icons/Tick";
-import Dart from "./UI/images/Dart";
-import { subHerTexts } from "../Items/SubHeroText";
+import HeadTitle from './UI/HeadTitle';
+import Tick from './UI/Icons/Tick';
+import Dart from './UI/images/Dart';
+import { subHerTexts } from '../Items/SubHeroText';
 
 const SubHero = () => {
   return (

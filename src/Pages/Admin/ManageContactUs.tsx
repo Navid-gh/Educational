@@ -1,28 +1,28 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import toast from "react-hot-toast";
-import WithLoaderAndError from "../../Components/WithLoaderAndError";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
+import WithLoaderAndError from '../../Components/WithLoaderAndError';
 import {
   getAllContacts,
   setContactStatus,
-} from "../../api/contactUs/contactAPI";
-import { ContactTimeConvertor } from "../../utils/ContactTimeConvertor";
+} from '../../api/contactUs/contactAPI';
+import { ContactTimeConvertor } from '../../utils/ContactTimeConvertor';
 
 const ManageContactUs = () => {
   const queryClient = useQueryClient();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["contacts", "admin"],
+    queryKey: ['contacts', 'admin'],
     queryFn: getAllContacts,
   });
 
   const setStatusContactMutation = useMutation({
     mutationFn: (id: string) => setContactStatus(id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["contacts", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['contacts', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
   return (
@@ -40,7 +40,7 @@ const ManageContactUs = () => {
                   <span>نام : {name}</span>
                   <span>شماره همراه : {phone}</span>
                   <span>زمان تماس : {ContactTimeConvertor(time)}</span>
-                  {subject !== "" ? (
+                  {subject !== '' ? (
                     <>
                       <span>موضوع : {subject}</span>
                       <span>پیام : {text}</span>

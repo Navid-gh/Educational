@@ -1,4 +1,4 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
@@ -293,7 +293,7 @@ const HeroImage: FC<SVGElementProps> = ({ id, ...props }) => {
       </defs>
       <g
         style={{
-          isolation: "isolate",
+          isolation: 'isolate',
         }}
       >
         <g id="Layer_2" data-name="Layer 2">
@@ -614,7 +614,7 @@ const HeroImage: FC<SVGElementProps> = ({ id, ...props }) => {
             <path
               d="M829.74 240.6c-12.1 1.58-23.67-8.51-26.91-23.46L777.28 99.28a35.1 35.1 0 012.29-22.41c3.17-6.67 8.31-11.25 14.48-12.89l30.5-8.15a19.37 19.37 0 012.5-.49c12.09-1.58 23.66 8.51 26.9 23.46l25.56 117.86c3.48 16.07-4 31.9-16.77 35.3l-30.51 8.15a19.56 19.56 0 01-2.49.49z"
               style={{
-                mixBlendMode: "overlay",
+                mixBlendMode: 'overlay',
               }}
               opacity={0.3}
               fill="#fff"

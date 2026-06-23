@@ -33,19 +33,19 @@ const CourseInfo = forwardRef<HTMLDivElement, Props>(
       buyHandler,
       isInBasket,
     },
-    ref
+    ref,
   ) => {
     return (
       <section
         className={cn('flex gap-4 pt-8 px-4 tips:flex-col', {
           'navbar:flex-col': type === 'book',
         })}
-        id='overview'
+        id="overview"
         ref={ref}
       >
-        <div className='hidden hero:block w-full order-1'>
+        <div className="hidden hero:block w-full order-1">
           {type === 'book' && book && details ? (
-            <CourseDetails header='قیمت کتاب' key='1'>
+            <CourseDetails header="قیمت کتاب" key="1">
               <ChooseBookType
                 {...(book as BookProps)}
                 buyHandler={buyHandler!}
@@ -53,24 +53,24 @@ const CourseInfo = forwardRef<HTMLDivElement, Props>(
               />
             </CourseDetails>
           ) : type === 'course' && details ? (
-            <CourseDetails header='اطلاعات دوره' key='1'>
+            <CourseDetails header="اطلاعات دوره" key="1">
               <DetailsUl details={details} />
               {isInBasket ? (
-                <p className='self-center'>هم اکنون در سبد خرید شما</p>
+                <p className="self-center">هم اکنون در سبد خرید شما</p>
               ) : (
                 <MainButton
-                  className='self-center w-full max-w-none'
+                  className="self-center w-full max-w-none"
                   text={`اضافه به سبد خرید`}
-                  intent='purple'
-                  size='medium'
+                  intent="purple"
+                  size="medium"
                   onClick={() => buyHandler!()}
                 />
               )}
             </CourseDetails>
           ) : null}
         </div>
-        <div className='flex flex-col gap-4 flex-[70%] order-1 hero:order-2'>
-          <MainHeader intent='bgBlack' size='main'>
+        <div className="flex flex-col gap-4 flex-[70%] order-1 hero:order-2">
+          <MainHeader intent="bgBlack" size="main">
             {infoHeader}
           </MainHeader>
           <MarkdownParser text={markdown} />
@@ -78,12 +78,12 @@ const CourseInfo = forwardRef<HTMLDivElement, Props>(
         <div
           className={cn(
             'flex-[30%] max-w-[17.5rem] justify-start flex flex-col gap-4 tips:max-h-full tips:flex-row tips:max-w-none hero:flex-col hero:max-w-none order-2',
-            { 'tips:flex-col tips:max-w-[17.5rem]': book }
+            { 'tips:flex-col tips:max-w-[17.5rem]': book },
           )}
         >
-          <div className='hero:hidden'>
+          <div className="hero:hidden">
             {type === 'book' && book && details ? (
-              <CourseDetails header='قیمت کتاب' key='1'>
+              <CourseDetails header="قیمت کتاب" key="1">
                 <ChooseBookType
                   {...(book as BookProps)}
                   buyHandler={buyHandler!}
@@ -91,16 +91,16 @@ const CourseInfo = forwardRef<HTMLDivElement, Props>(
                 />
               </CourseDetails>
             ) : type === 'course' && details ? (
-              <CourseDetails header='اطلاعات دوره' key='1'>
+              <CourseDetails header="اطلاعات دوره" key="1">
                 <DetailsUl details={details} />
                 {isInBasket ? (
-                  <p className='self-center'>هم اکنون در سبد خرید شما</p>
+                  <p className="self-center">هم اکنون در سبد خرید شما</p>
                 ) : (
                   <MainButton
-                    className='self-center w-full max-w-none'
+                    className="self-center w-full max-w-none"
                     text={`اضافه به سبد خرید`}
-                    intent='purple'
-                    size='medium'
+                    intent="purple"
+                    size="medium"
                     onClick={() => buyHandler!()}
                   />
                 )}
@@ -108,14 +108,14 @@ const CourseInfo = forwardRef<HTMLDivElement, Props>(
             ) : null}
           </div>
           {type === 'course' ? (
-            <CourseDetails header='درباره مدرس' key='2'>
+            <CourseDetails header="درباره مدرس" key="2">
               <OwnerProfile
                 name={teacher.name as string}
                 profile={teacher.profile as string}
               />
             </CourseDetails>
           ) : (
-            <CourseDetails header='درباره نویسنده' key='3'>
+            <CourseDetails header="درباره نویسنده" key="3">
               <OwnerProfile
                 name={teacher.name as string}
                 profile={teacher.profile as string}
@@ -125,7 +125,7 @@ const CourseInfo = forwardRef<HTMLDivElement, Props>(
         </div>
       </section>
     );
-  }
+  },
 );
 
 export default memo(CourseInfo);

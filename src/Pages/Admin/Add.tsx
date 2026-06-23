@@ -1,14 +1,14 @@
-import { useRef, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addImages } from "../../api/setters/imageAPI";
-import toast from "react-hot-toast";
-import { addArticle } from "../../api/setters/articleAPI";
-import { addCourse } from "../../api/setters/courseAPI";
-import { addBook } from "../../api/setters/bookAPI";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import { RobotsType } from "../../Types/apiTypes";
+import { useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { addImages } from '../../api/setters/imageAPI';
+import toast from 'react-hot-toast';
+import { addArticle } from '../../api/setters/articleAPI';
+import { addCourse } from '../../api/setters/courseAPI';
+import { addBook } from '../../api/setters/bookAPI';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import { RobotsType } from '../../Types/apiTypes';
 
 const Add = () => {
   const [imgUrls, setImgUrls] = useState<string[] | null>(null);
@@ -20,7 +20,7 @@ const Add = () => {
   const urlGoogleRef = useRef<HTMLInputElement | null>(null);
   const shortTextRef = useRef<HTMLInputElement | null>(null);
   const textRef = useRef<HTMLTextAreaElement | null>(null);
-  const [robots, setRobots] = useState<RobotsType>("index,follow");
+  const [robots, setRobots] = useState<RobotsType>('index,follow');
   const canonicalHref = useRef<HTMLInputElement | null>(null);
 
   const { token } = useAuth();
@@ -29,20 +29,20 @@ const Add = () => {
   const submitImages = async () => {
     if (imagesRef.current?.files) {
       const images = Array.from(imagesRef.current.files);
-      const loadToast = toast.loading("درحال بارگذاری");
+      const loadToast = toast.loading('درحال بارگذاری');
       try {
         const res = await addImages({ token, ...auth }, images);
-        toast.success("بارگذاری شد");
+        toast.success('بارگذاری شد');
         setImgUrls([...res]);
       } catch (err) {
         console.log(err);
-        toast.error("خطا در بارگذاری");
+        toast.error('خطا در بارگذاری');
       } finally {
         toast.dismiss(loadToast);
       }
     }
   };
-  if (parent === "Articles") {
+  if (parent === 'Articles') {
     const addArticleMutation = useMutation({
       mutationFn: () =>
         addArticle(
@@ -53,19 +53,19 @@ const Add = () => {
             title: titleRef.current!.value,
             urlTitle: urlTitleRef.current!.value,
             urlGoogle: urlGoogleRef.current!.value,
-            category: "",
+            category: '',
             images: imgUrls!,
             status: true,
             robots,
             canonicalHref: canonicalHref.current!.value,
-          }
+          },
         ),
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["articles", "admin"] });
-        toast.success("موفقیت آمیز");
+        queryClient.invalidateQueries({ queryKey: ['articles', 'admin'] });
+        toast.success('موفقیت آمیز');
       },
       onError: () => {
-        toast.error("خطا در برقراری ارتباط");
+        toast.error('خطا در برقراری ارتباط');
       },
     });
     return (
@@ -120,7 +120,7 @@ const Add = () => {
         </button>
       </div>
     );
-  } else if (parent === "Courses") {
+  } else if (parent === 'Courses') {
     const priceRef = useRef<HTMLInputElement | null>(null);
     const discountRef = useRef<HTMLInputElement | null>(null);
     const typeRef = useRef<HTMLSelectElement | null>(null);
@@ -138,23 +138,23 @@ const Add = () => {
             title: titleRef.current!.value,
             urlTitle: urlTitleRef.current!.value,
             urlGoogle: urlGoogleRef.current!.value,
-            category: "",
+            category: '',
             images: imgUrls!,
             discount: discountRef.current!.value,
             level: levelRef.current!.value,
             price: priceRef.current!.value,
-            type: typeRef.current!.value as "online" | "offline",
+            type: typeRef.current!.value as 'online' | 'offline',
             spotPlayerID: spotRef.current!.value,
-            subCourse: subCourseRef.current!.value.split(","),
+            subCourse: subCourseRef.current!.value.split(','),
             score: Number(scoreRef.current!.value),
-          }
+          },
         ),
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-        toast.success("موفقیت آمیز");
+        queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+        toast.success('موفقیت آمیز');
       },
       onError: () => {
-        toast.error("خطا در برقراری ارتباط");
+        toast.error('خطا در برقراری ارتباط');
       },
     });
     return (
@@ -233,7 +233,7 @@ const Add = () => {
             title: titleRef.current!.value,
             urlTitle: urlTitleRef.current!.value,
             urlGoogle: urlGoogleRef.current!.value,
-            category: "",
+            category: '',
             images: imgUrls!,
             discount: discountRef.current!.value,
             pricePhysical: phPriceRef.current!.value,
@@ -241,14 +241,14 @@ const Add = () => {
             numberOfPages: pageNumRef.current!.value,
             yearOfPublication: publicationRef.current!.value,
             link: LinkRef.current!.value,
-          }
+          },
         ),
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["books", "admin"] });
-        toast.success("موفقیت آمیز");
+        queryClient.invalidateQueries({ queryKey: ['books', 'admin'] });
+        toast.success('موفقیت آمیز');
       },
       onError: () => {
-        toast.error("خطا در برقراری ارتباط");
+        toast.error('خطا در برقراری ارتباط');
       },
     });
     return (

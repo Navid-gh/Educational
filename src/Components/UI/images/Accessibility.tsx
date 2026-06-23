@@ -1,4 +1,4 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
@@ -17,7 +17,7 @@ const Accessibility: FC<SVGElementProps> = ({ id, ...props }) => {
       </defs>
       <g
         style={{
-          isolation: "isolate",
+          isolation: 'isolate',
         }}
       >
         <g id="Layer_2" data-name="Layer 2">
@@ -30,7 +30,7 @@ const Accessibility: FC<SVGElementProps> = ({ id, ...props }) => {
               <path
                 d="M171.52 91.89L95.81 208.47a104 104 0 01-93.22-85.76l59.93-75.82c-2.15 14.21 101.07 53.34 109 45z"
                 style={{
-                  mixBlendMode: "multiply",
+                  mixBlendMode: 'multiply',
                 }}
                 fill="#c1c0c6"
                 opacity={0.7}

@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ErrorComp = () => {
   useEffect(() => {
-    toast.error("خطا در برقراری ارتباط");
+    toast.error('خطا در برقراری ارتباط');
   }, []);
   return (
     <div>

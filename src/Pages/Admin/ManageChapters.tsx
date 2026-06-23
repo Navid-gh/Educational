@@ -1,16 +1,16 @@
-import { useRef, useState, ChangeEvent } from "react";
-import { useLocation } from "react-router-dom";
-import { Chapter } from "../../Types/apiTypes";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import toast from "react-hot-toast";
+import { useRef, useState, ChangeEvent } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Chapter } from '../../Types/apiTypes';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
 import {
   addChapter,
   editChapter,
   removeChapter,
-} from "../../api/setters/chapterAPI";
-import { addEpisode, removeEpisode } from "../../api/setters/episodeAPI";
-import useAuth from "../../hooks/useAuth";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
+} from '../../api/setters/chapterAPI';
+import { addEpisode, removeEpisode } from '../../api/setters/episodeAPI';
+import useAuth from '../../hooks/useAuth';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
 
 type State = {
   id: string;
@@ -20,7 +20,7 @@ type State = {
 const ManageChapters = () => {
   const { id, chapters }: State = useLocation().state;
   const [chaptersState, setChaptersState] = useState(chapters);
-  const [chapterId, setChapterId] = useState("");
+  const [chapterId, setChapterId] = useState('');
   const queryClient = useQueryClient();
   const sessionsNumRef = useRef<HTMLInputElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
@@ -42,18 +42,18 @@ const ManageChapters = () => {
           time: timeRef.current!.value,
           title: titleRef.current!.value,
           id,
-        }
+        },
       ),
     onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      sessionsNumRef.current!.value = "";
-      titleRef.current!.value = "";
-      timeRef.current!.value = "";
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      sessionsNumRef.current!.value = '';
+      titleRef.current!.value = '';
+      timeRef.current!.value = '';
       setChapterId(data.id);
-      toast.success("موفقیت آمیز");
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
@@ -68,11 +68,11 @@ const ManageChapters = () => {
       });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
@@ -80,11 +80,11 @@ const ManageChapters = () => {
     mutationFn: (chapterId: string) =>
       removeChapter({ token, ...auth }, chapterId),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
@@ -97,17 +97,17 @@ const ManageChapters = () => {
           title: episodeTitleRef.current!.value,
           courseID: courseId,
           chapterID: episodeChapterRef.current!.value,
-        }
+        },
       ),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      episodeTextRef.current!.value = "";
-      episodeTitleRef.current!.value = "";
-      episodeChapterRef.current!.value = "";
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      episodeTextRef.current!.value = '';
+      episodeTitleRef.current!.value = '';
+      episodeChapterRef.current!.value = '';
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
@@ -115,21 +115,21 @@ const ManageChapters = () => {
     mutationFn: (episodeId: string) =>
       removeEpisode({ token, ...auth }, episodeId),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["courses", "admin"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['courses', 'admin'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
   const handleChange = (
     key: string,
     e: ChangeEvent<HTMLInputElement>,
-    id: string
+    id: string,
   ) => {
-    if (key === "time") {
-      const values = e.target.value.split(":");
+    if (key === 'time') {
+      const values = e.target.value.split(':');
       const updatedChapters = chaptersState.map((Chapter) => {
         if (Chapter._id === id) {
           return {
@@ -200,7 +200,7 @@ const ManageChapters = () => {
                 <input
                   type="number"
                   value={numberOfSessions}
-                  onChange={(e) => handleChange("numberOfSessions", e, _id)}
+                  onChange={(e) => handleChange('numberOfSessions', e, _id)}
                 />
               </div>
               <div className="flex gap-4">
@@ -208,7 +208,7 @@ const ManageChapters = () => {
                 <input
                   type="text"
                   value={title}
-                  onChange={(e) => handleChange("title", e, _id)}
+                  onChange={(e) => handleChange('title', e, _id)}
                 />
               </div>
               <div className="flex gap-4">
@@ -216,7 +216,7 @@ const ManageChapters = () => {
                 <input
                   type="text"
                   value={text}
-                  onChange={(e) => handleChange("text", e, _id)}
+                  onChange={(e) => handleChange('text', e, _id)}
                 />
               </div>
               <div className="flex gap-4">
@@ -224,7 +224,7 @@ const ManageChapters = () => {
                 <input
                   type="text"
                   defaultValue={`${time?.hour}:${time?.min}`}
-                  onChange={(e) => handleChange("time", e, _id)}
+                  onChange={(e) => handleChange('time', e, _id)}
                 />
               </div>
               <div className="flex flex-col gap-5">
@@ -268,7 +268,7 @@ const ManageChapters = () => {
                 </button>
               </div>
             </li>
-          )
+          ),
         )}
       </ul>
     </div>

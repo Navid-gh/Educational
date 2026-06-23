@@ -1,4 +1,4 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
@@ -13,10 +13,10 @@ const AvatarBoy: FC<SVGElementProps> = ({ id, ...props }) => {
     >
       <defs>
         <style>{`#${id} .cls-1{fill:none}#${id} .cls-4{fill:#fff}`}</style>
-        <clipPath id={id + "clip-path"} transform="translate(.21 .18)">
+        <clipPath id={id + 'clip-path'} transform="translate(.21 .18)">
           <circle className="cls-1" cx={33.83} cy={33.83} r={31.5} />
         </clipPath>
-        <clipPath id={id + "clip-path-2"} transform="translate(.21 .18)">
+        <clipPath id={id + 'clip-path-2'} transform="translate(.21 .18)">
           <path className="cls-1" d="M0 0H67.67V67.67H0z" />
         </clipPath>
       </defs>

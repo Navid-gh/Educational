@@ -1,4 +1,4 @@
-import { ContactTimes } from "./ContactTimeType";
+import { ContactTimes } from './ContactTimeType';
 
 type IdSchema = {
   _id: string;
@@ -40,7 +40,7 @@ export type Comment = IdSchema & {
     first_name: string;
     last_name: string;
   };
-  answer: Omit<Comment, "answer">[];
+  answer: Omit<Comment, 'answer'>[];
 };
 
 export type Course = {
@@ -55,10 +55,10 @@ export type Course = {
   short_text: string;
   text: string;
   title: string;
-  type: "online" | "offline" | "inPerson";
+  type: 'online' | 'offline' | 'inPerson';
   level: string;
   spotPlayerID: string;
-  item_type: "course";
+  item_type: 'course';
   numberLink: number;
   reateds: Course[];
   urlTitle: string;
@@ -84,7 +84,7 @@ export type Book = {
   finalPricePhysical: number | string;
   finalPriceVirtual: number | string;
   link: string;
-  item_type: "book";
+  item_type: 'book';
   numberLink: number;
   reateds: Book[];
   urlTitle: string;
@@ -100,13 +100,13 @@ export type Article = {
   title: string;
   tags: string[];
   status: boolean;
-  item_type: "blog";
+  item_type: 'blog';
   numberLink: number;
   reateds: Article[];
   sortByNumber: number;
   urlTitle: string;
   urlGoogle: string;
-  robots: "index,follow" | "noindex,follow";
+  robots: 'index,follow' | 'noindex,follow';
   canonicalHref: string;
 } & SingleSchema;
 
@@ -195,16 +195,16 @@ export type LandingType = {
   showWatsupButton: boolean;
 };
 
-export type RobotsType = "index,follow" | "noindex,follow";
+export type RobotsType = 'index,follow' | 'noindex,follow';
 
 export type SitemapChangeFreq =
-  | "always"
-  | "hourly"
-  | "daily"
-  | "weekly"
-  | "monthly"
-  | "yearly"
-  | "never";
+  | 'always'
+  | 'hourly'
+  | 'daily'
+  | 'weekly'
+  | 'monthly'
+  | 'yearly'
+  | 'never';
 
 export type SitemapItemType = {
   _id: string;

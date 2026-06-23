@@ -1,15 +1,15 @@
-import { SitemapItemType } from "../../Types/apiTypes";
-import { PrivateAuth } from "../../Types/reqAuth";
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { SitemapItemType } from '../../Types/apiTypes';
+import { PrivateAuth } from '../../Types/reqAuth';
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const getSitemapUrls = async (
-  auth: PrivateAuth
+  auth: PrivateAuth,
 ): Promise<SitemapItemType[]> => {
   const privateAxios = createPrivateAxios(auth);
 
   const response = await privateAxios.get<{ urls: SitemapItemType[] }>(
-    Endpoints.getSitemap
+    Endpoints.getSitemap,
   );
 
   if (response.status === 200) {

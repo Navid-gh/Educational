@@ -1,35 +1,35 @@
-import { Course } from "../../Types/apiTypes";
-import { PrivateAuth } from "../../Types/reqAuth";
+import { Course } from '../../Types/apiTypes';
+import { PrivateAuth } from '../../Types/reqAuth';
 
-import { createPrivateAxios } from "../axios";
-import { Endpoints } from "../endpoints";
+import { createPrivateAxios } from '../axios';
+import { Endpoints } from '../endpoints';
 
 export const editCourse = async (
   auth: PrivateAuth,
   courseID: string,
   data: Pick<
     Course,
-    | "short_text"
-    | "text"
-    | "title"
-    | "category"
-    | "images"
-    | "price"
-    | "discount"
-    | "level"
-    | "type"
-    | "spotPlayerID"
-    | "urlTitle"
-    | "urlGoogle"
-    | "subCourse"
-    | "score"
-  >
+    | 'short_text'
+    | 'text'
+    | 'title'
+    | 'category'
+    | 'images'
+    | 'price'
+    | 'discount'
+    | 'level'
+    | 'type'
+    | 'spotPlayerID'
+    | 'urlTitle'
+    | 'urlGoogle'
+    | 'subCourse'
+    | 'score'
+  >,
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const endpoint = Endpoints.editCourse(courseID);
   const response = await privateAxios.patch(endpoint, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 200) {
@@ -43,26 +43,26 @@ export const addCourse = async (
   auth: PrivateAuth,
   data: Pick<
     Course,
-    | "short_text"
-    | "text"
-    | "title"
-    | "category"
-    | "images"
-    | "discount"
-    | "price"
-    | "level"
-    | "type"
-    | "spotPlayerID"
-    | "urlTitle"
-    | "urlGoogle"
-    | "subCourse"
-    | "score"
-  >
+    | 'short_text'
+    | 'text'
+    | 'title'
+    | 'category'
+    | 'images'
+    | 'discount'
+    | 'price'
+    | 'level'
+    | 'type'
+    | 'spotPlayerID'
+    | 'urlTitle'
+    | 'urlGoogle'
+    | 'subCourse'
+    | 'score'
+  >,
 ) => {
   const privateAxios = createPrivateAxios(auth);
   const response = await privateAxios.post(Endpoints.addCourse, data, {
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   if (response.status === 201) {

@@ -1,7 +1,7 @@
-import { ReactNode, HTMLProps, memo, useState } from "react";
-import { cn } from "../../utils/lib/Cn";
-import { Link } from "react-router-dom";
-import LeftArrow from "./Icons/LeftArrow";
+import { ReactNode, HTMLProps, memo, useState } from 'react';
+import { cn } from '../../utils/lib/Cn';
+import { Link } from 'react-router-dom';
+import LeftArrow from './Icons/LeftArrow';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,8 +9,8 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./DropDown";
-import { SubLinks } from "../../Items/navbarTabs";
+} from './DropDown';
+import { SubLinks } from '../../Items/navbarTabs';
 
 type Props = HTMLProps<HTMLLIElement> & {
   children: ReactNode;
@@ -36,8 +36,8 @@ const Tab = ({
           <li
             {...props}
             className={cn(
-              "relative cursor-pointer font-semibold max-w-max p-1 px-2 after:absolute after:w-[65%] after:rounded-full after:bg-purple after:h-1 after:top-full after:scale-0 after:origin-right after:right-0 after:transition after:duration-500 ",
-              { "after:scale-100": isActive }
+              'relative cursor-pointer font-semibold max-w-max p-1 px-2 after:absolute after:w-[65%] after:rounded-full after:bg-purple after:h-1 after:top-full after:scale-0 after:origin-right after:right-0 after:transition after:duration-500 ',
+              { 'after:scale-100': isActive },
             )}
           >
             {children}
@@ -45,7 +45,7 @@ const Tab = ({
           <LeftArrow className="w-4 h-4 -rotate-90" />
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          style={{ direction: "rtl" }}
+          style={{ direction: 'rtl' }}
           className="w-56 bg-pink rounded-2xl px-4 z-[100000] "
         >
           <DropdownMenuSeparator />
@@ -70,8 +70,8 @@ const Tab = ({
       <li
         {...props}
         className={cn(
-          "relative cursor-pointer font-semibold max-w-max p-1 px-2 after:absolute after:w-[65%] after:rounded-full after:bg-purple after:h-1 after:top-full after:scale-0 after:origin-right after:right-0 after:transition after:duration-500 ",
-          { "after:scale-100": isActive }
+          'relative cursor-pointer font-semibold max-w-max p-1 px-2 after:absolute after:w-[65%] after:rounded-full after:bg-purple after:h-1 after:top-full after:scale-0 after:origin-right after:right-0 after:transition after:duration-500 ',
+          { 'after:scale-100': isActive },
         )}
       >
         {children}

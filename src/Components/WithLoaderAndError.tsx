@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import Loader from "./UI/Loader";
-import ErrorComp from "./UI/ErrorComp";
+import { ReactNode } from 'react';
+import Loader from './UI/Loader';
+import ErrorComp from './UI/ErrorComp';
 
 type Props<T> = {
   isError: boolean;

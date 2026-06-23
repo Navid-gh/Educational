@@ -39,54 +39,54 @@ const LandingCard = ({
   }, [Auth, addToBasket, data, dispatch]);
 
   return (
-    <section className='flex userSummary:flex-col gap-4 items-stretch justify-center userSummary:items-center'>
-      <div className='relative flex flex-col gap-4 items-center bg-white shadow-lg rounded-lg p-12 justify-center'>
-        <div className='absolute top-2 -translate-y-1/2 -rotate-90 flex flex-col gap-8'>
+    <section className="flex userSummary:flex-col gap-4 items-stretch justify-center userSummary:items-center">
+      <div className="relative flex flex-col gap-4 items-center bg-white shadow-lg rounded-lg p-12 justify-center">
+        <div className="absolute top-2 -translate-y-1/2 -rotate-90 flex flex-col gap-8">
           {[...Array(4)].map((_, idx) => (
-            <LeftArrow key={idx} className='w-8 h-8' fill='#e0dada' />
+            <LeftArrow key={idx} className="w-8 h-8" fill="#e0dada" />
           ))}
         </div>
 
-        <h2 className='font-semibold text-xl'>{title}</h2>
-        <div className='text-center'>
-          <span className='text-green-600 font-semibold'>{text1} </span>
-          <span className='text-gray-800'>{text2}</span>
+        <h2 className="font-semibold text-xl">{title}</h2>
+        <div className="text-center">
+          <span className="text-green-600 font-semibold">{text1} </span>
+          <span className="text-gray-800">{text2}</span>
         </div>
         <span>{text3}</span>
-        <div className='w-full flex items-center justify-around gap-3'>
-          <div className='flex flex-col items-start w-full'>
-            <span className='text-red-600 line-through'>
+        <div className="w-full flex items-center justify-around gap-3">
+          <div className="flex flex-col items-start w-full">
+            <span className="text-red-600 line-through">
               {usePersianNums(price)} تومان
             </span>
-            <span className='text-green-600 text-2xl font-bold'>
+            <span className="text-green-600 text-2xl font-bold">
               {usePersianNums(priceWithDiscount)} تومان
             </span>
           </div>
           <MainButton
             text={
-              <span className='flex items-center gap-2'>
+              <span className="flex items-center gap-2">
                 خرید آنلاین
-                <LeftArrow className='w-2 h-2' fill='#fff' />
+                <LeftArrow className="w-2 h-2" fill="#fff" />
               </span>
             }
             size={'login'}
-            className='bg-green-600 text-white flex justify-center'
+            className="bg-green-600 text-white flex justify-center"
             onClick={buyHandler}
           />
         </div>
       </div>
 
-      <div className='max-w-2xl grid grid-cols-2 gap-6'>
+      <div className="max-w-2xl grid grid-cols-2 gap-6">
         {LANDING_FEATURES.map(({ title, desc, Icon, id }) => (
           <div
             key={id}
-            className='flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-12 hover:scale-105 transition-transform text-center'
+            className="flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-12 hover:scale-105 transition-transform text-center"
           >
-            <Icon className='w-10 h-10 text-green-600 mb-3' />
-            <h4 className='text-gray-800 font-semibold text-base mb-2'>
+            <Icon className="w-10 h-10 text-green-600 mb-3" />
+            <h4 className="text-gray-800 font-semibold text-base mb-2">
               {title}
             </h4>
-            <p className='text-gray-600 text-sm'>{desc}</p>
+            <p className="text-gray-600 text-sm">{desc}</p>
           </div>
         ))}
       </div>

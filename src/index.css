@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Vazirmatn";
-  src: url("/fonts/Vazirmatn-VariableFont-wght.ttf") format("ttf");
+  font-family: 'Vazirmatn';
+  src: url('/fonts/Vazirmatn-VariableFont-wght.ttf') format('ttf');
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/Montserrat-VariableFont-wght.ttf") format("ttf");
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-VariableFont-wght.ttf') format('ttf');
 }
 
 @layer utilities {
   .image-fade::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -31,7 +31,7 @@
 
   .parallax {
     /* The image used */
-    background-image: url("img_parallax.jpg");
+    background-image: url('img_parallax.jpg');
 
     /* Set a specific height */
     min-height: 500px;
@@ -83,7 +83,7 @@
   }
 
   .parallelogram-text::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -20px;

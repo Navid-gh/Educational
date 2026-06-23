@@ -1,4 +1,4 @@
-import { SVGProps, FC, memo } from "react";
+import { SVGProps, FC, memo } from 'react';
 
 type SVGElementProps = SVGProps<SVGSVGElement>;
 
@@ -17,7 +17,7 @@ const Counseling: FC<SVGElementProps> = ({ id, ...props }) => {
       </defs>
       <g
         style={{
-          isolation: "isolate",
+          isolation: 'isolate',
         }}
       >
         <g id="Layer_2" data-name="Layer 2">
@@ -91,7 +91,7 @@ const Counseling: FC<SVGElementProps> = ({ id, ...props }) => {
             <path
               d="M1.11 118.15A104 104 0 00104.16 208c1.37 0 2.73 0 4.1-.08l45.18-45.16h-9v2h-14.12v-1.94H67.56c-4.12-.07-11.91-2.65-11.91-12s8-12.09 12.27-12.28h70.49c6.38 0 8.91-3.29 9.8-6.55a12.74 12.74 0 01-2.39.23h-7.62a12.09 12.09 0 01-2.33-.21c-8.48-1.54-15-11.36-15-23.23s6.55-21.72 15-23.24a12.09 12.09 0 012.33-.21h1.28c-3.29-24.64-17.79-44-36.07-47.83-18.23 3.87-32.75 23.19-36 47.83 9.44.24 17 10.66 17 23.45s-7.77 23.42-17.36 23.42h-7.62a12.09 12.09 0 01-2.33-.2 14 14 0 01-5-2h-.71a11.21 11.21 0 01-2.09-.19c-7.69-1.37-13.65-10.27-13.65-21s6-19.71 13.65-21.08a11.21 11.21 0 012.09-.19h.71a13.56 13.56 0 011.62-.9c1.79-15.33 7.92-28.7 16.63-37.71z"
               style={{
-                mixBlendMode: "multiply",
+                mixBlendMode: 'multiply',
               }}
               fill="#c1c0c6"
               opacity={0.7}
@@ -99,7 +99,7 @@ const Counseling: FC<SVGElementProps> = ({ id, ...props }) => {
             <path
               d="M60.26 150.8c0 7 6.64 7.32 7.35 7.34h62.65l.06-.06v-1.9h1.9l16.72-16.7c-2.37 2.2-5.79 3.63-10.53 3.63H68c-.29.02-7.74.45-7.74 7.69z"
               style={{
-                mixBlendMode: "multiply",
+                mixBlendMode: 'multiply',
               }}
               fill="#bdbbc3"
             />

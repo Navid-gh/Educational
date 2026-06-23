@@ -1,4 +1,4 @@
-import { introTexts, outroTexts } from "../Items/stressItems";
+import { introTexts, outroTexts } from '../Items/stressItems';
 
 const StressHeader = () => {
   return (

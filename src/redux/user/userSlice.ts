@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "../store";
-import { Roles } from "../../Types/Roles";
-import { User } from "../../Types/apiTypes";
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { RootState } from '../store';
+import { Roles } from '../../Types/Roles';
+import { User } from '../../Types/apiTypes';
 
 // Define a type for the slice state
 export interface UserState {
@@ -15,16 +15,16 @@ export interface UserState {
 // Define the initial state using that type
 const initialState: UserState = {
   Auth: false,
-  token: "",
-  role: "GUEST",
+  token: '',
+  role: 'GUEST',
   data: {} as User,
 };
 
 export const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {
-    logIn: (state, action: PayloadAction<Omit<UserState, "Auth">>) => {
+    logIn: (state, action: PayloadAction<Omit<UserState, 'Auth'>>) => {
       state.Auth = true;
       state.token = action.payload.token;
       state.role = action.payload.role;
@@ -32,13 +32,13 @@ export const userSlice = createSlice({
     },
     logOut: (state) => {
       state.Auth = false;
-      state.token = "";
-      state.role = "GUEST";
+      state.token = '';
+      state.role = 'GUEST';
       state.data = {} as User;
     },
     updateAccessToken: (
       state,
-      action: PayloadAction<Pick<UserState, "token">>
+      action: PayloadAction<Pick<UserState, 'token'>>,
     ) => {
       state.token = action.payload.token;
     },

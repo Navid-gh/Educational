@@ -1,4 +1,4 @@
-import { ReactNode, memo } from "react";
+import { ReactNode, memo } from 'react';
 import {
   Table,
   TableBody,
@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./UI/Table";
+} from './UI/Table';
 
 type Props = {
   headers: string[];
@@ -25,7 +25,7 @@ const TableWrapper = ({ caption, headers, tableRows, title }: Props) => {
           <TableRow>
             <TableHead
               className="text-right bg-tableHeader rounded-tr-xl"
-              key={"counter"}
+              key={'counter'}
             >
               #
             </TableHead>
@@ -36,7 +36,7 @@ const TableWrapper = ({ caption, headers, tableRows, title }: Props) => {
             ))}
             <TableHead
               className="text-center bg-tableHeader rounded-tl-xl"
-              key={"btn"}
+              key={'btn'}
             >
               عملیات
             </TableHead>

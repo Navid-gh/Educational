@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { cn } from "../../utils/lib/Cn";
+import { ReactNode } from 'react';
+import { cn } from '../../utils/lib/Cn';
 
 type Props = {
   img: ReactNode;
@@ -13,8 +13,8 @@ const Tip = ({ img, title, text, link, onClick }: Props) => {
   return (
     <div
       className={cn(
-        "flex flex-col gap-2 flex-1 items-center tips:flex-[50%] tips2:flex-[100%]",
-        { "cursor-pointer": onClick }
+        'flex flex-col gap-2 flex-1 items-center tips:flex-[50%] tips2:flex-[100%]',
+        { 'cursor-pointer': onClick },
       )}
       onClick={onClick}
     >

@@ -1,6 +1,6 @@
-import ContactForm from "../../Components/ContactForm";
-import ParallaxHeader from "../../Components/ParallaxHeader";
-import SeoTags from "../../utils/lib/Helmet";
+import ContactForm from '../../Components/ContactForm';
+import ParallaxHeader from '../../Components/ParallaxHeader';
+import SeoTags from '../../utils/lib/Helmet';
 
 const ContactUs = () => {
   return (
@@ -24,9 +24,13 @@ const ContactUs = () => {
         </ParallaxHeader>
         <section className="p-4 px-8 max-w-[56rem] flex flex-col gap-9 font-semibold text-lg text-[#636363] leading-relaxed">
           <div className="flex flex-col gap-4">
-            <h3 className="text-xl text-black font-bold">می‌خوای صدات شنیده بشه؟ از همین‌جا شروع کن.</h3>
+            <h3 className="text-xl text-black font-bold">
+              می‌خوای صدات شنیده بشه؟ از همین‌جا شروع کن.
+            </h3>
             <p>
-              آکادمی رسمی فن بیان «صابر زارعی» برای کودکان، نوجوانان و بزرگسالان دوره‌های تخصصی برگزار می‌کند تا هرکس بتواند واضح، قاطع و با اعتمادبه‌نفس حرف بزند؛ در خانه، محل تحصیل، محل کار و …
+              آکادمی رسمی فن بیان «صابر زارعی» برای کودکان، نوجوانان و بزرگسالان
+              دوره‌های تخصصی برگزار می‌کند تا هرکس بتواند واضح، قاطع و با
+              اعتمادبه‌نفس حرف بزند؛ در خانه، محل تحصیل، محل کار و …
             </p>
             <p>
               دوره‌ها به سه شکل برگزار می‌شوند:
@@ -35,7 +39,8 @@ const ContactUs = () => {
               <br />✅ آفلاین همراه با پشتیبانی مستقیم استاد
             </p>
             <p>
-              اگر می‌خواهی درباره‌ی دوره‌ی مناسب سن، زمان‌بندی یا شهریه اطلاعات بگیری، فرم زیر را پر کن تا مشاور آکادمی با شما تماس بگیرد.
+              اگر می‌خواهی درباره‌ی دوره‌ی مناسب سن، زمان‌بندی یا شهریه اطلاعات
+              بگیری، فرم زیر را پر کن تا مشاور آکادمی با شما تماس بگیرد.
               <br />
               اطلاعاتت کاملاً محرمانه است و فقط برای هماهنگی استفاده می‌شود.
             </p>

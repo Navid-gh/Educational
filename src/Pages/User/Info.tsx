@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import UserEditInfoBox from "../../Components/UserEditInfoBox";
-import MainInput from "../../Components/UI/MainInput";
-import MainButton from "../../Components/UI/MainButton";
+import { useRef, useState } from 'react';
+import UserEditInfoBox from '../../Components/UserEditInfoBox';
+import MainInput from '../../Components/UI/MainInput';
+import MainButton from '../../Components/UI/MainButton';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,14 +12,14 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../../Components/UI/AlertDialog";
-import MainTextArea from "../../Components/UI/MainTextArea";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Data, editUser } from "../../api/setters/userAPI";
-import { useAuthHooks } from "../../hooks/useAuthHooks";
-import useAuth from "../../hooks/useAuth";
-import toast from "react-hot-toast";
-import useInputValidator from "../../hooks/useInputValidator";
+} from '../../Components/UI/AlertDialog';
+import MainTextArea from '../../Components/UI/MainTextArea';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { Data, editUser } from '../../api/setters/userAPI';
+import { useAuthHooks } from '../../hooks/useAuthHooks';
+import useAuth from '../../hooks/useAuth';
+import toast from 'react-hot-toast';
+import useInputValidator from '../../hooks/useInputValidator';
 
 const Info = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -37,17 +37,17 @@ const Info = () => {
   const editUserMutation = useMutation({
     mutationFn: (data: Data) => editUser({ token, ...auth }, data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["user", "user"] });
-      toast.success("موفقیت آمیز");
+      queryClient.invalidateQueries({ queryKey: ['user', 'user'] });
+      toast.success('موفقیت آمیز');
     },
     onError: () => {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error('خطا در برقراری ارتباط');
     },
   });
 
   const handleEditPhoneEmail = (email?: string, phone?: string) => {
     if (email) {
-      const msg = useInputValidator(email, "email");
+      const msg = useInputValidator(email, 'email');
       if (msg) {
         toast.error(msg);
         return;
@@ -56,7 +56,7 @@ const Info = () => {
         email,
       });
     } else {
-      const msg = useInputValidator(phone, "phone");
+      const msg = useInputValidator(phone, 'phone');
       if (msg) {
         toast.error(msg);
         return;
@@ -69,7 +69,7 @@ const Info = () => {
   return (
     <section className="flex flex-col gap-4">
       <h1 className="font-bold text-purple">مشخصات</h1>
-      <UserEditInfoBox header="تغییر شماره همراه و ایمیل" key={"phone-email"}>
+      <UserEditInfoBox header="تغییر شماره همراه و ایمیل" key={'phone-email'}>
         <div className="flex flex-col gap-2 p-2">
           <div className="flex flex-col gap-1">
             <span>شماره همراه</span>
@@ -78,7 +78,7 @@ const Info = () => {
                 id="mobile"
                 intent="login"
                 inputSize="editUser"
-                key={"phone"}
+                key={'phone'}
                 className="max-w-[60%] hero:max-w-[95%]"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -90,7 +90,7 @@ const Info = () => {
                     size="login"
                     text="تغییر شماره همراه"
                     className="max-w-fit py-2 hover:bg-black min-w-[8.31rem]"
-                    key={"btn-ph"}
+                    key={'btn-ph'}
                   />
                 </AlertDialogTrigger>
                 <AlertDialogContent className="rounded-xl bg-white shadow-main py-12">
@@ -109,7 +109,7 @@ const Info = () => {
                         size="login"
                         text="بله"
                         className="max-w-fit py-2 hover:bg-black min-w-[8.31rem]"
-                        key={"modal-yes"}
+                        key={'modal-yes'}
                         onClick={() => handleEditPhoneEmail(undefined, phone)}
                       />
                     </AlertDialogCancel>
@@ -119,7 +119,7 @@ const Info = () => {
                         size="login"
                         text="خیر"
                         className="max-w-fit py-2 min-w-[8.31rem]"
-                        key={"modal-no"}
+                        key={'modal-no'}
                       />
                     </AlertDialogAction>
                   </AlertDialogFooter>
@@ -135,7 +135,7 @@ const Info = () => {
                 intent="login"
                 inputSize="editUser"
                 ref={emailRef}
-                key={"email"}
+                key={'email'}
                 className="max-w-[60%] hero:max-w-[95%]"
                 defaultValue={data?.email}
               />
@@ -147,13 +147,13 @@ const Info = () => {
                   handleEditPhoneEmail(emailRef.current!.value, undefined)
                 }
                 className="max-w-fit py-2 hover:bg-black min-w-[8.31rem]"
-                key={"btn-email"}
+                key={'btn-email'}
               />
             </div>
           </div>
         </div>
       </UserEditInfoBox>
-      <UserEditInfoBox header="مشخصات" key={"info"}>
+      <UserEditInfoBox header="مشخصات" key={'info'}>
         <div className="flex flex-col gap-3">
           <div className="flex gap-4 tips2:flex-col">
             <MainInput
@@ -162,7 +162,7 @@ const Info = () => {
               intent="login"
               inputSize="editUser"
               ref={fnameRef}
-              key={"fname"}
+              key={'fname'}
               className="flex-1"
               defaultValue={data?.first_name}
             />
@@ -172,7 +172,7 @@ const Info = () => {
               intent="login"
               inputSize="editUser"
               ref={lnameRef}
-              key={"lname"}
+              key={'lname'}
               className="flex-1"
               defaultValue={data?.last_name}
             />
@@ -184,7 +184,7 @@ const Info = () => {
               intent="login"
               inputSize="editUser"
               ref={fixPhoneRef}
-              key={"fix-phone"}
+              key={'fix-phone'}
               className="flex-1"
               defaultValue={data?.fixPhone}
             />
@@ -221,7 +221,7 @@ const Info = () => {
               })
             }
             className="max-w-fit py-2 hover:bg-black min-w-[8.31rem]"
-            key={"btn-edit-info"}
+            key={'btn-edit-info'}
           />
         </div>
       </UserEditInfoBox>
