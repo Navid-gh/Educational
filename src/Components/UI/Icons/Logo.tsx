@@ -8,7 +8,7 @@ const LogoIcon: FC<DivProps> = ({ id, ...props }) => {
     <div id={id} {...props}>
       <img
         className="w-full h-full"
-        src="/images/logo-saber.jpg"
+        src="/images/saberzarei-logo-icon.jpg"
         alt="saber zarei logo"
       />
     </div>
