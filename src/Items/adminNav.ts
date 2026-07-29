@@ -66,4 +66,9 @@ export const adminNavItems = [
     link: 'Sitemap',
     id: uuidv4(),
   },
+  {
+    name: 'مدیریت ریدایرکت ها',
+    link: 'Manage-Redirects',
+    id: uuidv4(),
+  },
 ];

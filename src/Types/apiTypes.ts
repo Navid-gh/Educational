@@ -214,3 +214,13 @@ export type SitemapItemType = {
   createdAt?: string;
   updatedAt?: string;
 };
+
+export type RedirectItem = {
+  _id: string;
+  oldUrl: string;
+  newUrl: string;
+  statusCode: 301 | 302;
+  active: boolean;
+  createdAt: string;
+  updatedAt: string;
+};

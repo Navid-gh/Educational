@@ -134,4 +134,10 @@ export const Endpoints = {
   getSitemap: `/admin/sitemap/list`,
   addSitemap: `/admin/sitemap/add`,
   removeSitemap: (id: string) => `/admin/sitemap/remove/${id}`,
+
+  // redirect endpoints
+  getRedirects: "/admin/redirect/list",
+  addRedirect: "/admin/redirect/add",
+  editRedirect: (id: string) => `/admin/redirect/edit/${id}`,
+  deleteRedirect: (id: string) => `/admin/redirect/remove/${id}`,
 };
